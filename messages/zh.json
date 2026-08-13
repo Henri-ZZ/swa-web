@@ -33,10 +33,10 @@
       "browserAddress": "stealth://popup",
       "worksOn": "Chrome、Firefox 和 Edge",
       "actions": {
-        "mute": { "name": "静音标签页", "shortcut": "⌘ ⇧ M" },
-        "hide": { "name": "隐藏标签页", "shortcut": "⌘ ⇧ H" },
-        "emergency": { "name": "紧急动作", "shortcut": "⌘ ⇧ E" },
-        "clear": { "name": "清理敏感数据", "shortcut": "⌘ ⇧ C" }
+        "mute": { "name": "静音标签页", "shortcut": "⌥ ⇧ M" },
+        "hide": { "name": "隐藏标签页", "shortcut": "⌥ ⇧ H" },
+        "emergency": { "name": "紧急动作", "shortcut": "⌥ ⇧ E" },
+        "clear": { "name": "清理敏感数据", "shortcut": "⌥ ⇧ C" }
       }
     }
   },
@@ -72,22 +72,22 @@
       "mute": {
         "name": "静音标签页",
         "description": "静音所有匹配的标签页。",
-        "keys": ["⌘", "⇧", "M"]
+        "keys": ["⌥", "⇧", "M"]
       },
       "hide": {
         "name": "隐藏标签页",
         "description": "从视图中隐藏敏感标签页。",
-        "keys": ["⌘", "⇧", "H"]
+        "keys": ["⌥", "⇧", "H"]
       },
       "emergency": {
         "name": "紧急动作",
         "description": "一键静音、隐藏或关闭所有匹配的标签页。",
-        "keys": ["⌘", "⇧", "E"]
+        "keys": ["⌥", "⇧", "E"]
       },
       "clear": {
         "name": "清理敏感数据",
         "description": "清理敏感数据，例如浏览历史记录、Cookie 和缓存等。",
-        "keys": ["⌘", "⇧", "C"]
+        "keys": ["⌥", "⇧", "C"]
       }
     }
   },

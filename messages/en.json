@@ -33,10 +33,10 @@
       "browserAddress": "stealth://popup",
       "worksOn": "Chrome, Firefox & Edge",
       "actions": {
-        "mute": { "name": "Mute Tabs", "shortcut": "⌘ ⇧ M" },
-        "hide": { "name": "Hide Tabs", "shortcut": "⌘ ⇧ H" },
-        "emergency": { "name": "Emergency Action", "shortcut": "⌘ ⇧ E" },
-        "clear": { "name": "Clear Sensitive Data", "shortcut": "⌘ ⇧ C" }
+        "mute": { "name": "Mute Tabs", "shortcut": "⌥ ⇧ M" },
+        "hide": { "name": "Hide Tabs", "shortcut": "⌥ ⇧ H" },
+        "emergency": { "name": "Emergency Action", "shortcut": "⌥ ⇧ E" },
+        "clear": { "name": "Clear Sensitive Data", "shortcut": "⌥ ⇧ C" }
       }
     }
   },
@@ -72,22 +72,22 @@
       "mute": {
         "name": "Mute Tabs",
         "description": "Silence all matching tabs.",
-        "keys": ["⌘", "⇧", "M"]
+        "keys": ["⌥", "⇧", "M"]
       },
       "hide": {
         "name": "Hide Tabs",
         "description": "Hide sensitive tabs from view.",
-        "keys": ["⌘", "⇧", "H"]
+        "keys": ["⌥", "⇧", "H"]
       },
       "emergency": {
         "name": "Emergency Action",
         "description": "Mute, hide or close all matching tabs.",
-        "keys": ["⌘", "⇧", "E"]
+        "keys": ["⌥", "⇧", "E"]
       },
       "clear": {
         "name": "Clear Sensitive Data",
         "description": "Wipe sensitive data such as browsing history, cookies and cache.",
-        "keys": ["⌘", "⇧", "C"]
+        "keys": ["⌥", "⇧", "C"]
       }
     }
   },

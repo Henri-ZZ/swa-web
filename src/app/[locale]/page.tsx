@@ -16,29 +16,30 @@ export default async function Home({
   const t = await getTranslations();
 
   // Paddle 配置：服务端读取环境变量，作为 props 传给购买按钮（避免 NEXT_PUBLIC_ 前缀）。
-  const paddleEnv = (process.env.PADDLE_ENV ??
-    "sandbox") as "sandbox" | "production";
+  const paddleEnv = (process.env.PADDLE_ENV ?? "sandbox") as
+    | "sandbox"
+    | "production";
   const paddleToken = process.env.PADDLE_CLIENT_TOKEN ?? "";
   const paddlePriceId = process.env.PADDLE_PRICE_ID ?? "";
 
   const featureKeys = ["mute", "hide", "emergency", "clear"] as const;
   const shortcutKeys = ["mute", "hide", "emergency", "clear"] as const;
-  const heroActionKeys = [
-    "mute",
-    "hide",
-    "emergency",
-    "clear",
+  const heroActionKeys = ["mute", "hide", "emergency", "clear"] as const;
+  const privacyKeys = [
+    "noData",
+    "noTracking",
+    "noUploads",
+    "noAccount",
   ] as const;
-  const privacyKeys = ["noData", "noTracking", "noUploads", "noAccount"] as const;
-  const tabKeys = ["work", "project", "shopping", "personal", "banking"] as const;
+  const tabKeys = [
+    "work",
+    "project",
+    "shopping",
+    "personal",
+    "banking",
+  ] as const;
   const benefitKeys = ["all", "lifetime", "devices", "noSub"] as const;
-  const faqKeys = [
-    "safe",
-    "data",
-    "sites",
-    "license",
-    "custom",
-  ] as const;
+  const faqKeys = ["safe", "data", "sites", "license", "custom"] as const;
 
   const faqItems: FAQItem[] = faqKeys.map((k) => ({
     question: t(`faq.items.${k}.question`),
@@ -86,10 +87,7 @@ export default async function Home({
             >
               {t("header.nav.pricing")}
             </Link>
-            <Link
-              href="#faq"
-              className="transition-colors hover:text-white"
-            >
+            <Link href="#faq" className="transition-colors hover:text-white">
               {t("header.nav.faq")}
             </Link>
             <Link
@@ -156,7 +154,11 @@ export default async function Home({
                     aria-hidden
                     className="flex h-5 w-5 items-center justify-center rounded-full bg-white/15"
                   >
-                    <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="currentColor">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-2.5 w-2.5"
+                      fill="currentColor"
+                    >
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>
@@ -275,10 +277,7 @@ export default async function Home({
         </section>
 
         {/* Keyboard shortcuts */}
-        <section
-          id="shortcuts"
-          className="bg-[var(--dark)] text-white"
-        >
+        <section id="shortcuts" className="bg-[var(--dark)] text-white">
           <div className="mx-auto max-w-6xl px-6 py-24">
             <div className="mx-auto max-w-2xl text-center">
               <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple-bright)]">
@@ -352,9 +351,7 @@ export default async function Home({
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
                 {t("emergency.heading")}
               </h2>
-              <p className="mt-4 text-[var(--muted)]">
-                {t("emergency.copy")}
-              </p>
+              <p className="mt-4 text-[var(--muted)]">{t("emergency.copy")}</p>
             </div>
 
             <div className="mt-14 grid gap-8 lg:grid-cols-2">
@@ -424,7 +421,10 @@ export default async function Home({
         </section>
 
         {/* Privacy */}
-        <section id="privacy" className="border-t border-[var(--border)] bg-white">
+        <section
+          id="privacy"
+          className="border-t border-[var(--border)] bg-white"
+        >
           <div className="mx-auto max-w-5xl px-6 py-24">
             <div className="rounded-3xl border border-[var(--border)] bg-zinc-50 p-8 sm:p-12">
               <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple)]">
@@ -603,18 +603,12 @@ function TabsState({
                 <span className="h-2 w-2 rounded-full bg-current opacity-50" />
                 {t(`emergency.tabs.${key}`)}
                 {isSensitive && !isHidden && !isClosed && (
-                  <span
-                    className="ml-1 inline-flex h-3.5 items-center rounded-full bg-[var(--purple)] px-1.5 text-[8px] font-semibold uppercase tracking-wider text-white"
-                  >
+                  <span className="ml-1 inline-flex h-3.5 items-center rounded-full bg-[var(--purple)] px-1.5 text-[8px] font-semibold uppercase tracking-wider text-white">
                     mute
                   </span>
                 )}
-                {isHidden && (
-                  <span className="ml-1 text-[10px]">hidden</span>
-                )}
-                {isClosed && (
-                  <span className="ml-1 text-[10px]">closed</span>
-                )}
+                {isHidden && <span className="ml-1 text-[10px]">hidden</span>}
+                {isClosed && <span className="ml-1 text-[10px]">closed</span>}
               </div>
             );
           })}
@@ -719,7 +713,15 @@ function ActionIcon({ kind }: { kind: keyof typeof ACTION_COLORS }) {
         className="inline-flex h-7 w-7 items-center justify-center rounded-lg"
         style={{ backgroundColor: `${c}20`, color: c }}
       >
-        <svg viewBox="0 0 24 24" className={cls} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className={cls}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
           <line x1="22" y1="9" x2="16" y2="15" />
           <line x1="16" y1="9" x2="22" y2="15" />
@@ -733,7 +735,15 @@ function ActionIcon({ kind }: { kind: keyof typeof ACTION_COLORS }) {
         className="inline-flex h-7 w-7 items-center justify-center rounded-lg"
         style={{ backgroundColor: `${c}20`, color: c }}
       >
-        <svg viewBox="0 0 24 24" className={cls} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className={cls}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
           <line x1="1" y1="1" x2="23" y2="23" />
         </svg>
@@ -746,7 +756,15 @@ function ActionIcon({ kind }: { kind: keyof typeof ACTION_COLORS }) {
         className="inline-flex h-7 w-7 items-center justify-center rounded-lg"
         style={{ backgroundColor: `${c}20`, color: c }}
       >
-        <svg viewBox="0 0 24 24" className={cls} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className={cls}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
         </svg>
       </span>
@@ -757,7 +775,15 @@ function ActionIcon({ kind }: { kind: keyof typeof ACTION_COLORS }) {
       className="inline-flex h-7 w-7 items-center justify-center rounded-lg"
       style={{ backgroundColor: `${c}20`, color: c }}
     >
-      <svg viewBox="0 0 24 24" className={cls} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        className={cls}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <polyline points="3 6 5 6 21 6" />
         <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6" />
         <path d="M10 11v6M14 11v6" />
@@ -766,7 +792,11 @@ function ActionIcon({ kind }: { kind: keyof typeof ACTION_COLORS }) {
   );
 }
 
-function FeatureIcon({ kind }: { kind: "mute" | "hide" | "emergency" | "clear" }) {
+function FeatureIcon({
+  kind,
+}: {
+  kind: "mute" | "hide" | "emergency" | "clear";
+}) {
   const c =
     kind === "mute"
       ? "#7c3aed"
