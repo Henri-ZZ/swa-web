@@ -3,20 +3,30 @@
 import { useEffect, useState } from "react";
 import { initializePaddle, type Paddle } from "@paddle/paddle-js";
 
-const PADDLE_ENV = (process.env.NEXT_PUBLIC_PADDLE_ENV ??
-  "sandbox") as "sandbox" | "production";
-const CLIENT_TOKEN = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN ?? "";
-const PRICE_ID = process.env.NEXT_PUBLIC_PADDLE_PRICE_ID ?? "";
+type PaddleEnvironment = "sandbox" | "production";
 
-export function PaddleBuyButton({ label }: { label: string }) {
+export function PaddleBuyButton({
+  label,
+  environment,
+  token,
+  priceId,
+}: {
+  label: string;
+  environment: PaddleEnvironment;
+  token: string;
+  priceId: string;
+}) {
   const [paddle, setPaddle] = useState<Paddle | undefined>(undefined);
   const [purchased, setPurchased] = useState(false);
 
   useEffect(() => {
+    // token/priceId 缺失时跳过初始化，避免线上报 "You must specify your Paddle Seller ID or token"。
+    if (!token || !priceId) return;
+
     let cancelled = false;
     initializePaddle({
-      environment: PADDLE_ENV,
-      token: CLIENT_TOKEN,
+      environment,
+      token,
       eventCallback: (event) => {
         if (event.name === "checkout.completed") {
           setPurchased(true);
@@ -32,14 +42,14 @@ export function PaddleBuyButton({ label }: { label: string }) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [environment, token, priceId]);
 
-  const ready = Boolean(paddle) && Boolean(CLIENT_TOKEN) && Boolean(PRICE_ID);
+  const ready = Boolean(paddle) && Boolean(token) && Boolean(priceId);
 
   const openCheckout = () => {
     if (!paddle) return;
     paddle.Checkout.open({
-      items: [{ priceId: PRICE_ID, quantity: 1 }],
+      items: [{ priceId, quantity: 1 }],
     });
   };
 

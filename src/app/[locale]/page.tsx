@@ -15,6 +15,12 @@ export default async function Home({
   setRequestLocale(locale);
   const t = await getTranslations();
 
+  // Paddle 配置：服务端读取环境变量，作为 props 传给购买按钮（避免 NEXT_PUBLIC_ 前缀）。
+  const paddleEnv = (process.env.PADDLE_ENV ??
+    "sandbox") as "sandbox" | "production";
+  const paddleToken = process.env.PADDLE_CLIENT_TOKEN ?? "";
+  const paddlePriceId = process.env.PADDLE_PRICE_ID ?? "";
+
   const featureKeys = ["mute", "hide", "emergency", "clear"] as const;
   const shortcutKeys = ["mute", "hide", "emergency", "clear"] as const;
   const heroActionKeys = [
@@ -509,7 +515,12 @@ export default async function Home({
                     </li>
                   ))}
                 </ul>
-                <PaddleBuyButton label={t("pricing.cta")} />
+                <PaddleBuyButton
+                  label={t("pricing.cta")}
+                  environment={paddleEnv}
+                  token={paddleToken}
+                  priceId={paddlePriceId}
+                />
               </div>
             </div>
           </div>
