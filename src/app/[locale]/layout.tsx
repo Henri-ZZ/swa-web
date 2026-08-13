@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
+import { AnchorScroll } from "./anchor-scroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white text-[var(--text)]">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <AnchorScroll />
       </body>
     </html>
   );

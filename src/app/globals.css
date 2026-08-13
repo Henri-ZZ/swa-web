@@ -38,6 +38,12 @@ body {
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Smooth in-page anchor scrolling, offset by the sticky header height */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
 /* Buttons should show a pointer cursor (browsers default buttons to a plain arrow) */
 button:not(:disabled),
 [role="button"]:not(:disabled),
