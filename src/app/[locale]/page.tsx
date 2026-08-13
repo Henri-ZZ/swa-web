@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FAQAccordion, type FAQItem } from "./faq-accordion";
 import { LocaleSwitcher } from "./locale-switcher";
+import { PaddleBuyButton } from "./paddle-buy-button";
 import { SiteFooter } from "./site-footer";
 
 export default async function Home({
@@ -508,13 +509,7 @@ export default async function Home({
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="#"
-                  className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[var(--purple)] text-sm font-semibold text-white transition-colors hover:bg-[var(--purple-bright)]"
-                >
-                  {t("pricing.cta")}
-                  <span aria-hidden>→</span>
-                </Link>
+                <PaddleBuyButton label={t("pricing.cta")} />
               </div>
             </div>
           </div>

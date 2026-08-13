@@ -38,6 +38,14 @@ body {
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Buttons should show a pointer cursor (browsers default buttons to a plain arrow) */
+button:not(:disabled),
+[role="button"]:not(:disabled),
+select:not(:disabled),
+summary {
+  cursor: pointer;
+}
+
 ::selection {
   background: rgba(124, 58, 237, 0.45);
   color: inherit;
