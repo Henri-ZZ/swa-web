@@ -1,0 +1,288 @@
+{
+  "metadata": {
+    "title": "隐私浏览助手 — 保护隐私，尽在掌控",
+    "description": "一个快捷键即可静音、隐藏或清理敏感浏览器标签页。一次性付费，终身使用，无订阅。"
+  },
+  "header": {
+    "brandPrimary": "Stealth",
+    "brandSecondary": "隐私浏览助手",
+    "brandFull": "隐私浏览助手",
+    "nav": {
+      "features": "功能",
+      "howItWorks": "工作原理",
+      "pricing": "价格",
+      "faq": "常见问题",
+      "changelog": "更新日志"
+    },
+    "cta": "立即获取"
+  },
+  "hero": {
+    "eyebrow": "守护隐私的快捷键",
+    "headlineLine1": "保持隐私。",
+    "headlineLine2Start": "保持",
+    "headlineAccent": "掌控。",
+    "copy": "一个快捷键，立即静音、隐藏或清理敏感浏览器标签页。",
+    "primaryCta": "获取终身授权 — $15",
+    "secondaryCta": "观看演示",
+    "trust": {
+      "oneTime": "一次性付费",
+      "lifetime": "终身更新",
+      "noSub": "无订阅"
+    },
+    "mockup": {
+      "browserAddress": "stealth://popup",
+      "worksOn": "Chrome、Firefox 和 Edge",
+      "actions": {
+        "mute": { "name": "静音标签页", "shortcut": "⌘ ⇧ M" },
+        "hide": { "name": "隐藏标签页", "shortcut": "⌘ ⇧ H" },
+        "emergency": { "name": "紧急动作", "shortcut": "⌘ ⇧ E" },
+        "clear": { "name": "清理敏感数据", "shortcut": "⌘ ⇧ C" }
+      }
+    }
+  },
+  "features": {
+    "heading": "一个快捷键，守护你的隐私。",
+    "items": {
+      "mute": {
+        "title": "静音",
+        "description": "立即静音匹配的标签页，而无需关闭它们。"
+      },
+      "hide": {
+        "title": "隐藏",
+        "description": "把敏感标签页从视图中隐藏，但保持打开状态。"
+      },
+      "emergency": {
+        "title": "紧急动作",
+        "description": "一键静音、隐藏或关闭所有匹配的标签页。"
+      },
+      "clear": {
+        "title": "清理敏感数据",
+        "description": "一键清理敏感数据，例如浏览历史记录、Cookie 和缓存等。"
+      }
+    }
+  },
+  "shortcuts": {
+    "eyebrow": "键盘快捷键",
+    "headingStart": "你的键盘就是",
+    "headingAccent": "紧急按钮。",
+    "copy": "无需查找，无需点击，按下按键即可。",
+    "note": "默认快捷键显示为 macOS 版本。完全可自定义。",
+    "cta": "查看全部快捷键",
+    "items": {
+      "mute": {
+        "name": "静音标签页",
+        "description": "静音所有匹配的标签页。",
+        "keys": ["⌘", "⇧", "M"]
+      },
+      "hide": {
+        "name": "隐藏标签页",
+        "description": "从视图中隐藏敏感标签页。",
+        "keys": ["⌘", "⇧", "H"]
+      },
+      "emergency": {
+        "name": "紧急动作",
+        "description": "一键静音、隐藏或关闭所有匹配的标签页。",
+        "keys": ["⌘", "⇧", "E"]
+      },
+      "clear": {
+        "name": "清理敏感数据",
+        "description": "清理敏感数据，例如浏览历史记录、Cookie 和缓存等。",
+        "keys": ["⌘", "⇧", "C"]
+      }
+    }
+  },
+  "emergency": {
+    "eyebrow": "工作原理",
+    "heading": "当一切需要立刻消失。",
+    "copy": "一键立即静音、隐藏或关闭所有匹配的标签页。",
+    "beforeLabel": "操作前",
+    "afterLabel": "操作后",
+    "tabs": {
+      "work": "工作面板",
+      "project": "项目进度",
+      "shopping": "购物清单",
+      "personal": "私人",
+      "banking": "银行"
+    }
+  },
+  "demo": {
+    "eyebrow": "实际效果",
+    "heading": "几秒掌握主动权。",
+    "copy": "观看 隐私浏览助手 如何在任何场景下保护你的隐私。",
+    "cta": "在 YouTube 观看",
+    "playAria": "播放演示视频"
+  },
+  "privacy": {
+    "eyebrow": "你的隐私至关重要",
+    "heading": "浏览记录只属于你。",
+    "copy": "隐私浏览助手 在你的浏览器本地运行。数据从不被收集或共享。",
+    "points": {
+      "noData": {
+        "title": "不收集数据",
+        "description": "你的浏览数据始终保留在你的设备上。"
+      },
+      "noTracking": {
+        "title": "无追踪",
+        "description": "我们不追踪你的任何行为。"
+      },
+      "noUploads": {
+        "title": "不上传",
+        "description": "浏览历史从不离开你的浏览器。"
+      },
+      "noAccount": {
+        "title": "无需账号",
+        "description": "使用所有功能无需创建账号。"
+      }
+    }
+  },
+  "pricing": {
+    "heading": "简单定价，终身使用。",
+    "badge": "最佳价值",
+    "name": "Stealth Premium",
+    "price": "$15",
+    "period": "一次性付费",
+    "benefits": {
+      "all": "所有高级功能",
+      "lifetime": "终身更新",
+      "devices": "在你的设备上使用",
+      "noSub": "永不订阅"
+    },
+    "cta": "获取终身授权"
+  },
+  "faq": {
+    "heading": "常见问题",
+    "items": {
+      "safe": {
+        "question": "这款扩展安全吗？",
+        "answer": "安全。一切都在你的浏览器本地运行——你的浏览内容从不被发送到任何服务器。该扩展只申请实现功能所必需的权限。"
+      },
+      "data": {
+        "question": "你们会收集我的数据吗？",
+        "answer": "不会。没有浏览历史、没有页面内容、没有分析、没有埋点。我们没有存储你活动数据的服务器，因为我们从未收到过它。"
+      },
+      "sites": {
+        "question": "它在所有网站上都能用吗？",
+        "answer": "可以。它支持浏览器内的几乎所有网站，如有遇到问题也可以随时反馈给我们。你来决定哪些关键词或模式触发每个动作。"
+      },
+      "license": {
+        "question": "终身授权是怎么运作的？",
+        "answer": "一次付费，获得授权码，在你拥有的设备上永久使用。所有未来的更新都免费包含。"
+      },
+      "custom": {
+        "question": "可以自定义关键词和快捷键吗？",
+        "answer": "完全可以。添加或删除关键词、更改快捷键——都可在扩展的设置页面完成。"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "保持隐私，保持掌控。",
+    "subTagline": "掌控你的浏览器。",
+    "columns": {
+      "product": {
+        "title": "产品",
+        "links": {
+          "features": "功能",
+          "howItWorks": "工作原理",
+          "changelog": "更新日志"
+        }
+      },
+      "support": {
+        "title": "支持",
+        "links": {
+          "faq": "常见问题",
+          "contact": "联系 / 反馈",
+          "privacy": "隐私政策",
+          "terms": "服务条款",
+          "refund": "退款政策"
+        }
+      },
+      "resources": {
+        "title": "资源",
+        "links": {
+          "chrome": "Chrome 应用商店",
+          "youtube": "YouTube 演示",
+          "docs": "文档"
+        }
+      }
+    },
+    "copyright": "© 2026 隐私浏览助手。保留所有权利。"
+  },
+  "legal": {
+    "lastUpdated": "最后更新：2026年9月",
+    "footer": {
+      "terms": "服务条款",
+      "refund": "退款政策",
+      "privacy": "隐私政策"
+    },
+    "terms": {
+      "title": "服务条款",
+      "sections": [
+        {
+          "heading": "1. 业务信息",
+          "body": "本服务由 Stealth Browser Assistant（隐私浏览助手）提供。"
+        },
+        {
+          "heading": "2. 使用许可",
+          "body": "本浏览器插件仅面向个人非商业使用。每个已购买授权最多可同时激活 3 台设备；当在第 4 台设备上激活时，最早激活的设备可能会被自动移除。禁止用于任何商业用途、非法用途或违反网站服务条款的操作。"
+        },
+        {
+          "heading": "3. 用户责任",
+          "body": "用户使用本工具时，需自行遵守所在国家/地区的法律法规及对应网站的使用规则，因违规使用产生的一切责任由用户自行承担。"
+        },
+        {
+          "heading": "4. 支付处理",
+          "body": "所有支付流程由 Paddle 平台安全处理，本工具仅提供软件授权，不存储用户任何支付信息。"
+        },
+        {
+          "heading": "5. 数字商品说明",
+          "body": "本插件为数字商品，支付成功后即时交付使用。用户确认购买即表示同意立即交付，下载/开始使用后，14 天无理由退款权失效。"
+        },
+        {
+          "heading": "6. 条款更新",
+          "body": "我们保留随时更新插件功能、调整服务条款的权利，更新后将在产品页公示。"
+        }
+      ]
+    },
+    "refund": {
+      "title": "退款政策",
+      "sections": [
+        {
+          "heading": "1. 数字商品说明",
+          "body": "本插件为数字商品，支付成功后即时交付使用。用户确认购买即表示同意立即交付，下载/开始使用后，14 天无理由退款权失效。"
+        },
+        {
+          "heading": "2. 可退款情形",
+          "body": "仅在产品故障、无法使用、与描述严重不符（非主观不喜欢）的情况下，可申请退款。退款由 Paddle 平台审核处理。"
+        },
+        {
+          "heading": "3. 退款申请方式",
+          "body": "退款申请需通过 Paddle 平台提交，我们可协助提供订单/使用记录，但最终审批权在 Paddle。"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "sections": [
+        {
+          "heading": "1. 数据收集",
+          "body": "本浏览器插件不会收集、存储、传输用户的任何个人敏感数据，包括但不限于密码、浏览历史、支付信息、个人身份信息。"
+        },
+        {
+          "heading": "2. 数据存储",
+          "body": "插件的所有配置、授权状态仅存储在用户本地设备，不会上传至任何外部服务器。"
+        },
+        {
+          "heading": "3. 第三方共享",
+          "body": "我们不会向任何第三方共享、出售用户数据，仅在法律要求的情况下配合监管机构提供必要信息。"
+        },
+        {
+          "heading": "4. 支付数据",
+          "body": "支付相关数据由 Paddle 平台独立处理，遵循其隐私政策，本工具不获取任何支付相关信息。"
+        }
+      ]
+    }
+  },
+  "locale": {
+    "label": "切换语言"
+  }
+}

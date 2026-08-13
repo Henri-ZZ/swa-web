@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stealth Browser Assistant 官网
 
-## Getting Started
+Stealth Browser Assistant 的官方网站，基于 Next.js 16 构建。内置国际化 (i18n) 支持，使用 [next-intl](https://next-intl.dev/)。
 
-First, run the development server:
+## 技术栈
+
+- **框架**: Next.js 16.3.0 (App Router)
+- **语言**: TypeScript
+- **UI**: React 19.2.8 + Tailwind CSS 4
+- **i18n**: next-intl 4.x（locale 前缀路由）
+- **包管理**: pnpm
+- **代码规范**: ESLint
+
+## 开始
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# 安装依赖
+pnpm install
+
+# 启动开发服务器
 pnpm dev
-# or
-bun dev
+
+# 构建生产版本
+pnpm build
+
+# 启动生产服务器
+pnpm start
+
+# 代码检查
+pnpm lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看效果。根路径会自动重定向到浏览器首选语言对应的 locale（默认 `en`）。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 国际化（i18n）
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+所有页面位于 `[locale]` 段下：
 
-## Learn More
+- 翻译文案在 `messages/<locale>.json`，已包含英文（`en`）和中文（`zh`）
+- 通过 `next-intl` 在服务端组件中读取，避免在客户端传输语言包
+- `<html lang>` 与 `<title>` / `<meta description>` 根据 locale 动态生成
+- 在 `src/i18n/routing.ts` 中配置 `locales` / `defaultLocale`，新增语言时只需：
+  1. 在 `routing.ts` 的 `locales` 数组中加入新 locale
+  2. 新建 `messages/<locale>.json`
+  3. （可选）在页面里使用 `getTranslations({ locale, namespace: '...' })`
 
-To learn more about Next.js, take a look at the following resources:
+## 目录结构
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+messages/
+├── en.json                # 英文文案（默认）
+└── zh.json                # 中文文案
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+public/
+└── icon.png               # 产品 Logo
 
-## Deploy on Vercel
+src/
+├── app/
+│   ├── globals.css        # 全局样式（默认深色主题）
+│   └── [locale]/
+│       ├── layout.tsx     # 根布局：动态 lang/metadata + Provider
+│       └── page.tsx       # 首页（落地页）
+├── i18n/
+│   ├── routing.ts         # locale 配置
+│   ├── navigation.ts      # 国际化导航包装（Link / useRouter 等）
+│   └── request.ts         # 服务端文案加载
+└── proxy.ts               # next-intl 中间件（Next.js 16 中重命名为 proxy）
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 部署
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+推荐使用 [Vercel](https://vercel.com) 部署，详见 [Next.js 部署文档](https://nextjs.org/docs/app/building-your-application/deploying)。

@@ -1,0 +1,288 @@
+{
+  "metadata": {
+    "title": "Stealth Browser Assistant — Stay private. Stay in control.",
+    "description": "Instantly mute, hide or clean up sensitive browser tabs with a single shortcut. Lifetime license, no subscription."
+  },
+  "header": {
+    "brandPrimary": "Stealth",
+    "brandSecondary": "Browser Assistant",
+    "brandFull": "Stealth Browser Assistant",
+    "nav": {
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "changelog": "Changelog"
+    },
+    "cta": "Get Stealth"
+  },
+  "hero": {
+    "eyebrow": "Keyboard shortcuts for privacy",
+    "headlineLine1": "Stay private.",
+    "headlineLine2Start": "Stay ",
+    "headlineAccent": "in control.",
+    "copy": "Instantly mute, hide or clean up sensitive browser tabs with a single shortcut.",
+    "primaryCta": "Get Lifetime Access — $15",
+    "secondaryCta": "Watch Demo",
+    "trust": {
+      "oneTime": "One-time payment",
+      "lifetime": "Lifetime updates",
+      "noSub": "No subscription"
+    },
+    "mockup": {
+      "browserAddress": "stealth://popup",
+      "worksOn": "Chrome, Firefox & Edge",
+      "actions": {
+        "mute": { "name": "Mute Tabs", "shortcut": "⌘ ⇧ M" },
+        "hide": { "name": "Hide Tabs", "shortcut": "⌘ ⇧ H" },
+        "emergency": { "name": "Emergency Action", "shortcut": "⌘ ⇧ E" },
+        "clear": { "name": "Clear Sensitive Data", "shortcut": "⌘ ⇧ C" }
+      }
+    }
+  },
+  "features": {
+    "heading": "One shortcut to protect your privacy.",
+    "items": {
+      "mute": {
+        "title": "Mute",
+        "description": "Silence matching tabs instantly without closing them."
+      },
+      "hide": {
+        "title": "Hide",
+        "description": "Hide sensitive tabs from view while keeping them open."
+      },
+      "emergency": {
+        "title": "Emergency Action",
+        "description": "Mute, hide or close all matching tabs with one click."
+      },
+      "clear": {
+        "title": "Clear Sensitive Data",
+        "description": "Wipe sensitive data such as browsing history, cookies and cache in one go."
+      }
+    }
+  },
+  "shortcuts": {
+    "eyebrow": "KEYBOARD SHORTCUTS",
+    "headingStart": "Your keyboard is the ",
+    "headingAccent": "panic button.",
+    "copy": "No searching. No clicking. Just press a key.",
+    "note": "Default shortcuts shown for macOS. Fully customizable.",
+    "cta": "View All Shortcuts",
+    "items": {
+      "mute": {
+        "name": "Mute Tabs",
+        "description": "Silence all matching tabs.",
+        "keys": ["⌘", "⇧", "M"]
+      },
+      "hide": {
+        "name": "Hide Tabs",
+        "description": "Hide sensitive tabs from view.",
+        "keys": ["⌘", "⇧", "H"]
+      },
+      "emergency": {
+        "name": "Emergency Action",
+        "description": "Mute, hide or close all matching tabs.",
+        "keys": ["⌘", "⇧", "E"]
+      },
+      "clear": {
+        "name": "Clear Sensitive Data",
+        "description": "Wipe sensitive data such as browsing history, cookies and cache.",
+        "keys": ["⌘", "⇧", "C"]
+      }
+    }
+  },
+  "emergency": {
+    "eyebrow": "HOW IT WORKS",
+    "heading": "When you need everything gone.",
+    "copy": "One click mutes, hides, or closes every matching tab instantly.",
+    "beforeLabel": "Before",
+    "afterLabel": "After",
+    "tabs": {
+      "work": "Work Dashboard",
+      "project": "Project Updates",
+      "shopping": "Shopping List",
+      "personal": "Personal",
+      "banking": "Banking"
+    }
+  },
+  "demo": {
+    "eyebrow": "SEE IT IN ACTION",
+    "heading": "Take control in seconds.",
+    "copy": "Watch how Stealth Browser Assistant helps you stay private in any situation.",
+    "cta": "Watch on YouTube",
+    "playAria": "Play demo video"
+  },
+  "privacy": {
+    "eyebrow": "YOUR PRIVACY MATTERS",
+    "heading": "Your browsing stays yours.",
+    "copy": "Stealth Browser Assistant works locally in your browser. Your data is never collected or shared.",
+    "points": {
+      "noData": {
+        "title": "No data collection",
+        "description": "Your browsing stays on your device."
+      },
+      "noTracking": {
+        "title": "No tracking",
+        "description": "We don't track you."
+      },
+      "noUploads": {
+        "title": "No uploads",
+        "description": "No browsing history ever leaves your browser."
+      },
+      "noAccount": {
+        "title": "No account",
+        "description": "Use all features without creating an account."
+      }
+    }
+  },
+  "pricing": {
+    "heading": "Simple pricing. Lifetime access.",
+    "badge": "BEST VALUE",
+    "name": "Stealth Premium",
+    "price": "$15",
+    "period": "One-time payment",
+    "benefits": {
+      "all": "All premium features",
+      "lifetime": "Lifetime updates",
+      "devices": "Use on your devices",
+      "noSub": "No subscription. Ever."
+    },
+    "cta": "Get Lifetime Access"
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "items": {
+      "safe": {
+        "question": "Is this extension safe?",
+        "answer": "Yes. Everything runs locally in your browser — nothing about your browsing is ever sent to a server. The extension requests only the permissions it needs to do its job."
+      },
+      "data": {
+        "question": "Do you collect my data?",
+        "answer": "No. No browsing history, no page content, no analytics, no telemetry. We have no servers storing your activity because we never receive it."
+      },
+      "sites": {
+        "question": "Does it work on all websites?",
+        "answer": "Yes. It works on almost every site in your browser. If you run into any issues, feel free to reach out. You decide which keywords or patterns trigger each action."
+      },
+      "license": {
+        "question": "How does the lifetime license work?",
+        "answer": "Pay once, get a license code, and use it forever on any device you own. All future updates are included for free."
+      },
+      "custom": {
+        "question": "Can I customize the keywords and shortcuts?",
+        "answer": "Absolutely. Add or remove keywords and change shortcuts to match your workflow — all from the extension's settings page."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Stay private. Stay in control.",
+    "subTagline": "Take control of your browser.",
+    "columns": {
+      "product": {
+        "title": "Product",
+        "links": {
+          "features": "Features",
+          "howItWorks": "How It Works",
+          "changelog": "Changelog"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "faq": "FAQ",
+          "contact": "Contact / Feedback",
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Service",
+          "refund": "Refund Policy"
+        }
+      },
+      "resources": {
+        "title": "Resources",
+        "links": {
+          "chrome": "Chrome Web Store",
+          "youtube": "YouTube Demo",
+          "docs": "Documentation"
+        }
+      }
+    },
+    "copyright": "© 2026 Stealth Browser Assistant. All rights reserved."
+  },
+  "legal": {
+    "lastUpdated": "Last Updated: September 2026",
+    "footer": {
+      "terms": "Terms of Service",
+      "refund": "Refund Policy",
+      "privacy": "Privacy Policy"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "sections": [
+        {
+          "heading": "1. Business Information",
+          "body": "This service is provided by Stealth Browser Assistant."
+        },
+        {
+          "heading": "2. Usage License",
+          "body": "This browser extension is intended for personal non-commercial use only. Each purchased license may be activated on up to three devices at the same time. If you activate on a fourth device, the earliest activated device may be removed automatically. Any commercial use, illegal use, or operations that violate website terms of service are prohibited."
+        },
+        {
+          "heading": "3. User Responsibility",
+          "body": "When using this tool, users must comply with the laws and regulations of their country/region and the usage rules of the corresponding websites. All responsibilities arising from violating use shall be borne by the user."
+        },
+        {
+          "heading": "4. Payment Processing",
+          "body": "All payment processes are securely handled by the Paddle platform. This tool only provides software authorization and does not store any user payment information."
+        },
+        {
+          "heading": "5. Digital Product Notice",
+          "body": "This extension is a digital product, delivered immediately upon successful payment. By confirming your purchase, you agree to immediate delivery. Your 14-day right of withdrawal expires once you download or start using the product."
+        },
+        {
+          "heading": "6. Terms Updates",
+          "body": "We reserve the right to update extension features and adjust these terms of service at any time. Updates will be posted on the product page."
+        }
+      ]
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "heading": "1. Digital Product Notice",
+          "body": "This extension is a digital product, delivered immediately upon successful payment. By confirming your purchase, you agree to immediate delivery. Your 14-day right of withdrawal expires once you download or start using the product."
+        },
+        {
+          "heading": "2. Refund Eligibility",
+          "body": "Refunds are only available in cases of product malfunction, inability to use, or significant discrepancy from the description (not subjective dislike). Refunds are reviewed and processed by Paddle."
+        },
+        {
+          "heading": "3. How to Apply for a Refund",
+          "body": "Refund applications must be submitted through the Paddle platform. We can assist by providing order/usage records, but final approval authority lies with Paddle."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "sections": [
+        {
+          "heading": "1. Data Collection",
+          "body": "This browser extension does not collect, store, or transmit any personal sensitive data of users, including but not limited to passwords, browsing history, payment information, and personal identity information."
+        },
+        {
+          "heading": "2. Data Storage",
+          "body": "All configurations and authorization status of the extension are stored only on the user's local device and will not be uploaded to any external servers."
+        },
+        {
+          "heading": "3. Third-Party Sharing",
+          "body": "We will not share or sell user data with any third parties, and will only provide necessary information to regulatory authorities in compliance with legal requirements."
+        },
+        {
+          "heading": "4. Payment Data",
+          "body": "Payment-related data is independently processed by the Paddle platform in accordance with its privacy policy. This tool does not obtain any payment-related information."
+        }
+      ]
+    }
+  },
+  "locale": {
+    "label": "Switch language"
+  }
+}
