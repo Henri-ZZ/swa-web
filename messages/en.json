@@ -9,15 +9,15 @@
     "brandFull": "Stealth Browser Assistant",
     "nav": {
       "features": "Features",
-      "howItWorks": "How It Works",
+      "howItWorks": "Workflow",
       "pricing": "Pricing",
       "faq": "FAQ",
       "changelog": "Changelog"
     },
-    "cta": "Get Stealth"
+    "cta": "Install Now"
   },
   "hero": {
-    "eyebrow": "Keyboard shortcuts for privacy",
+    "eyebrow": "A browser extension for privacy",
     "headlineLine1": "Stay private.",
     "headlineLine2Start": "Stay ",
     "headlineAccent": "in control.",
@@ -67,7 +67,6 @@
     "headingAccent": "panic button.",
     "copy": "No searching. No clicking. Just press a key.",
     "note": "Default shortcuts shown for macOS. Fully customizable.",
-    "cta": "View All Shortcuts",
     "items": {
       "mute": {
         "name": "Mute Tabs",
@@ -92,7 +91,7 @@
     }
   },
   "emergency": {
-    "eyebrow": "HOW IT WORKS",
+    "eyebrow": "WORKFLOW",
     "heading": "When you need everything gone.",
     "copy": "One click mutes, hides, or closes every matching tab instantly.",
     "beforeLabel": "Before",
@@ -182,7 +181,7 @@
         "title": "Product",
         "links": {
           "features": "Features",
-          "howItWorks": "How It Works",
+          "howItWorks": "Workflow",
           "changelog": "Changelog"
         }
       },

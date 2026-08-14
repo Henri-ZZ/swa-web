@@ -5,6 +5,7 @@ import { FAQAccordion, type FAQItem } from "./faq-accordion";
 import { LocaleSwitcher } from "./locale-switcher";
 import { PaddleBuyButton } from "./paddle-buy-button";
 import { SiteFooter } from "./site-footer";
+import { StoreLink } from "./store-link";
 
 export default async function Home({
   params,
@@ -98,13 +99,10 @@ export default async function Home({
             </Link>
           </div>
           <div className="flex items-center gap-3">
-            <Link
-              href="#pricing"
-              className="inline-flex h-9 items-center justify-center gap-1 rounded-full bg-[var(--purple)] px-4 text-sm font-medium text-white transition-colors hover:bg-[var(--purple-bright)]"
-            >
+            <StoreLink className="inline-flex h-9 items-center justify-center gap-1 rounded-full bg-[var(--purple)] px-4 text-sm font-medium text-white transition-colors hover:bg-[var(--purple-bright)]">
               {t("header.cta")}
               <span aria-hidden>→</span>
-            </Link>
+            </StoreLink>
             <LocaleSwitcher />
           </div>
         </nav>
@@ -212,8 +210,14 @@ export default async function Home({
                       <span className="text-sm font-semibold text-white">
                         {t("header.brandFull")}
                       </span>
+                      <Image
+                        src="/premium.png"
+                        alt=""
+                        width={16}
+                        height={16}
+                        className="h-4 w-4"
+                      />
                     </div>
-                    <Toggle on />
                   </div>
                   <div className="mt-3 space-y-2">
                     {heroActionKeys.map((key) => {
@@ -326,15 +330,6 @@ export default async function Home({
             <p className="mt-8 text-center text-xs text-zinc-500">
               {t("shortcuts.note")}
             </p>
-            <div className="mt-6 text-center">
-              <button
-                type="button"
-                className="inline-flex h-10 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/[0.03] px-5 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
-              >
-                {t("shortcuts.cta")}
-                <span aria-hidden>→</span>
-              </button>
-            </div>
           </div>
         </section>
 
@@ -669,23 +664,6 @@ function BrowsersIcon() {
       <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
       <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
     </svg>
-  );
-}
-
-function Toggle({ on }: { on: boolean }) {
-  return (
-    <span
-      className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
-        on ? "bg-[var(--purple)]" : "bg-zinc-700"
-      }`}
-      aria-hidden
-    >
-      <span
-        className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
-          on ? "translate-x-4" : "translate-x-0.5"
-        }`}
-      />
-    </span>
   );
 }
 

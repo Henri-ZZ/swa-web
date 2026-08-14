@@ -9,15 +9,15 @@
     "brandFull": "隐私浏览助手",
     "nav": {
       "features": "功能",
-      "howItWorks": "工作原理",
+      "howItWorks": "工作流程",
       "pricing": "价格",
       "faq": "常见问题",
       "changelog": "更新日志"
     },
-    "cta": "立即获取"
+    "cta": "立即安装"
   },
   "hero": {
-    "eyebrow": "守护隐私的快捷键",
+    "eyebrow": "守护隐私的浏览器插件",
     "headlineLine1": "保持隐私。",
     "headlineLine2Start": "保持",
     "headlineAccent": "掌控。",
@@ -67,7 +67,6 @@
     "headingAccent": "紧急按钮。",
     "copy": "无需查找，无需点击，按下按键即可。",
     "note": "默认快捷键显示为 macOS 版本。完全可自定义。",
-    "cta": "查看全部快捷键",
     "items": {
       "mute": {
         "name": "静音标签页",
@@ -92,7 +91,7 @@
     }
   },
   "emergency": {
-    "eyebrow": "工作原理",
+    "eyebrow": "工作流程",
     "heading": "当一切需要立刻消失。",
     "copy": "一键立即静音、隐藏或关闭所有匹配的标签页。",
     "beforeLabel": "操作前",
@@ -182,7 +181,7 @@
         "title": "产品",
         "links": {
           "features": "功能",
-          "howItWorks": "工作原理",
+          "howItWorks": "工作流程",
           "changelog": "更新日志"
         }
       },
