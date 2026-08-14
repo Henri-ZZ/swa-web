@@ -150,7 +150,7 @@
   "pricing": {
     "heading": "简单定价，终身使用。",
     "badge": "最佳价值",
-    "name": "Stealth Premium",
+    "premiumLabel": "Premium",
     "price": "$15",
     "period": "一次性付费",
     "benefits": {
@@ -170,7 +170,10 @@
     }
   },
   "faq": {
-    "heading": "常见问题",
+    "eyebrow": "常见问题",
+    "heading": "你可能正在好奇…",
+    "ctaStart": "还有疑问？",
+    "ctaLink": "联系客服",
     "items": {
       "safe": {
         "question": "这款扩展安全吗？",

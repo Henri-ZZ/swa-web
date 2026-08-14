@@ -58,7 +58,7 @@ export function PaddleBuyButton({
       type="button"
       onClick={openCheckout}
       disabled={!ready}
-      className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[var(--purple)] text-sm font-semibold text-white transition-colors hover:bg-[var(--purple-bright)] disabled:cursor-not-allowed disabled:opacity-60"
+      className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[var(--purple)] text-sm font-semibold text-white transition-colors hover:bg-[var(--purple-bright)] disabled:cursor-not-allowed disabled:opacity-60"
     >
       {label}
       <span aria-hidden>→</span>

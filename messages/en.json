@@ -150,8 +150,15 @@
   "pricing": {
     "heading": "Simple pricing. Lifetime access.",
     "badge": "BEST VALUE",
-    "name": "Stealth Premium",
+    "premiumLabel": "Premium",
     "price": "$15",
+    "freeName": "Free",
+    "freePrice": "$0",
+    "freePeriod": "Free forever",
+    "freeCta": "Start for free",
+    "freeBenefits": {
+      "core": "Core features"
+    },
     "period": "One-time payment",
     "benefits": {
       "all": "All premium features",
@@ -170,7 +177,10 @@
     }
   },
   "faq": {
-    "heading": "Frequently asked questions",
+    "eyebrow": "Common questions",
+    "heading": "You might be wondering...",
+    "ctaStart": "Still curious?",
+    "ctaLink": "Contact support",
     "items": {
       "safe": {
         "question": "Is this extension safe?",

@@ -477,8 +477,15 @@ export default async function Home({
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--purple)] px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
                   {t("pricing.badge")}
                 </div>
-                <h3 className="text-lg font-semibold text-[var(--text)]">
-                  {t("pricing.name")}
+                <h3 className="flex items-center gap-2.5 text-lg font-semibold text-[var(--text)]">
+                  <Image
+                    src="/premium.png"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="h-6 w-6"
+                  />
+                  {t("pricing.premiumLabel")}
                 </h3>
                 <div className="mt-4 flex items-baseline gap-2">
                   <span className="text-5xl font-bold tracking-tight text-[var(--text)]">
@@ -487,6 +494,14 @@ export default async function Home({
                   <span className="text-sm text-[var(--muted)]">
                     {t("pricing.period")}
                   </span>
+                </div>
+                <div className="mt-6">
+                  <PaddleBuyButton
+                    label={t("pricing.cta")}
+                    environment={paddleEnv}
+                    token={paddleToken}
+                    priceId={paddlePriceId}
+                  />
                 </div>
                 <ul className="mt-6 space-y-3">
                   {benefitKeys.map((key) => (
@@ -511,12 +526,6 @@ export default async function Home({
                     </li>
                   ))}
                 </ul>
-                <PaddleBuyButton
-                  label={t("pricing.cta")}
-                  environment={paddleEnv}
-                  token={paddleToken}
-                  priceId={paddlePriceId}
-                />
               </div>
               {/* Activation steps */}
               <div className="w-full max-w-md">
@@ -544,12 +553,31 @@ export default async function Home({
 
         {/* FAQ */}
         <section id="faq" className="border-t border-[var(--border)] bg-white">
-          <div className="mx-auto max-w-3xl px-6 py-24">
-            <h2 className="text-center text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
-              {t("faq.heading")}
-            </h2>
-            <div className="mt-10">
-              <FAQAccordion items={faqItems} />
+          <div className="mx-auto max-w-6xl px-6 py-24">
+            <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+              {/* Left: heading + CTA */}
+              <div className="lg:col-span-4 lg:sticky lg:top-24">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple)]">
+                  {t("faq.eyebrow")}
+                </span>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
+                  {t("faq.heading")}
+                </h2>
+                <p className="mt-6 text-sm font-medium text-[var(--text)]">
+                  {t("faq.ctaStart")}{" "}
+                  <a
+                    href="#"
+                    className="inline-flex items-center gap-1 text-[var(--purple)] transition-colors hover:text-[var(--purple-bright)]"
+                  >
+                    {t("faq.ctaLink")}
+                    <span aria-hidden>→</span>
+                  </a>
+                </p>
+              </div>
+              {/* Right: questions */}
+              <div className="lg:col-span-8">
+                <FAQAccordion items={faqItems} />
+              </div>
             </div>
           </div>
         </section>
