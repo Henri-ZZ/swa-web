@@ -107,7 +107,7 @@ export function SiteFooter({ t }: { t: Translations }) {
             title={t("footer.columns.support.title")}
             links={[
               { label: t("footer.columns.support.links.faq"), hash: "faq" },
-              { label: t("footer.columns.support.links.contact"), href: "#" },
+              { label: t("footer.columns.support.links.contact"), href: "/contact" },
               { label: t("footer.columns.support.links.privacy"), href: "/privacy" },
               { label: t("footer.columns.support.links.terms"), href: "/terms" },
               { label: t("footer.columns.support.links.refund"), href: "/refund" },

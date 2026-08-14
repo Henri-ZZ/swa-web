@@ -22,10 +22,11 @@
     "headlineLine2Start": "保持",
     "headlineAccent": "掌控。",
     "copy": "用你自己的关键词定义敏感标签页，然后立即静音、隐藏或清理它们。",
-    "primaryCta": "获取永久授权 — $15",
+    "primaryCta": "查看价格",
     "secondaryCta": "观看演示",
     "trust": {
-      "oneTime": "一次性付费",
+      "free": "免费可用",
+      "oneTime": "一次性付费解锁Premium",
       "lifetime": "永久更新",
       "noSub": "无订阅"
     },
@@ -345,6 +346,17 @@
       "improvement": "功能改进",
       "fix": "Bug 修复"
     }
+  },
+  "contact": {
+    "eyebrow": "联系客服",
+    "heading": "我们随时提供帮助",
+    "description": "有问题、反馈或遇到困难？给我们留言，我们会尽快回复。",
+    "responseTitle": "响应时间",
+    "responseBody": "如果需要，我们通常会在工作日的 24-48 小时内回复您的留言或邮件。",
+    "emailTitle": "直接发送邮件",
+    "emailBody": "更习惯邮件或者右侧表单未正常加载？可以直接发给我们。",
+    "email": "henrizhang@henri.ren",
+    "formTitle": "给我们留言"
   },
   "locale": {
     "label": "切换语言"

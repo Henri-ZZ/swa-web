@@ -40,6 +40,7 @@ export default async function Home({
     "banking",
   ] as const;
   const benefitKeys = ["unlimited", "feedback", "mute", "hide", "emergency", "clear", "all", "updates", "noFee"] as const;
+  const trustKeys = ["free", "oneTime", "lifetime", "noSub"] as const;
   const faqKeys = ["safe", "data", "sites", "license", "custom", "detect"] as const;
 
   const faqItems: FAQItem[] = faqKeys.map((k) => ({
@@ -147,8 +148,8 @@ export default async function Home({
                 >
                   {t("hero.primaryCta")}
                 </Link>
-                <button
-                  type="button"
+                <Link
+                  href="#demo"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 text-sm font-medium text-white transition-colors hover:bg-white/10"
                 >
                   <span
@@ -164,21 +165,15 @@ export default async function Home({
                     </svg>
                   </span>
                   {t("hero.secondaryCta")}
-                </button>
+                </Link>
               </div>
               <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-zinc-400">
-                <li className="flex items-center gap-1.5">
-                  <CheckIcon />
-                  {t("hero.trust.oneTime")}
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <CheckIcon />
-                  {t("hero.trust.lifetime")}
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <CheckIcon />
-                  {t("hero.trust.noSub")}
-                </li>
+                {trustKeys.map((key) => (
+                  <li key={key} className="flex items-center gap-1.5">
+                    <CheckIcon />
+                    {t(`hero.trust.${key}`)}
+                  </li>
+                ))}
               </ul>
             </div>
 
