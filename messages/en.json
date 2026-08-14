@@ -149,26 +149,36 @@
   },
   "pricing": {
     "heading": "Simple pricing. Lifetime access.",
-    "badge": "BEST VALUE",
+    "badge": "MOST POPULAR",
     "premiumLabel": "Premium",
     "price": "$15",
     "freeName": "Free",
-    "freePrice": "$0",
+    "freePrice": "0",
     "freePeriod": "Free forever",
     "freeCta": "Start for free",
     "freeBenefits": {
-      "core": "Core features"
+      "keywords": "5 keywords",
+      "feedback": "Tab match feedback",
+      "mute": "Mute tabs",
+      "hide": "Hide tabs",
+      "emergency": "Emergency action",
+      "clear": "Clear private data"
     },
     "period": "One-time payment",
     "benefits": {
+      "unlimited": "Unlimited keywords",
+      "feedback": "Tab match feedback",
+      "mute": "Mute tabs",
+      "hide": "Hide tabs",
+      "emergency": "Emergency action",
+      "clear": "Clear private data",
       "all": "All premium features",
-      "lifetime": "Lifetime updates",
-      "devices": "Use on your devices",
-      "noSub": "No subscription. Ever."
+      "updates": "All future updates included",
+      "noFee": "No new fees. Ever."
     },
     "cta": "Get Lifetime Access",
     "steps": {
-      "title": "How to activate",
+      "title": "How to activate Premium",
       "items": [
         "Click the button to pay.",
         "Your license key will be sent to your email.",

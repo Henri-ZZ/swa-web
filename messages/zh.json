@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "隐私浏览助手 — 保护隐私，尽在掌控",
-    "description": "一个快捷键即可静音、隐藏或清理敏感浏览器标签页。一次性付费，终身使用，无订阅。"
+    "description": "一个快捷键即可静音、隐藏或清理敏感浏览器标签页。一次性付费，永久使用，无订阅。"
   },
   "header": {
     "brandPrimary": "Stealth",
@@ -22,11 +22,11 @@
     "headlineLine2Start": "保持",
     "headlineAccent": "掌控。",
     "copy": "用你自己的关键词定义敏感标签页，然后立即静音、隐藏或清理它们。",
-    "primaryCta": "获取终身授权 — $15",
+    "primaryCta": "获取永久授权 — $15",
     "secondaryCta": "观看演示",
     "trust": {
       "oneTime": "一次性付费",
-      "lifetime": "终身更新",
+      "lifetime": "永久更新",
       "noSub": "无订阅"
     },
     "mockup": {
@@ -148,20 +148,37 @@
     }
   },
   "pricing": {
-    "heading": "简单定价，终身使用。",
-    "badge": "最佳价值",
+    "heading": "简单定价，永久使用。",
+    "badge": "最受欢迎",
     "premiumLabel": "Premium",
     "price": "$15",
+    "freeName": "免费",
+    "freePrice": "0",
+    "freePeriod": "永久免费",
+    "freeCta": "免费开始",
+    "freeBenefits": {
+      "keywords": "5条关键词",
+      "feedback": "标签页命中反馈",
+      "mute": "静音标签页",
+      "hide": "隐藏标签页",
+      "emergency": "紧急动作",
+      "clear": "清理隐私数据"
+    },
     "period": "一次性付费",
     "benefits": {
+      "unlimited": "无限关键词",
+      "feedback": "标签页命中反馈",
+      "mute": "静音标签页",
+      "hide": "隐藏标签页",
+      "emergency": "紧急动作",
+      "clear": "清理隐私数据",
       "all": "所有高级功能",
-      "lifetime": "终身更新",
-      "devices": "在你的设备上使用",
-      "noSub": "永不订阅"
+      "updates": "后续更新功能继续使用",
+      "noFee": "永不增加收费"
     },
-    "cta": "获取终身授权",
+    "cta": "获取永久授权",
     "steps": {
-      "title": "如何激活",
+      "title": "如何激活 Premium",
       "items": [
         "点击按钮付款。",
         "激活码会发送到您的邮箱。",
@@ -188,7 +205,7 @@
         "answer": "可以。它支持浏览器内的几乎所有网站，如有遇到问题也可以随时反馈给我们。你来决定哪些关键词或模式触发每个动作。"
       },
       "license": {
-        "question": "终身授权是怎么运作的？",
+        "question": "永久授权是怎么运作的？",
         "answer": "一次付费，获得激活码，在你拥有的设备上永久使用。所有未来的更新都免费包含。"
       },
       "custom": {

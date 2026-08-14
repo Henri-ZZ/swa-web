@@ -39,7 +39,7 @@ export default async function Home({
     "personal",
     "banking",
   ] as const;
-  const benefitKeys = ["all", "lifetime", "devices", "noSub"] as const;
+  const benefitKeys = ["unlimited", "feedback", "mute", "hide", "emergency", "clear", "all", "updates", "noFee"] as const;
   const faqKeys = ["safe", "data", "sites", "license", "custom", "detect"] as const;
 
   const faqItems: FAQItem[] = faqKeys.map((k) => ({
@@ -472,8 +472,68 @@ export default async function Home({
             <h2 className="text-center text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
               {t("pricing.heading")}
             </h2>
-            <div className="mt-12 flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center">
-              <div className="relative w-full max-w-md rounded-3xl border border-[var(--border)] bg-white p-8 shadow-xl shadow-black/5">
+            <div className="mt-12 flex flex-col items-center gap-10 lg:flex-row lg:items-end lg:justify-center">
+              {/* Free plan */}
+              <div className="w-full max-w-xs rounded-3xl border border-[var(--border)] bg-white p-8 lg:flex-1">
+                <h3 className="text-lg font-semibold text-[var(--text)]">
+                  {t("pricing.freeName")}
+                </h3>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="text-5xl font-bold tracking-tight text-[var(--text)]">
+                    {t("pricing.freePrice")}
+                  </span>
+                  <span className="text-sm text-[var(--muted)]">
+                    {t("pricing.freePeriod")}
+                  </span>
+                </div>
+                <div className="mt-6">
+                  <StoreLink className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-[var(--purple)]/30 text-sm font-semibold text-[var(--purple)] transition-colors hover:bg-[var(--purple)]/5">
+                    {t("pricing.freeCta")}
+                    <span aria-hidden>→</span>
+                  </StoreLink>
+                </div>
+                <ul className="mt-6 space-y-3">
+                  {(["keywords", "feedback", "mute", "hide", "emergency"] as const).map((k) => (
+                    <li
+                      key={k}
+                      className="flex items-center gap-3 text-sm text-[var(--text)]"
+                    >
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--purple)]/10 text-[var(--purple)]">
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="h-3 w-3"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12l4 4L19 6" />
+                        </svg>
+                      </span>
+                      {t(`pricing.freeBenefits.${k}`)}
+                    </li>
+                  ))}
+                  <li className="flex items-center gap-3 text-sm text-[var(--muted)]">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-zinc-100 text-zinc-400">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-3 w-3"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M6 6l12 12M18 6L6 18" />
+                      </svg>
+                    </span>
+                    {t("pricing.freeBenefits.clear")}
+                  </li>
+                </ul>
+              </div>
+              {/* Premium plan */}
+              <div className="relative w-full max-w-lg rounded-3xl border-2 border-[var(--purple)]/40 bg-white p-8 shadow-2xl shadow-[var(--purple)]/10 lg:flex-[1.5]">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--purple)] px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
                   {t("pricing.badge")}
                 </div>
@@ -528,7 +588,7 @@ export default async function Home({
                 </ul>
               </div>
               {/* Activation steps */}
-              <div className="w-full max-w-md">
+              <div className="w-full max-w-md lg:flex-1 lg:self-start">
                 <h3 className="text-lg font-semibold text-[var(--text)]">
                   {t("pricing.steps.title")}
                 </h3>
