@@ -3,11 +3,12 @@ import Image from "next/image";
 import type { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FooterAnchorLink } from "./footer-anchor-link";
+import { STORE_URLS } from "./store-urls";
 
 type Translations = Awaited<ReturnType<typeof getTranslations>>;
 type LinkHref = ComponentProps<typeof Link>["href"];
 
-type FooterLink = { label: string; href?: LinkHref; hash?: string };
+type FooterLink = { label: string; href?: LinkHref; hash?: string; external?: boolean; icon?: string };
 
 function FooterCol({
   title,
@@ -31,6 +32,26 @@ function FooterCol({
                 className="text-zinc-300 transition-colors hover:text-white"
               />
             </li>
+          ) : l.external ? (
+            <li key={l.label}>
+              <a
+                href={l.href as string}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-zinc-300 transition-colors hover:text-white"
+              >
+                {l.icon && (
+                  <Image
+                    src={l.icon}
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="h-4 w-4"
+                  />
+                )}
+                {l.label}
+              </a>
+            </li>
           ) : (
             <li key={l.label}>
               <Link
@@ -50,10 +71,10 @@ function FooterCol({
 export function SiteFooter({ t }: { t: Translations }) {
   return (
     <footer className="bg-[var(--dark)] text-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5">
+            <Link href="/" className="flex w-fit items-center gap-2.5">
               <Image
                 src="/icon.png"
                 alt=""
@@ -66,7 +87,7 @@ export function SiteFooter({ t }: { t: Translations }) {
                   {t("header.brandFull")}
                 </span>
               </span>
-            </div>
+            </Link>
             <p className="mt-3 text-sm font-medium text-white">
               {t("footer.tagline")}
             </p>
@@ -79,7 +100,7 @@ export function SiteFooter({ t }: { t: Translations }) {
             links={[
               { label: t("footer.columns.product.links.features"), hash: "features" },
               { label: t("footer.columns.product.links.howItWorks"), hash: "how-it-works" },
-              { label: t("footer.columns.product.links.changelog"), hash: "changelog" },
+              { label: t("footer.columns.product.links.changelog"), href: "/changelog" },
             ]}
           />
           <FooterCol
@@ -98,6 +119,14 @@ export function SiteFooter({ t }: { t: Translations }) {
               { label: t("footer.columns.resources.links.chrome"), href: "#" },
               { label: t("footer.columns.resources.links.youtube"), hash: "demo" },
               { label: t("footer.columns.resources.links.docs"), href: "#" },
+            ]}
+          />
+          <FooterCol
+            title={t("footer.columns.download.title")}
+            links={[
+              { label: "Chrome", href: STORE_URLS.chrome, external: true, icon: "/chrome.svg" },
+              { label: "Firefox", href: STORE_URLS.firefox, external: true, icon: "/firefox.svg" },
+              { label: "Edge", href: STORE_URLS.edge, external: true, icon: "/edge.svg" },
             ]}
           />
         </div>

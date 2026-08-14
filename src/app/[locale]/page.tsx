@@ -92,7 +92,7 @@ export default async function Home({
               {t("header.nav.faq")}
             </Link>
             <Link
-              href="#changelog"
+              href="/changelog"
               className="transition-colors hover:text-white"
             >
               {t("header.nav.changelog")}
@@ -240,9 +240,31 @@ export default async function Home({
                       );
                     })}
                   </div>
-                  <div className="mt-5 flex items-center justify-center gap-2 border-t border-white/10 pt-4 text-[11px] text-zinc-500">
-                    <BrowsersIcon />
-                    <span>{t("hero.mockup.worksOn")}</span>
+                  <div className="mt-5 border-t border-white/10 pt-4">
+                    <p className="text-center text-[10px] font-semibold uppercase tracking-widest text-zinc-400">
+                      {t("hero.mockup.supportedLabel")}
+                    </p>
+                    <div className="mt-3 flex items-center justify-center gap-6">
+                      {[
+                        { name: "Chrome", icon: "/chrome.svg" },
+                        { name: "Firefox", icon: "/firefox.svg" },
+                        { name: "Edge", icon: "/edge.svg" },
+                      ].map((b) => (
+                        <span
+                          key={b.name}
+                          className="flex items-center gap-1.5 text-white"
+                        >
+                          <Image
+                            src={b.icon}
+                            alt={b.name}
+                            width={16}
+                            height={16}
+                            className="h-4 w-4"
+                          />
+                          <span className="text-xs font-medium">{b.name}</span>
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -418,23 +440,23 @@ export default async function Home({
         {/* Privacy */}
         <section
           id="privacy"
-          className="border-t border-[var(--border)] bg-white"
+          className="border-t border-white/10 bg-[var(--dark)] text-white"
         >
           <div className="mx-auto max-w-5xl px-6 py-24">
-            <div className="rounded-3xl border border-[var(--border)] bg-zinc-50 p-8 sm:p-12">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple)]">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 sm:p-12">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple-bright)]">
                 {t("privacy.eyebrow")}
               </span>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 {t("privacy.heading")}
               </h2>
-              <p className="mt-4 max-w-2xl text-[var(--muted)]">
+              <p className="mt-4 max-w-2xl text-zinc-400">
                 {t("privacy.copy")}
               </p>
               <div className="mt-10 grid gap-6 sm:grid-cols-2">
                 {privacyKeys.map((key) => (
                   <div key={key} className="flex gap-3">
-                    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--purple)]/10 text-[var(--purple)]">
+                    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-[var(--purple-bright)]">
                       <svg
                         viewBox="0 0 24 24"
                         className="h-3.5 w-3.5"
@@ -448,10 +470,10 @@ export default async function Home({
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[var(--text)]">
+                      <h3 className="text-sm font-semibold text-white">
                         {t(`privacy.points.${key}.title`)}
                       </h3>
-                      <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+                      <p className="mt-1 text-sm leading-6 text-zinc-400">
                         {t(`privacy.points.${key}.description`)}
                       </p>
                     </div>
@@ -471,7 +493,7 @@ export default async function Home({
             <h2 className="text-center text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
               {t("pricing.heading")}
             </h2>
-            <div className="mt-12 flex justify-center">
+            <div className="mt-12 flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center">
               <div className="relative w-full max-w-md rounded-3xl border border-[var(--border)] bg-white p-8 shadow-xl shadow-black/5">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--purple)] px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
                   {t("pricing.badge")}
@@ -516,6 +538,26 @@ export default async function Home({
                   token={paddleToken}
                   priceId={paddlePriceId}
                 />
+              </div>
+              {/* Activation steps */}
+              <div className="w-full max-w-md">
+                <h3 className="text-lg font-semibold text-[var(--text)]">
+                  {t("pricing.steps.title")}
+                </h3>
+                <ol className="mt-5 space-y-4">
+                  {[0, 1, 2].map((i) => (
+                    <li key={i} className="flex gap-4">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--purple)]/10 text-sm font-semibold text-[var(--purple)]">
+                        {i + 1}
+                      </span>
+                      <p className="text-sm leading-6 text-[var(--muted)]">
+                        {t(`pricing.steps.items.${i}`, {
+                          product: t("header.brandFull"),
+                        })}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
           </div>
@@ -642,27 +684,6 @@ function LockIcon() {
     >
       <rect x="5" y="11" width="14" height="9" rx="2" />
       <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-    </svg>
-  );
-}
-
-function BrowsersIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className="h-3.5 w-3.5"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <circle cx="12" cy="12" r="10" />
-      <circle cx="12" cy="12" r="4" />
-      <line x1="21.17" y1="8" x2="12" y2="8" />
-      <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
-      <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
     </svg>
   );
 }

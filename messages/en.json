@@ -31,7 +31,7 @@
     },
     "mockup": {
       "browserAddress": "stealth://popup",
-      "worksOn": "Chrome, Firefox & Edge",
+      "supportedLabel": "Supported browsers",
       "actions": {
         "mute": { "name": "Mute Tabs", "shortcut": "⌥ ⇧ M" },
         "hide": { "name": "Hide Tabs", "shortcut": "⌥ ⇧ H" },
@@ -146,7 +146,15 @@
       "devices": "Use on your devices",
       "noSub": "No subscription. Ever."
     },
-    "cta": "Get Lifetime Access"
+    "cta": "Get Lifetime Access",
+    "steps": {
+      "title": "How to activate",
+      "items": [
+        "Click the button to pay.",
+        "Your license key will be sent to your email.",
+        "Enter your license key at the bottom of the “{product}” settings page to activate."
+      ]
+    }
   },
   "faq": {
     "heading": "Frequently asked questions",
@@ -165,7 +173,7 @@
       },
       "license": {
         "question": "How does the lifetime license work?",
-        "answer": "Pay once, get a license code, and use it forever on any device you own. All future updates are included for free."
+        "answer": "Pay once, get a license key, and use it forever on any device you own. All future updates are included for free."
       },
       "custom": {
         "question": "Can I customize the keywords and shortcuts?",
@@ -202,6 +210,9 @@
           "youtube": "YouTube Demo",
           "docs": "Documentation"
         }
+      },
+      "download": {
+        "title": "Download"
       }
     },
     "copyright": "© 2026 Stealth Browser Assistant. All rights reserved."
@@ -279,6 +290,23 @@
           "body": "Payment-related data is independently processed by the Paddle platform in accordance with its privacy policy. This tool does not obtain any payment-related information."
         }
       ]
+    }
+  },
+  "changelog": {
+    "title": "Changelog",
+    "description": "See what's new in Stealth Browser Assistant. We're always working to make your browsing more private, safer, and easier.",
+    "latest": "Latest",
+    "empty": "No updates found for this filter.",
+    "filters": {
+      "all": "All versions",
+      "new": "New features",
+      "improvement": "Improvements",
+      "fix": "Bug fixes"
+    },
+    "types": {
+      "new": "New features",
+      "improvement": "Improvements",
+      "fix": "Bug fixes"
     }
   },
   "locale": {

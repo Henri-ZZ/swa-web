@@ -64,6 +64,38 @@ summary {
     radial-gradient(ellipse 50% 40% at 80% 30%, rgba(139, 92, 246, 0.25), transparent 70%);
 }
 
+/* Changelog: render MDX unordered lists with check icons instead of bullets */
+.changelog-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.changelog-body li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.changelog-body li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.changelog-body p {
+  margin: 0.5rem 0;
+}
+
+.changelog-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

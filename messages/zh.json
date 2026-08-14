@@ -31,7 +31,7 @@
     },
     "mockup": {
       "browserAddress": "stealth://popup",
-      "worksOn": "Chrome、Firefox 和 Edge",
+      "supportedLabel": "支持的浏览器",
       "actions": {
         "mute": { "name": "静音标签页", "shortcut": "⌥ ⇧ M" },
         "hide": { "name": "隐藏标签页", "shortcut": "⌥ ⇧ H" },
@@ -146,7 +146,15 @@
       "devices": "在你的设备上使用",
       "noSub": "永不订阅"
     },
-    "cta": "获取终身授权"
+    "cta": "获取终身授权",
+    "steps": {
+      "title": "如何激活",
+      "items": [
+        "点击按钮付款。",
+        "激活码会发送到您的邮箱。",
+        "拿到激活码后，在“{product}”的设置页最下方输入并激活。"
+      ]
+    }
   },
   "faq": {
     "heading": "常见问题",
@@ -165,7 +173,7 @@
       },
       "license": {
         "question": "终身授权是怎么运作的？",
-        "answer": "一次付费，获得授权码，在你拥有的设备上永久使用。所有未来的更新都免费包含。"
+        "answer": "一次付费，获得激活码，在你拥有的设备上永久使用。所有未来的更新都免费包含。"
       },
       "custom": {
         "question": "可以自定义关键词和快捷键吗？",
@@ -202,6 +210,9 @@
           "youtube": "YouTube 演示",
           "docs": "文档"
         }
+      },
+      "download": {
+        "title": "下载"
       }
     },
     "copyright": "© 2026 隐私浏览助手。保留所有权利。"
@@ -279,6 +290,23 @@
           "body": "支付相关数据由 Paddle 平台独立处理，遵循其隐私政策，本工具不获取任何支付相关信息。"
         }
       ]
+    }
+  },
+  "changelog": {
+    "title": "更新日志",
+    "description": "了解隐私浏览助手的最新动态。我们一直致力于让你的浏览更私密、更安全、更轻松。",
+    "latest": "最新",
+    "empty": "没有符合该筛选的更新。",
+    "filters": {
+      "all": "全部版本",
+      "new": "新功能",
+      "improvement": "功能改进",
+      "fix": "Bug 修复"
+    },
+    "types": {
+      "new": "新功能",
+      "improvement": "功能改进",
+      "fix": "Bug 修复"
     }
   },
   "locale": {
