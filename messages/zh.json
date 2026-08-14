@@ -9,7 +9,7 @@
     "brandFull": "隐私浏览助手",
     "nav": {
       "features": "功能",
-      "howItWorks": "工作流程",
+      "howItWorks": "工作原理",
       "pricing": "价格",
       "faq": "常见问题",
       "changelog": "更新日志"
@@ -21,7 +21,7 @@
     "headlineLine1": "保持隐私。",
     "headlineLine2Start": "保持",
     "headlineAccent": "掌控。",
-    "copy": "一个快捷键，立即静音、隐藏或清理敏感浏览器标签页。",
+    "copy": "用你自己的关键词定义敏感标签页，然后立即静音、隐藏或清理它们。",
     "primaryCta": "获取终身授权 — $15",
     "secondaryCta": "观看演示",
     "trust": {
@@ -40,42 +40,54 @@
       }
     }
   },
-  "features": {
-    "heading": "一个快捷键，守护你的隐私。",
-    "items": {
-      "mute": {
-        "title": "静音",
-        "description": "立即静音匹配的标签页，而无需关闭它们。"
+  "keywordMatching": {
+    "eyebrow": "工作原理",
+    "heading": "敏感与否，由你决定。",
+    "copy": "添加任意网站、域名或关键词。隐私浏览助手通过检查标签页的 URL 和标题来识别匹配的标签页——整个过程都在你的浏览器内完成。",
+    "steps": {
+      "keywords": {
+        "title": "你的关键词",
+        "chips": {
+          "shopping": "购物",
+          "private": "私人",
+          "work": "工作"
+        }
       },
-      "hide": {
-        "title": "隐藏",
-        "description": "把敏感标签页从视图中隐藏，但保持打开状态。"
+      "tabs": {
+        "title": "匹配的标签页",
+        "items": {
+          "a": "购物网站",
+          "b": "私人笔记",
+          "c": "工作聊天"
+        }
       },
-      "emergency": {
-        "title": "紧急动作",
-        "description": "一键静音、隐藏或关闭所有匹配的标签页。"
-      },
-      "clear": {
-        "title": "清理敏感数据",
-        "description": "一键清理敏感数据，例如浏览历史记录、Cookie 和缓存等。"
+      "actions": {
+        "title": "动作"
       }
+    },
+    "tagline": "你的关键词，你的规则。",
+    "note": "一切都不是预设的。由你选择隐私浏览助手保护什么。",
+    "story": {
+      "define": "你来定义",
+      "detect": "隐私浏览助手检测",
+      "control": "你来掌控"
     }
   },
   "shortcuts": {
     "eyebrow": "键盘快捷键",
-    "headingStart": "你的键盘就是",
-    "headingAccent": "紧急按钮。",
+    "headingStart": "一个快捷键，守护",
+    "headingAccent": "你的隐私",
     "copy": "无需查找，无需点击，按下按键即可。",
     "note": "默认快捷键显示为 macOS 版本。完全可自定义。",
     "items": {
       "mute": {
         "name": "静音标签页",
-        "description": "静音所有匹配的标签页。",
+        "description": "立即静音匹配的标签页，而无需关闭它们。",
         "keys": ["⌥", "⇧", "M"]
       },
       "hide": {
         "name": "隐藏标签页",
-        "description": "从视图中隐藏敏感标签页。",
+        "description": "把敏感标签页从视图中隐藏，但保持打开状态。",
         "keys": ["⌥", "⇧", "H"]
       },
       "emergency": {
@@ -85,7 +97,7 @@
       },
       "clear": {
         "name": "清理敏感数据",
-        "description": "清理敏感数据，例如浏览历史记录、Cookie 和缓存等。",
+        "description": "一键清理敏感数据，例如浏览历史记录、下载历史记录等。",
         "keys": ["⌥", "⇧", "C"]
       }
     }
@@ -115,6 +127,7 @@
     "eyebrow": "你的隐私至关重要",
     "heading": "浏览记录只属于你。",
     "copy": "隐私浏览助手 在你的浏览器本地运行。数据从不被收集或共享。",
+    "localMatching": "关键词匹配在本地完成。你的关键词、标签页 URL 和浏览活动无需离开浏览器。",
     "points": {
       "noData": {
         "title": "不收集数据",
@@ -178,6 +191,10 @@
       "custom": {
         "question": "可以自定义关键词和快捷键吗？",
         "answer": "完全可以。添加或删除关键词、更改快捷键——都可在扩展的设置页面完成。"
+      },
+      "detect": {
+        "question": "隐私浏览助手如何识别敏感标签页？",
+        "answer": "隐私浏览助手会将你自定义的关键词与浏览器标签页的 URL 和标题进行匹配。匹配在浏览器本地完成，你的浏览活动无需发送到任何服务器。"
       }
     }
   },
@@ -189,7 +206,7 @@
         "title": "产品",
         "links": {
           "features": "功能",
-          "howItWorks": "工作流程",
+          "howItWorks": "工作原理",
           "changelog": "更新日志"
         }
       },

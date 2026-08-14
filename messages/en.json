@@ -9,7 +9,7 @@
     "brandFull": "Stealth Browser Assistant",
     "nav": {
       "features": "Features",
-      "howItWorks": "Workflow",
+      "howItWorks": "How It Works",
       "pricing": "Pricing",
       "faq": "FAQ",
       "changelog": "Changelog"
@@ -21,7 +21,7 @@
     "headlineLine1": "Stay private.",
     "headlineLine2Start": "Stay ",
     "headlineAccent": "in control.",
-    "copy": "Instantly mute, hide or clean up sensitive browser tabs with a single shortcut.",
+    "copy": "Define sensitive tabs with your own keywords, then mute, hide, or clean them up instantly.",
     "primaryCta": "Get Lifetime Access — $15",
     "secondaryCta": "Watch Demo",
     "trust": {
@@ -40,52 +40,64 @@
       }
     }
   },
-  "features": {
-    "heading": "One shortcut to protect your privacy.",
-    "items": {
-      "mute": {
-        "title": "Mute",
-        "description": "Silence matching tabs instantly without closing them."
+  "keywordMatching": {
+    "eyebrow": "How it works",
+    "heading": "You decide what counts as sensitive.",
+    "copy": "Add any website, domain, or keyword. Stealth Browser Assistant detects matching tabs by checking their URL or title — entirely in your browser.",
+    "steps": {
+      "keywords": {
+        "title": "Your keywords",
+        "chips": {
+          "shopping": "shopping",
+          "private": "private",
+          "work": "work"
+        }
       },
-      "hide": {
-        "title": "Hide",
-        "description": "Hide sensitive tabs from view while keeping them open."
+      "tabs": {
+        "title": "Matching tabs",
+        "items": {
+          "a": "shopping.example",
+          "b": "private notes",
+          "c": "work chat"
+        }
       },
-      "emergency": {
-        "title": "Emergency Action",
-        "description": "Mute, hide or close all matching tabs with one click."
-      },
-      "clear": {
-        "title": "Clear Sensitive Data",
-        "description": "Wipe sensitive data such as browsing history, cookies and cache in one go."
+      "actions": {
+        "title": "Actions"
       }
+    },
+    "tagline": "Your keywords. Your rules.",
+    "note": "Nothing is predefined. You choose what Stealth Browser Assistant protects.",
+    "story": {
+      "define": "You define",
+      "detect": "Stealth Browser Assistant detects",
+      "control": "You control"
     }
   },
   "shortcuts": {
     "eyebrow": "KEYBOARD SHORTCUTS",
-    "headingStart": "Your keyboard is the ",
-    "headingAccent": "panic button.",
+    "headingStart": "One shortcut to protect ",
+    "headingAccent": "your privacy.",
     "copy": "No searching. No clicking. Just press a key.",
     "note": "Default shortcuts shown for macOS. Fully customizable.",
     "items": {
       "mute": {
         "name": "Mute Tabs",
-        "description": "Silence all matching tabs.",
+        "description": "Silence matching tabs instantly without closing them.",
         "keys": ["⌥", "⇧", "M"]
       },
       "hide": {
         "name": "Hide Tabs",
-        "description": "Hide sensitive tabs from view.",
+        "description": "Hide sensitive tabs from view while keeping them open.",
         "keys": ["⌥", "⇧", "H"]
       },
       "emergency": {
         "name": "Emergency Action",
-        "description": "Mute, hide or close all matching tabs.",
+        "description": "Mute, hide or close all matching tabs with one click.",
         "keys": ["⌥", "⇧", "E"]
       },
       "clear": {
         "name": "Clear Sensitive Data",
-        "description": "Wipe sensitive data such as browsing history, cookies and cache.",
+        "description": "Wipe sensitive data such as browsing history and download history in one go.",
         "keys": ["⌥", "⇧", "C"]
       }
     }
@@ -115,6 +127,7 @@
     "eyebrow": "YOUR PRIVACY MATTERS",
     "heading": "Your browsing stays yours.",
     "copy": "Stealth Browser Assistant works locally in your browser. Your data is never collected or shared.",
+    "localMatching": "Keyword matching happens locally. Your keywords, tab URLs, and browsing activity never need to leave your browser.",
     "points": {
       "noData": {
         "title": "No data collection",
@@ -178,6 +191,10 @@
       "custom": {
         "question": "Can I customize the keywords and shortcuts?",
         "answer": "Absolutely. Add or remove keywords and change shortcuts to match your workflow — all from the extension's settings page."
+      },
+      "detect": {
+        "question": "How does Stealth Browser Assistant detect sensitive tabs?",
+        "answer": "Stealth Browser Assistant matches your custom keywords against the URL and title of your browser tabs. Matching happens locally in your browser, so your browsing activity doesn't need to be sent to a server."
       }
     }
   },
@@ -189,7 +206,7 @@
         "title": "Product",
         "links": {
           "features": "Features",
-          "howItWorks": "Workflow",
+          "howItWorks": "How It Works",
           "changelog": "Changelog"
         }
       },

@@ -98,8 +98,8 @@ export function SiteFooter({ t }: { t: Translations }) {
           <FooterCol
             title={t("footer.columns.product.title")}
             links={[
-              { label: t("footer.columns.product.links.features"), hash: "features" },
-              { label: t("footer.columns.product.links.howItWorks"), hash: "how-it-works" },
+              { label: t("footer.columns.product.links.features"), hash: "hero" },
+              { label: t("footer.columns.product.links.howItWorks"), hash: "keyword-matching" },
               { label: t("footer.columns.product.links.changelog"), href: "/changelog" },
             ]}
           />

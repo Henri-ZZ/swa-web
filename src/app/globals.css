@@ -96,6 +96,36 @@ summary {
   font-weight: 600;
 }
 
+/* Keyword matching flow: one-time fade-in entrance (no loop) */
+@keyframes km-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.km-fade-up {
+  animation: km-fade-up 0.6s ease-out both;
+}
+
+.km-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.km-delay-2 {
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .km-fade-up {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

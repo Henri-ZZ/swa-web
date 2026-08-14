@@ -6,6 +6,7 @@ import { LocaleSwitcher } from "./locale-switcher";
 import { PaddleBuyButton } from "./paddle-buy-button";
 import { SiteFooter } from "./site-footer";
 import { StoreLink } from "./store-link";
+import { KeywordMatching } from "./keyword-matching";
 
 export default async function Home({
   params,
@@ -23,7 +24,6 @@ export default async function Home({
   const paddleToken = process.env.PADDLE_CLIENT_TOKEN ?? "";
   const paddlePriceId = process.env.PADDLE_PRICE_ID ?? "";
 
-  const featureKeys = ["mute", "hide", "emergency", "clear"] as const;
   const shortcutKeys = ["mute", "hide", "emergency", "clear"] as const;
   const heroActionKeys = ["mute", "hide", "emergency", "clear"] as const;
   const privacyKeys = [
@@ -40,7 +40,7 @@ export default async function Home({
     "banking",
   ] as const;
   const benefitKeys = ["all", "lifetime", "devices", "noSub"] as const;
-  const faqKeys = ["safe", "data", "sites", "license", "custom"] as const;
+  const faqKeys = ["safe", "data", "sites", "license", "custom", "detect"] as const;
 
   const faqItems: FAQItem[] = faqKeys.map((k) => ({
     question: t(`faq.items.${k}.question`),
@@ -71,13 +71,13 @@ export default async function Home({
           </Link>
           <div className="hidden items-center gap-7 text-sm text-zinc-300 md:flex">
             <Link
-              href="#features"
+              href="#hero"
               className="transition-colors hover:text-white"
             >
               {t("header.nav.features")}
             </Link>
             <Link
-              href="#how-it-works"
+              href="#keyword-matching"
               className="transition-colors hover:text-white"
             >
               {t("header.nav.howItWorks")}
@@ -110,7 +110,10 @@ export default async function Home({
 
       <main className="flex flex-1 flex-col">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-[var(--dark)] text-white">
+        <section
+          id="hero"
+          className="relative overflow-hidden bg-[var(--dark)] text-white"
+        >
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 hero-glow"
@@ -272,35 +275,8 @@ export default async function Home({
           </div>
         </section>
 
-        {/* Feature summary */}
-        <section
-          id="features"
-          className="border-t border-[var(--border)] bg-white"
-        >
-          <div className="mx-auto max-w-6xl px-6 py-24">
-            <h2 className="mx-auto max-w-2xl text-center text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
-              {t("features.heading")}
-            </h2>
-            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {featureKeys.map((key) => (
-                <div
-                  key={key}
-                  className="rounded-2xl border border-[var(--border)] bg-white p-6 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/5"
-                >
-                  <div className="mb-4">
-                    <FeatureIcon kind={key} />
-                  </div>
-                  <h3 className="text-base font-semibold text-[var(--text)]">
-                    {t(`features.items.${key}.title`)}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                    {t(`features.items.${key}.description`)}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Keyword matching: how it works */}
+        <KeywordMatching t={t} />
 
         {/* Keyboard shortcuts */}
         <section id="shortcuts" className="bg-[var(--dark)] text-white">
@@ -452,6 +428,9 @@ export default async function Home({
               </h2>
               <p className="mt-4 max-w-2xl text-zinc-400">
                 {t("privacy.copy")}
+              </p>
+              <p className="mt-3 max-w-2xl text-sm font-medium text-zinc-300">
+                {t("privacy.localMatching")}
               </p>
               <div className="mt-10 grid gap-6 sm:grid-cols-2">
                 {privacyKeys.map((key) => (
@@ -787,29 +766,6 @@ function ActionIcon({ kind }: { kind: keyof typeof ACTION_COLORS }) {
         <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6" />
         <path d="M10 11v6M14 11v6" />
       </svg>
-    </span>
-  );
-}
-
-function FeatureIcon({
-  kind,
-}: {
-  kind: "mute" | "hide" | "emergency" | "clear";
-}) {
-  const c =
-    kind === "mute"
-      ? "#7c3aed"
-      : kind === "hide"
-        ? "#2563eb"
-        : kind === "emergency"
-          ? "#dc2626"
-          : "#16a34a";
-  return (
-    <span
-      className="inline-flex h-11 w-11 items-center justify-center rounded-xl"
-      style={{ backgroundColor: `${c}15`, color: c }}
-    >
-      <ActionIcon kind={kind} />
     </span>
   );
 }
