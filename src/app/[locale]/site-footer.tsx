@@ -8,15 +8,15 @@ import { STORE_URLS } from "./store-urls";
 type Translations = Awaited<ReturnType<typeof getTranslations>>;
 type LinkHref = ComponentProps<typeof Link>["href"];
 
-type FooterLink = { label: string; href?: LinkHref; hash?: string; external?: boolean; icon?: string };
+type FooterLink = {
+  label: string;
+  href?: LinkHref;
+  hash?: string;
+  external?: boolean;
+  icon?: string;
+};
 
-function FooterCol({
-  title,
-  links,
-}: {
-  title: string;
-  links: FooterLink[];
-}) {
+function FooterCol({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div>
       <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-500">
@@ -61,7 +61,7 @@ function FooterCol({
                 {l.label}
               </Link>
             </li>
-          )
+          ),
         )}
       </ul>
     </div>
@@ -98,35 +98,74 @@ export function SiteFooter({ t }: { t: Translations }) {
           <FooterCol
             title={t("footer.columns.product.title")}
             links={[
-              { label: t("footer.columns.product.links.features"), hash: "hero" },
-              { label: t("footer.columns.product.links.howItWorks"), hash: "keyword-matching" },
-              { label: t("footer.columns.product.links.changelog"), href: "/changelog" },
+              {
+                label: t("footer.columns.product.links.features"),
+                hash: "hero",
+              },
+              {
+                label: t("footer.columns.product.links.howItWorks"),
+                hash: "keyword-matching",
+              },
+              {
+                label: t("footer.columns.product.links.changelog"),
+                href: "/changelog",
+              },
             ]}
           />
           <FooterCol
             title={t("footer.columns.support.title")}
             links={[
               { label: t("footer.columns.support.links.faq"), hash: "faq" },
-              { label: t("footer.columns.support.links.contact"), href: "/contact" },
-              { label: t("footer.columns.support.links.privacy"), href: "/privacy" },
-              { label: t("footer.columns.support.links.terms"), href: "/terms" },
-              { label: t("footer.columns.support.links.refund"), href: "/refund" },
+              {
+                label: t("footer.columns.support.links.contact"),
+                href: "/contact",
+              },
+              {
+                label: t("footer.columns.support.links.terms"),
+                href: "/terms",
+              },
+              {
+                label: t("footer.columns.support.links.privacy"),
+                href: "/privacy",
+              },
+              {
+                label: t("footer.columns.support.links.refund"),
+                href: "/refund",
+              },
             ]}
           />
           <FooterCol
             title={t("footer.columns.resources.title")}
             links={[
               { label: t("footer.columns.resources.links.chrome"), href: "#" },
-              { label: t("footer.columns.resources.links.youtube"), hash: "demo" },
+              {
+                label: t("footer.columns.resources.links.youtube"),
+                hash: "demo",
+              },
               { label: t("footer.columns.resources.links.docs"), href: "#" },
             ]}
           />
           <FooterCol
             title={t("footer.columns.download.title")}
             links={[
-              { label: "Chrome", href: STORE_URLS.chrome, external: true, icon: "/chrome.svg" },
-              { label: "Firefox", href: STORE_URLS.firefox, external: true, icon: "/firefox.svg" },
-              { label: "Edge", href: STORE_URLS.edge, external: true, icon: "/edge.svg" },
+              {
+                label: "Chrome",
+                href: STORE_URLS.chrome,
+                external: true,
+                icon: "/chrome.svg",
+              },
+              {
+                label: "Firefox",
+                href: STORE_URLS.firefox,
+                external: true,
+                icon: "/firefox.svg",
+              },
+              {
+                label: "Edge",
+                href: STORE_URLS.edge,
+                external: true,
+                icon: "/edge.svg",
+              },
             ]}
           />
         </div>

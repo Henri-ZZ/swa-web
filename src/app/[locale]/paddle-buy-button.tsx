@@ -17,7 +17,6 @@ export function PaddleBuyButton({
   priceId: string;
 }) {
   const [paddle, setPaddle] = useState<Paddle | undefined>(undefined);
-  const [purchased, setPurchased] = useState(false);
 
   useEffect(() => {
     // token/priceId 缺失时跳过初始化，避免线上报 "You must specify your Paddle Seller ID or token"。
@@ -27,12 +26,8 @@ export function PaddleBuyButton({
     initializePaddle({
       environment,
       token,
-      eventCallback: (event) => {
-        if (event.name === "checkout.completed") {
-          setPurchased(true);
-          // TODO: 后续在此接入 license 发放（通过服务器端 webhook 或 transaction id）。
-        }
-      },
+      // 激活码发放由 Paddle webhook 转发到激活码管理平台（licentra.henri.ren）处理，
+      // 前端无需监听交易事件。
     }).then((instance) => {
       if (!cancelled && instance) {
         setPaddle(instance);
