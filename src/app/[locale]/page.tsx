@@ -621,7 +621,7 @@ export default async function Home({
                 <p className="mt-6 text-sm font-medium text-[var(--text)]">
                   {t("faq.ctaStart")}{" "}
                   <a
-                    href="#"
+                    href="/contact"
                     className="inline-flex items-center gap-1 text-[var(--purple)] transition-colors hover:text-[var(--purple-bright)]"
                   >
                     {t("faq.ctaLink")}
