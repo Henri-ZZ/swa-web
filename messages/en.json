@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Stealth Browser Assistant — Stay private. Stay in control.",
-    "description": "Instantly mute, hide or clean up sensitive browser tabs with a single shortcut. Lifetime license, no subscription."
+    "description": "Instantly mute, hide or clean up private browser tabs with a single shortcut. Lifetime license, no subscription."
   },
   "header": {
     "brandPrimary": "Stealth",
@@ -21,7 +21,7 @@
     "headlineLine1": "Stay private.",
     "headlineLine2Start": "Stay ",
     "headlineAccent": "in control.",
-    "copy": "Define sensitive tabs with your own keywords, then mute, hide, or clean them up instantly.",
+    "copy": "Define private tabs with your own keywords, then mute, hide, or clean them up instantly.",
     "primaryCta": "See Pricing",
     "secondaryCta": "Watch Demo",
     "trust": {
@@ -37,13 +37,13 @@
         "mute": { "name": "Mute Tabs", "shortcut": "⌥ ⇧ M" },
         "hide": { "name": "Hide Tabs", "shortcut": "⌥ ⇧ H" },
         "emergency": { "name": "Emergency Action", "shortcut": "⌥ ⇧ E" },
-        "clear": { "name": "Clear Sensitive Data", "shortcut": "⌥ ⇧ C" }
+        "clear": { "name": "Clear Private Data", "shortcut": "⌥ ⇧ C" }
       }
     }
   },
   "keywordMatching": {
     "eyebrow": "How it works",
-    "heading": "You decide what counts as sensitive.",
+    "heading": "You decide what counts as private.",
     "copy": "Add any website, domain, or keyword. Stealth Browser Assistant detects matching tabs by checking their URL or title — entirely in your browser.",
     "steps": {
       "keywords": {
@@ -88,7 +88,7 @@
       },
       "hide": {
         "name": "Hide Tabs",
-        "description": "Hide sensitive tabs from view while keeping them open.",
+        "description": "Hide private tabs from view while keeping them open.",
         "keys": ["⌥", "⇧", "H"]
       },
       "emergency": {
@@ -97,8 +97,8 @@
         "keys": ["⌥", "⇧", "E"]
       },
       "clear": {
-        "name": "Clear Sensitive Data",
-        "description": "Wipe sensitive data such as browsing history and download history in one go.",
+        "name": "Clear Private Data",
+        "description": "Wipe private data such as browsing history and download history in one go.",
         "keys": ["⌥", "⇧", "C"]
       }
     }
@@ -214,7 +214,7 @@
         "answer": "Absolutely. Add or remove keywords and change shortcuts to match your workflow — all from the extension's settings page."
       },
       "detect": {
-        "question": "How does Stealth Browser Assistant detect sensitive tabs?",
+        "question": "How does Stealth Browser Assistant detect private tabs?",
         "answer": "Stealth Browser Assistant matches your custom keywords against the URL and title of your browser tabs. Matching happens locally in your browser, so your browsing activity doesn't need to be sent to a server."
       }
     }
@@ -271,7 +271,7 @@
         },
         {
           "heading": "2. Usage License",
-          "body": "This browser extension is intended for personal non-commercial use only. Each purchased license may be activated on up to three devices at the same time. If you activate on a fourth device, the earliest activated device may be removed automatically. Any commercial use, illegal use, or operations that violate website terms of service are prohibited."
+          "body": "This browser extension is intended for personal non-commercial use only. Each purchased license may be activated on up to three devices at the same time. If you activate on a fourth device, the earliest activated device may be removed automatically. Reselling, sharing, or transferring licenses or activation keys is prohibited, as is decompiling, cracking, or otherwise circumventing the licensing mechanism. You are responsible for safeguarding your activation key; any loss caused by sharing or leaking it is your responsibility. Any commercial use, illegal use, or operations that violate website terms of service are prohibited."
         },
         {
           "heading": "3. User Responsibility",
@@ -288,6 +288,18 @@
         {
           "heading": "6. Terms Updates",
           "body": "We reserve the right to update extension features and adjust these terms of service at any time. Updates will be posted on the product page."
+        },
+        {
+          "heading": "7. Lifetime License",
+          "body": "A 'Lifetime License' means that, from the date of purchase, you may continue to use the purchased version and its features for as long as the software remains in service, including any updates we release during that period. The term 'lifetime' refers to the continued availability of the software for as long as the service exists; it does not mean that the software or its service will exist in perpetuity. If the software is discontinued due to company dissolution, shutdown of the product, force majeure, or other reasons, we will handle the matter in accordance with applicable law and this policy, including, where feasible, providing advance notice. You understand and agree that such discontinuation does not constitute a breach of the 'lifetime' commitment."
+        },
+        {
+          "heading": "8. No Warranty",
+          "body": "The product is provided 'as is'. We make no warranties that it will work with all websites, be error-free, or meet your specific requirements. Websites and platform rules may change over time, which may cause some features to become unavailable on certain sites."
+        },
+        {
+          "heading": "9. Limitation of Liability",
+          "body": "To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of or inability to use the product, including but not limited to data loss, business interruption, or loss of profits. Where applicable law does not permit such limitation, our total liability shall not exceed the amount you actually paid for the product."
         }
       ]
     },
@@ -305,6 +317,10 @@
         {
           "heading": "3. How to Apply for a Refund",
           "body": "Refund applications must be submitted through the Paddle platform. We can assist by providing order/usage records, but final approval authority lies with Paddle."
+        },
+        {
+          "heading": "4. Refund Amount and Processing",
+          "body": "Eligible orders will be refunded in full to the original payment method. Refunds are processed by Paddle in accordance with its procedures; the actual arrival time depends on your payment provider."
         }
       ]
     },
@@ -313,7 +329,7 @@
       "sections": [
         {
           "heading": "1. Data Collection",
-          "body": "This browser extension does not collect, store, or transmit any personal sensitive data of users, including but not limited to passwords, browsing history, payment information, and personal identity information."
+          "body": "This browser extension does not collect, store, or transmit any personal private data of users, including but not limited to passwords, browsing history, payment information, and personal identity information."
         },
         {
           "heading": "2. Data Storage",
@@ -326,6 +342,10 @@
         {
           "heading": "4. Payment Data",
           "body": "Payment-related data is independently processed by the Paddle platform in accordance with its privacy policy. This tool does not obtain any payment-related information."
+        },
+        {
+          "heading": "5. Permissions and Local Processing",
+          "body": "The extension only requests browser permissions (such as tab management and storage) that are necessary to provide keyword matching, muting, hiding, and cleanup features. Keyword matching and the comparison of tab URLs and titles all happen locally in your browser; this data never leaves your device."
         }
       ]
     }
@@ -354,7 +374,7 @@
     "responseTitle": "Response Time",
     "responseBody": "If needed, we typically respond to your message or email within 24-48 hours during business days.",
     "emailTitle": "Email Us Directly",
-    "emailBody": "Prefer email, or is the form on the right not loading? Drop us a line.",
+    "emailBody": "Prefer email, or is the form not loading? Drop us a line.",
     "email": "henrizhang@henri.ren",
     "formTitle": "Send us a message"
   },
