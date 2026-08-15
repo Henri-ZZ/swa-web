@@ -6,24 +6,19 @@ import { SiteFooter } from "./site-footer";
 
 type Translations = Awaited<ReturnType<typeof getTranslations>>;
 
-export type LegalSection = {
-  heading: string;
-  body: string;
-};
-
 export function LegalPage({
   brand,
   cta,
   title,
   lastUpdated,
-  sections,
+  bodyHtml,
   t,
 }: {
   brand: string;
   cta: string;
   title: string;
   lastUpdated: string;
-  sections: LegalSection[];
+  bodyHtml: string;
   t: Translations;
 }) {
   return (
@@ -64,16 +59,10 @@ export function LegalPage({
             {title}
           </h1>
           <p className="mt-3 text-sm text-[var(--muted)]">{lastUpdated}</p>
-          <div className="mt-10 space-y-10">
-            {sections.map((s) => (
-              <section key={s.heading}>
-                <h2 className="text-lg font-semibold text-[var(--text)]">
-                  {s.heading}
-                </h2>
-                <p className="mt-2 leading-7 text-[var(--muted)]">{s.body}</p>
-              </section>
-            ))}
-          </div>
+          <div
+            className="legal-body mt-10"
+            dangerouslySetInnerHTML={{ __html: bodyHtml }}
+          />
         </div>
       </main>
 

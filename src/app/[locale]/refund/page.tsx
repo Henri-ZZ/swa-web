@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { LegalPage, type LegalSection } from "../legal-page";
+import { LegalPage } from "../legal-page";
+import { getLegalDocForLocale } from "../legal-doc";
 
 export async function generateMetadata({
   params,
@@ -8,9 +10,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "legal.refund" });
+  const doc = await getLegalDocForLocale("refund", locale);
   const tb = await getTranslations({ locale, namespace: "header" });
-  return { title: `${t("title")} | ${tb("brandFull")}` };
+  return { title: `${doc?.title ?? "Refund Policy"} | ${tb("brandFull")}` };
 }
 
 export default async function RefundPage({
@@ -22,15 +24,22 @@ export default async function RefundPage({
   setRequestLocale(locale);
   const t = await getTranslations();
 
-  const sections = t.raw("legal.refund.sections") as LegalSection[];
+  const doc = await getLegalDocForLocale("refund", locale);
+  if (!doc) notFound();
+
+  const displayDate = new Intl.DateTimeFormat(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(new Date(`${doc.date}T00:00:00`));
 
   return (
     <LegalPage
       brand={t("header.brandFull")}
       cta={t("header.cta")}
-      title={t("legal.refund.title")}
-      lastUpdated={t("legal.lastUpdated")}
-      sections={sections}
+      title={doc.title}
+      lastUpdated={`${t("legal.lastUpdatedPrefix")}${displayDate}`}
+      bodyHtml={doc.bodyHtml}
       t={t}
     />
   );

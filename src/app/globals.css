@@ -96,6 +96,24 @@ summary {
   font-weight: 600;
 }
 
+/* Legal pages (MDX): section heading + paragraph */
+.legal-body h2 {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.legal-body h2:first-child {
+  margin-top: 0;
+}
+
+.legal-body p {
+  margin-top: 0.5rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
 /* Keyword matching flow: one-time fade-in entrance (no loop) */
 @keyframes km-fade-up {
   from {
