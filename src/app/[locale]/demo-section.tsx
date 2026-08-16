@@ -63,47 +63,39 @@ export function DemoSection({
   return (
     <section id="demo" className="border-t border-[var(--border)] bg-white">
       <div
-        className={`mx-auto grid max-w-6xl gap-10 px-6 py-24 transition-[grid-template-columns] duration-700 ease-in-out lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] ${
-          playing ? "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)]" : ""
+        className={`mx-auto grid w-full transition-all duration-700 ease-in-out ${
+          playing
+            ? "max-w-[96rem] gap-4 px-2 py-8 sm:px-3 lg:grid-cols-[minmax(0,1fr)_minmax(14rem,0.18fr)]"
+            : "max-w-7xl gap-8 px-4 py-16 sm:px-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
         }`}
       >
         <div
-          className={`transition-all duration-700 ease-in-out ${
-            playing ? "lg:opacity-50" : "lg:opacity-100"
+          className={`order-2 flex flex-col transition-all duration-700 ease-in-out ${
+            playing ? "justify-center" : "justify-start"
           }`}
         >
-          <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple)]">
-            {eyebrow}
-          </span>
-          <h2
-            className={`mt-4 font-semibold tracking-tight text-[var(--text)] transition-all duration-700 ease-in-out ${
-              playing
-                ? "text-2xl sm:text-3xl"
-                : "text-3xl sm:text-4xl"
-            }`}
-          >
-            {heading}
-          </h2>
-          <p
-            className={`mt-4 text-[var(--muted)] transition-all duration-700 ease-in-out ${
-              playing ? "text-sm leading-6" : "text-base leading-7"
-            }`}
-          >
-            {copy}
-          </p>
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple)]">
+              {eyebrow}
+            </span>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
+              {heading}
+            </h2>
+            <p className="mt-4 text-base leading-7 text-[var(--muted)]">
+              {copy}
+            </p>
+          </div>
           <a
             href="https://youtu.be/JHnCipw1akw"
             target="_blank"
             rel="noopener noreferrer"
-            className={`mt-8 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--text)] px-5 text-sm font-medium text-white transition-all duration-700 ease-in-out hover:bg-black ${
-              playing ? "lg:pointer-events-none lg:opacity-0" : "lg:opacity-100"
-            }`}
+            className="mt-8 inline-flex h-11 items-center justify-center gap-2 self-start rounded-full bg-[var(--text)] px-5 text-sm font-medium text-white transition-colors hover:bg-black"
           >
             {cta}
             <span aria-hidden>↗</span>
           </a>
         </div>
-        <div className="demo-video relative aspect-video overflow-hidden rounded-2xl border border-[var(--border)] bg-black shadow-xl shadow-black/10 transition-all duration-700 ease-in-out">
+        <div className="demo-video order-1 relative aspect-video overflow-hidden rounded-2xl border border-[var(--border)] bg-black shadow-xl shadow-black/10 transition-all duration-700 ease-in-out">
           <div id="demo-youtube-player" className="h-full w-full" />
         </div>
       </div>
