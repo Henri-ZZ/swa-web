@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FAQAccordion, type FAQItem } from "./faq-accordion";
+import { DemoSection } from "./demo-section";
 import { LocaleSwitcher } from "./locale-switcher";
 import { PaddleBuyButton } from "./paddle-buy-button";
 import { SiteFooter } from "./site-footer";
@@ -362,38 +363,12 @@ export default async function Home({
         </section>
 
         {/* YouTube Demo */}
-        <section id="demo" className="border-t border-[var(--border)] bg-white">
-          <div className="mx-auto grid max-w-6xl gap-10 px-6 py-24 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[var(--purple)]">
-                {t("demo.eyebrow")}
-              </span>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--text)] sm:text-4xl">
-                {t("demo.heading")}
-              </h2>
-              <p className="mt-4 text-[var(--muted)]">{t("demo.copy")}</p>
-              <a
-                href="https://youtu.be/JHnCipw1akw"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--text)] px-5 text-sm font-medium text-white transition-colors hover:bg-black"
-              >
-                {t("demo.cta")}
-                <span aria-hidden>↗</span>
-              </a>
-            </div>
-            <div className="relative aspect-video overflow-hidden rounded-2xl border border-[var(--border)] bg-black shadow-xl shadow-black/10">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/JHnCipw1akw"
-                title={t("demo.heading")}
-                className="absolute inset-0 h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </section>
+        <DemoSection
+          eyebrow={t("demo.eyebrow")}
+          heading={t("demo.heading")}
+          copy={t("demo.copy")}
+          cta={t("demo.cta")}
+        />
 
         {/* Privacy */}
         <section
