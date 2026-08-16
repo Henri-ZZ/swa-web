@@ -373,7 +373,7 @@ export default async function Home({
               </h2>
               <p className="mt-4 text-[var(--muted)]">{t("demo.copy")}</p>
               <a
-                href="https://www.youtube.com"
+                href="https://youtu.be/JHnCipw1akw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--text)] px-5 text-sm font-medium text-white transition-colors hover:bg-black"
@@ -382,29 +382,16 @@ export default async function Home({
                 <span aria-hidden>↗</span>
               </a>
             </div>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t("demo.playAria")}
-              className="group relative block aspect-video overflow-hidden rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--dark)] via-[var(--dark-2)] to-[var(--purple)]/40 shadow-xl shadow-black/10"
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.25),transparent_60%)]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-20 w-28 items-center justify-center rounded-2xl bg-[var(--red)] shadow-2xl shadow-red-900/40 transition-transform group-hover:scale-105">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="ml-1 h-9 w-9 text-white"
-                    fill="currentColor"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-              <div className="absolute bottom-3 left-4 text-xs text-white/60">
-                {t("header.brandFull")}
-              </div>
-            </a>
+            <div className="relative aspect-video overflow-hidden rounded-2xl border border-[var(--border)] bg-black shadow-xl shadow-black/10">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/JHnCipw1akw"
+                title={t("demo.heading")}
+                className="absolute inset-0 h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
 
