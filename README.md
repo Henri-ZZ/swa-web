@@ -32,6 +32,16 @@ pnpm lint
 
 打开 [http://localhost:3000](http://localhost:3000) 查看效果。根路径会自动重定向到浏览器首选语言对应的 locale（默认 `en`）。
 
+## Google Analytics
+
+网站通过 GA4 收集全站访问数据。在本地 `.env.local` 及部署平台中配置 Measurement ID：
+
+```bash
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+```
+
+未配置时不会加载 Google Analytics。`NEXT_PUBLIC_` 环境变量会在构建时写入前端资源，因此部署环境修改后需要重新构建。
+
 ## 国际化（i18n）
 
 所有页面位于 `[locale]` 段下：
