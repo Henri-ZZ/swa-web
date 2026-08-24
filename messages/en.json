@@ -314,6 +314,18 @@
     "email": "henriz@henri.ren",
     "formTitle": "Send us a message"
   },
+  "goodbye": {
+    "metadataTitle": "Thanks for trying Stealth Browser Assistant",
+    "metadataDescription": "Tell us how we can make Stealth Browser Assistant better.",
+    "eyebrow": "A quick goodbye",
+    "heading": "Thanks for trying Stealth Browser Assistant.",
+    "description": "We're always trying to improve. We're always working to make private browsing simpler, faster, and more reliable.",
+    "question": "Could you take a moment to tell us why you uninstalled Stealth Browser Assistant?",
+    "formNote": "Your feedback is anonymous and helps us decide what to improve next.",
+    "formTitle": "Stealth Browser Assistant uninstall feedback",
+    "footerPrefix": "Changed your mind?",
+    "footerLink": "Reinstall Stealth Browser Assistant"
+  },
   "locale": {
     "label": "Switch language"
   }

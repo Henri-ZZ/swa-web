@@ -314,6 +314,18 @@
     "email": "henriz@henri.ren",
     "formTitle": "给我们留言"
   },
+  "goodbye": {
+    "metadataTitle": "感谢体验隐私浏览助手",
+    "metadataDescription": "告诉我们如何把隐私浏览助手做得更好。",
+    "eyebrow": "简单道个别",
+    "heading": "感谢你体验 Stealth Browser Assistant。",
+    "description": "我们一直在努力改进，并致力于让隐私浏览更简单、更快捷、更可靠。",
+    "question": "可以花一点时间告诉我们，你为什么卸载 Stealth Browser Assistant 吗？",
+    "formNote": "你的反馈将保持匿名，并帮助我们决定接下来应该改进什么。",
+    "formTitle": "隐私浏览助手卸载反馈",
+    "footerPrefix": "改变主意了？",
+    "footerLink": "重新安装 Stealth Browser Assistant"
+  },
   "locale": {
     "label": "切换语言"
   }
