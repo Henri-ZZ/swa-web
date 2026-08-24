@@ -115,6 +115,8 @@ export function ImageLightbox() {
 
   if (!openImage) return null;
 
+  const aspectRatio = openImage.width / openImage.height;
+
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm sm:p-8"
@@ -125,16 +127,24 @@ export function ImageLightbox() {
         if (event.target === event.currentTarget) setOpenImage(null);
       }}
     >
-      <Image
-        src={openImage.src}
-        alt={openImage.alt}
-        width={openImage.width}
-        height={openImage.height}
-        sizes="94vw"
-        unoptimized
-        className="h-auto max-h-[88vh] w-auto max-w-[94vw] rounded-xl bg-white object-contain shadow-2xl"
+      <div
+        className="relative max-h-[88vh] max-w-[94vw] overflow-hidden rounded-xl bg-white shadow-2xl"
+        style={{
+          width: `min(94vw, calc(88vh * ${aspectRatio}), 1600px)`,
+          aspectRatio: `${openImage.width} / ${openImage.height}`,
+        }}
         data-no-image-zoom
-      />
+      >
+        <Image
+          src={openImage.src}
+          alt={openImage.alt}
+          fill
+          sizes="(max-width: 1700px) 94vw, 1600px"
+          unoptimized
+          className="object-contain"
+          data-no-image-zoom
+        />
+      </div>
       <button
         ref={closeButtonRef}
         type="button"

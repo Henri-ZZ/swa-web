@@ -57,7 +57,7 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
   const related = (Object.keys(relatedLabels) as LandingSlug[]).filter((slug) => slug !== page.slug).slice(0, 3);
 
   return (
-    <div className="flex min-h-full flex-col bg-white">
+    <div lang="en" className="flex min-h-full flex-col bg-white">
       <LandingHeader t={t} />
       <main>
         <section className="relative overflow-hidden bg-[var(--dark)] text-white">

@@ -80,8 +80,8 @@ const en: Record<LandingSlug, LandingPageContent> = {
     headline: "Need to hide Chrome tabs quickly?",
     lead: "Hide selected Chrome tabs with a keyboard shortcut instead of closing them.",
     cta: "Hide Chrome Tabs with SBA",
-    image: "/promo-images/SBA_Settings_1280x800.png",
-    imageAlt: "Stealth Browser Assistant settings in Google Chrome",
+    image: "/promo-images/SBA_Small_Promo_Tile_440x280.png",
+    imageAlt: "Stealth Browser Assistant for private browsing with Mute, Hide, and Clean actions",
     answer: "Yes — you can hide Chrome tabs without closing them. Define the pages you want SBA to match, then trigger Hide with a keyboard shortcut.",
     problem: {
       title: "Keep the session. Remove the distraction.",
