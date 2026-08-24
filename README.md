@@ -38,9 +38,12 @@ pnpm lint
 
 ```bash
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_SITE_URL=https://your-production-domain.example
 ```
 
 未配置时不会加载 Google Analytics。`NEXT_PUBLIC_` 环境变量会在构建时写入前端资源，因此部署环境修改后需要重新构建。
+
+`NEXT_PUBLIC_SITE_URL` 用于 canonical、Open Graph、robots.txt 和 sitemap.xml，请在生产环境配置为网站的正式域名。
 
 ## 国际化（i18n）
 

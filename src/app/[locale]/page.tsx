@@ -582,13 +582,13 @@ export default async function Home({
                 </h2>
                 <p className="mt-6 text-sm font-medium text-[var(--text)]">
                   {t("faq.ctaStart")}{" "}
-                  <a
+                  <Link
                     href="/contact"
                     className="inline-flex items-center gap-1 text-[var(--purple)] transition-colors hover:text-[var(--purple-bright)]"
                   >
                     {t("faq.ctaLink")}
                     <span aria-hidden>→</span>
-                  </a>
+                  </Link>
                 </p>
               </div>
               {/* Right: questions */}

@@ -40,7 +40,7 @@ export function getChangelogEntries(): ChangelogEntry[] {
 
   const entries: ChangelogEntry[] = files.map((file) => {
     const raw = fs.readFileSync(path.join(CONTENT_DIR, file), "utf8");
-    const { data, content } = matter(raw);
+    const { data } = matter(raw);
     return {
       version: String(data.version ?? ""),
       date: String(data.date ?? ""),

@@ -52,6 +52,15 @@ summary {
   cursor: pointer;
 }
 
+img[data-image-zoom-ready="true"] {
+  cursor: zoom-in;
+}
+
+img[data-image-zoom-ready="true"]:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--purple) 70%, white);
+  outline-offset: 4px;
+}
+
 ::selection {
   background: rgba(124, 58, 237, 0.45);
   color: inherit;

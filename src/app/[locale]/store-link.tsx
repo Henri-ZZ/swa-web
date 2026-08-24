@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
+import { useSyncExternalStore, type ReactNode } from "react";
 import { STORE_URLS } from "./store-urls";
 
 type StoreKey = keyof typeof STORE_URLS;
@@ -14,20 +15,22 @@ function detectStore(): StoreKey {
   return "chrome";
 }
 
+const subscribe = () => () => {};
+
 export function StoreLink({
   children,
   className,
+  analyticsLabel,
 }: {
   children: ReactNode;
   className?: string;
+  analyticsLabel?: string;
 }) {
-  // 服务端渲染时无法识别浏览器，首帧与服务端保持一致（chrome），
-  // 挂载后再按真实浏览器更新链接，避免 hydration 不一致导致 Edge/Firefox 显示 Chrome 链接。
-  const [store, setStore] = useState<StoreKey>("chrome");
-
-  useEffect(() => {
-    setStore(detectStore());
-  }, []);
+  const store = useSyncExternalStore<StoreKey>(
+    subscribe,
+    detectStore,
+    () => "chrome",
+  );
 
   return (
     <a
@@ -35,6 +38,14 @@ export function StoreLink({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
+      onClick={() => {
+        if (analyticsLabel && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID) {
+          sendGAEvent("event", "install_cta_click", {
+            placement: analyticsLabel,
+            store,
+          });
+        }
+      }}
     >
       {children}
     </a>
