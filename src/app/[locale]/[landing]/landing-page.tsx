@@ -5,6 +5,7 @@ import type { LandingPageContent, LandingSlug } from "@/lib/landing-pages";
 import { LocaleSwitcher } from "../locale-switcher";
 import { SiteFooter } from "../site-footer";
 import { StoreLink } from "../store-link";
+import { STORE_URLS } from "../store-urls";
 
 type Translations = Awaited<ReturnType<typeof getTranslations>>;
 
@@ -117,7 +118,31 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
             </div>
             <div className="mt-10 flex flex-wrap items-center justify-between gap-5 rounded-3xl bg-white p-6 ring-1 ring-[var(--border)] sm:p-8">
               <div><h3 className="text-lg font-semibold">Use SBA on your preferred browser.</h3><p className="mt-1 text-[var(--muted)]">{page.compatibility}</p></div>
-              <div className="flex gap-4"><Image src="/chrome.svg" alt="Google Chrome" width={28} height={28} /><Image src="/edge.svg" alt="Microsoft Edge" width={28} height={28} /><Image src="/firefox.svg" alt="Mozilla Firefox" width={28} height={28} /></div>
+              <div className="flex gap-3" data-no-image-zoom>
+                {[
+                  { name: "Google Chrome", icon: "/chrome.svg", url: STORE_URLS.chrome },
+                  { name: "Microsoft Edge", icon: "/edge.svg", url: STORE_URLS.edge },
+                  { name: "Mozilla Firefox", icon: "/firefox.svg", url: STORE_URLS.firefox },
+                ].map((browser) => (
+                  <a
+                    key={browser.name}
+                    href={browser.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Get Stealth Browser Assistant for ${browser.name}`}
+                    title={`Get SBA for ${browser.name}`}
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-white transition hover:-translate-y-0.5 hover:border-purple-300 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[var(--purple)] focus:ring-offset-2"
+                  >
+                    <Image
+                      src={browser.icon}
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="h-7 w-auto"
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </section>
