@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LegalPage } from "../legal-page";
 import { getLegalDocForLocale } from "../legal-doc";
+import { getLocalizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,10 @@ export async function generateMetadata({
   const { locale } = await params;
   const doc = await getLegalDocForLocale("privacy", locale);
   const tb = await getTranslations({ locale, namespace: "header" });
-  return { title: `${doc?.title ?? "Privacy Policy"} | ${tb("brandFull")}` };
+  return {
+    title: `${doc?.title ?? "Privacy Policy"} | ${tb("brandFull")}`,
+    alternates: getLocalizedAlternates(locale, "/privacy"),
+  };
 }
 
 export default async function PrivacyPage({

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -8,6 +9,16 @@ import { PaddleBuyButton } from "./paddle-buy-button";
 import { SiteFooter } from "./site-footer";
 import { StoreLink } from "./store-link";
 import { KeywordMatching } from "./keyword-matching";
+import { getLocalizedAlternates } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: getLocalizedAlternates(locale) };
+}
 
 export default async function Home({
   params,

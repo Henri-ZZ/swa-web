@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl, LANDING_SLUGS } from "@/lib/landing-pages";
+import { getLocalizedUrl } from "@/lib/seo";
 
 const STATIC_ROUTES = ["", "/changelog", "/contact", "/privacy", "/refund", "/terms"];
 
@@ -12,8 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const landingPages = LANDING_SLUGS.map((slug) => ({ locale: "en", path: `/${slug}` }));
 
   return [...localizedPages, ...landingPages].map(({ locale, path }) => ({
-      url: `${base}${locale === routing.defaultLocale ? "" : `/${locale}`}${path || "/"}`.replace(/\/$/, path ? "" : "/"),
-      lastModified: new Date(),
+      url: path && locale === "en"
+        ? `${base}${path}`
+        : getLocalizedUrl(locale, path),
       changeFrequency: path ? ("monthly" as const) : ("weekly" as const),
       priority: path.startsWith("/hide-") || path === "/chrome-panic-button" || path === "/mute-browser-tabs" ? 0.8 : path ? 0.6 : 1,
     }));

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "../locale-switcher";
 import { SiteFooter } from "../site-footer";
+import { getLocalizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -13,7 +14,10 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
   const tb = await getTranslations({ locale, namespace: "header" });
-  return { title: `${t("heading")} | ${tb("brandFull")}` };
+  return {
+    title: `${t("heading")} | ${tb("brandFull")}`,
+    alternates: getLocalizedAlternates(locale, "/contact"),
+  };
 }
 
 export default async function ContactPage({
