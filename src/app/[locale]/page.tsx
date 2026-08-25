@@ -8,8 +8,10 @@ import { LocaleSwitcher } from "./locale-switcher";
 import { PaddleBuyButton } from "./paddle-buy-button";
 import { SiteFooter } from "./site-footer";
 import { StoreLink } from "./store-link";
+import { STORE_URLS } from "./store-urls";
 import { KeywordMatching } from "./keyword-matching";
-import { getLocalizedAlternates } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/landing-pages";
+import { getLocalizedAlternates, getLocalizedUrl } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -17,7 +19,38 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: getLocalizedAlternates(locale) };
+  const t = await getTranslations({ locale, namespace: "metadata" });
+  const title = t("title");
+  const description = t("description");
+  const url = getLocalizedUrl(locale);
+  const image = `${getSiteUrl()}/promo-images/SBA_Marquee_Promo_Tile_1400x560.png`;
+
+  return {
+    alternates: getLocalizedAlternates(locale),
+    openGraph: {
+      type: "website",
+      url,
+      siteName: "Stealth Browser Assistant",
+      locale: locale === "zh" ? "zh_CN" : "en_US",
+      alternateLocale: locale === "zh" ? ["en_US"] : ["zh_CN"],
+      title,
+      description,
+      images: [
+        {
+          url: image,
+          width: 1400,
+          height: 560,
+          alt: "Stealth Browser Assistant — Mute, Hide, and Clean browser tabs",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
 }
 
 export default async function Home({
@@ -28,6 +61,42 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const siteUrl = getSiteUrl();
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "Stealth Browser Assistant",
+        url: `${siteUrl}/`,
+        logo: `${siteUrl}/icon.png`,
+        sameAs: Object.values(STORE_URLS),
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${siteUrl}/#software-application`,
+        name: "Stealth Browser Assistant",
+        url: getLocalizedUrl(locale),
+        image: `${siteUrl}/icon.png`,
+        description: t("metadata.description"),
+        applicationCategory: "BrowserApplication",
+        operatingSystem: "Windows, macOS, Linux",
+        browserRequirements:
+          "Requires Google Chrome, Microsoft Edge, or Mozilla Firefox",
+        isAccessibleForFree: true,
+        downloadUrl: Object.values(STORE_URLS),
+        publisher: { "@id": `${siteUrl}/#organization` },
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          url: `${siteUrl}/`,
+          availability: "https://schema.org/InStock",
+        },
+      },
+    ],
+  };
 
   // Paddle 配置：服务端读取环境变量，作为 props 传给购买按钮（避免 NEXT_PUBLIC_ 前缀）。
   const paddleEnv = (process.env.PADDLE_ENV ?? "sandbox") as
@@ -64,6 +133,12 @@ export default async function Home({
 
   return (
     <div className="flex flex-col flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[var(--dark)]/85 backdrop-blur supports-[backdrop-filter]:bg-[var(--dark)]/70">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
