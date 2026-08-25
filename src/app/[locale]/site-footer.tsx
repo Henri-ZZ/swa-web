@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FooterAnchorLink } from "./footer-anchor-link";
+import { FoundrListBadge } from "./foundrlist-badge";
 import { STORE_URLS } from "./store-urls";
 
 type Translations = Awaited<ReturnType<typeof getTranslations>>;
@@ -94,6 +95,8 @@ export function SiteFooter({ t }: { t: Translations }) {
             <p className="mt-1 text-sm text-zinc-500">
               {t("footer.subTagline")}
             </p>
+            {/* Optional FoundrList badge: remove this line and foundrlist-badge.tsx to retire it. */}
+            <FoundrListBadge />
           </div>
           <FooterCol
             title={t("footer.columns.product.title")}
