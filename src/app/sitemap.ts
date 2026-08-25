@@ -17,6 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? `${base}${path}`
         : getLocalizedUrl(locale, path),
       changeFrequency: path ? ("monthly" as const) : ("weekly" as const),
-      priority: path.startsWith("/hide-") || path === "/chrome-panic-button" || path === "/mute-browser-tabs" ? 0.8 : path ? 0.6 : 1,
+      priority: path.startsWith("/hide-") || path === "/chrome-panic-button" || path === "/mute-browser-tabs" || path === "/emergency-tab-close" ? 0.8 : path ? 0.6 : 1,
     }));
 }

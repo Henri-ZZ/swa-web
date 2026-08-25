@@ -15,6 +15,7 @@ const relatedLabels: Record<LandingSlug, string> = {
   "hide-tabs-from-boss": "Hide tabs at work",
   "chrome-panic-button": "Chrome panic button",
   "mute-browser-tabs": "Mute browser tabs",
+  "emergency-tab-close": "Emergency tab close",
 };
 
 function LandingHeader({ t }: { t: Translations }) {
@@ -47,7 +48,15 @@ function Flow({ flow }: { flow: LandingPageContent["flow"] }) {
           <div className={`flex min-h-28 items-center justify-center rounded-2xl border p-6 text-center text-base font-semibold ${index === 1 ? "border-purple-400/30 bg-purple-500/15 text-purple-200" : "border-white/10 bg-white/5 text-white"}`}>
             <span><span className="mb-2 block text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">{index === 0 ? "Before" : index === 1 ? "Action" : "After"}</span>{label}</span>
           </div>
-          {index < 2 ? <span aria-hidden className="self-center text-center text-2xl text-purple-400">↓<span className="hidden md:inline"> →</span></span> : null}
+          {index < 2 ? (
+            <span
+              aria-hidden
+              className="self-center text-center text-2xl text-purple-400"
+            >
+              <span className="md:hidden">↓</span>
+              <span className="hidden md:inline">→</span>
+            </span>
+          ) : null}
         </div>
       ))}
     </div>

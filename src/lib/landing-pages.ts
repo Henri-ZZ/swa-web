@@ -4,6 +4,7 @@ export const LANDING_SLUGS = [
   "hide-tabs-from-boss",
   "chrome-panic-button",
   "mute-browser-tabs",
+  "emergency-tab-close",
 ] as const;
 
 export type LandingSlug = (typeof LANDING_SLUGS)[number];
@@ -228,6 +229,96 @@ const en: Record<LandingSlug, LandingPageContent> = {
       { question: "Will muting close the tab?", answer: "No. Mute and Close are separate actions." },
       { question: "Can I choose which tabs are muted?", answer: "Yes. You control matching through your own keywords and website rules." },
       { question: "Can SBA hide and mute together?", answer: "Yes. Emergency Mode can combine both actions for matching tabs." },
+    ],
+  },
+  "emergency-tab-close": {
+    slug: "emergency-tab-close",
+    title: "Emergency Tab Close — Close Matching Tabs Instantly | SBA",
+    description:
+      "Use emergency tab close to instantly close matching browser tabs with one customizable shortcut. Keep unrelated tabs open with Stealth Browser Assistant.",
+    eyebrow: "EMERGENCY TAB CLOSE",
+    headline: "Close matching tabs in an emergency.",
+    lead: "When hiding is not enough, close every matching tab with one customizable emergency shortcut.",
+    cta: "Set Up Emergency Tab Close",
+    image: "/promo-images/someone-coming.png",
+    imageAlt:
+      "Someone approaching while Stealth Browser Assistant triggers an emergency tab close action",
+    answer:
+      "Emergency tab close lets you close every open tab that matches your own keywords in one action, while unrelated tabs stay open.",
+    problem: {
+      title: "Sometimes the tabs need to be gone, not just hidden.",
+      copy: "Closing tabs one by one takes time and can expose each page as you search for it. SBA can close all configured matches together when you trigger the Emergency Action.",
+      items: [
+        "Someone is approaching your computer",
+        "A screen-sharing session starts unexpectedly",
+        "Several matching tabs need to close at once",
+      ],
+    },
+    flow: {
+      before: "Matching tabs are open",
+      action: "Emergency tab close shortcut",
+      after: "Matching tabs are closed",
+    },
+    howTitle: "How emergency tab close works",
+    steps: [
+      {
+        title: "Define your matching rules",
+        copy: "Add the domains, URLs, or title keywords that identify the tabs you may need to close.",
+      },
+      {
+        title: "Choose Close for Emergency Action",
+        copy: "Select Close matching tabs as your Premium Emergency Action in SBA settings. Free users can use Hide to remove matching tabs from view without closing them.",
+      },
+      {
+        title: "Customize the shortcut",
+        copy: "Use your browser's extension shortcut settings to choose a key combination you can reach quickly.",
+      },
+      {
+        title: "Trigger it when needed",
+        copy: "SBA closes all currently matching tabs together and leaves unrelated tabs untouched.",
+      },
+    ],
+    featuresTitle: "Fast closing without closing everything",
+    features: [
+      {
+        title: "Close all matches",
+        copy: "Handle several matching tabs in one emergency action.",
+      },
+      {
+        title: "Keep unrelated tabs",
+        copy: "Tabs outside your matching rules remain open.",
+      },
+      {
+        title: "Your own keywords",
+        copy: "You decide which domains, URLs, and page titles count as matches.",
+      },
+      {
+        title: "Custom shortcut",
+        copy: "Choose an extension keyboard shortcut that fits your workflow.",
+      },
+    ],
+    compatibility:
+      "Emergency tab close is available with SBA Premium on Chrome, Edge, and Firefox. Free users can hide matching tabs instead.",
+    ctaTitle: "Be ready before you need to close everything.",
+    ctaCopy:
+      "Install SBA, define your matching rules, and configure your emergency action.",
+    faq: [
+      {
+        question: "What is emergency tab close?",
+        answer: "It is an SBA Emergency Action that closes every currently open tab matching your configured keywords and website rules.",
+      },
+      {
+        question: "Will emergency tab close close every browser tab?",
+        answer: "No. It targets matching tabs only. Tabs that do not match your rules remain open.",
+      },
+      {
+        question: "Can I customize the emergency tab close shortcut?",
+        answer: "Yes. You can customize extension keyboard shortcuts through your browser's shortcut settings.",
+      },
+      {
+        question: "Is Close matching tabs a free feature?",
+        answer: "Close matching tabs is a Premium Emergency Action. Free users can use Hide to remove matching tabs from view without closing them, and the free Emergency Action includes Mute and Hide.",
+      },
     ],
   },
 };
