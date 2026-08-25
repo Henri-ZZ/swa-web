@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FooterAnchorLink } from "./footer-anchor-link";
-import { FoundrListBadge } from "./foundrlist-badge";
+import { FooterBadges } from "./footer-badges";
 import { STORE_URLS } from "./store-urls";
 
 type Translations = Awaited<ReturnType<typeof getTranslations>>;
@@ -95,8 +95,6 @@ export function SiteFooter({ t }: { t: Translations }) {
             <p className="mt-1 text-sm text-zinc-500">
               {t("footer.subTagline")}
             </p>
-            {/* Optional FoundrList badge: remove this line and foundrlist-badge.tsx to retire it. */}
-            <FoundrListBadge />
           </div>
           <FooterCol
             title={t("footer.columns.product.title")}
@@ -172,8 +170,12 @@ export function SiteFooter({ t }: { t: Translations }) {
             ]}
           />
         </div>
-        <div className="mt-12 border-t border-white/10 pt-6 text-xs text-zinc-500">
-          {t("footer.copyright")}
+        <div className="mt-12 border-t border-white/10 pt-6">
+          {/* Optional listing badges: remove this line and footer-badges.tsx to retire them. */}
+          <FooterBadges />
+          <p className="mt-4 text-xs text-zinc-500">
+            {t("footer.copyright")}
+          </p>
         </div>
       </div>
     </footer>
