@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "隐私浏览助手 — 保护隐私，尽在掌控",
+    "title": "Stealth Browser Assistant — 保护隐私，尽在掌控",
     "description": "一个快捷键即可静音、隐藏或清理隐私浏览器标签页。一次性付费，永久使用，无订阅。"
   },
   "header": {
     "brandPrimary": "Stealth",
-    "brandSecondary": "隐私浏览助手",
-    "brandFull": "隐私浏览助手",
+    "brandSecondary": "Stealth Browser Assistant",
+    "brandFull": "Stealth Browser Assistant",
     "nav": {
       "features": "功能",
       "howItWorks": "工作原理",
@@ -56,7 +56,7 @@
   "keywordMatching": {
     "eyebrow": "工作原理",
     "heading": "隐私与否，由你决定。",
-    "copy": "添加任意网站、域名或关键词。隐私浏览助手通过检查标签页的 URL 和标题来识别匹配的标签页——整个过程都在你的浏览器内完成。",
+    "copy": "添加任意网站、域名或关键词。Stealth Browser Assistant 通过检查标签页的 URL 和标题来识别匹配的标签页——整个过程都在你的浏览器内完成。",
     "steps": {
       "keywords": {
         "title": "你的关键词",
@@ -79,10 +79,10 @@
       }
     },
     "tagline": "你的关键词，你的规则。",
-    "note": "一切都不是预设的。由你选择隐私浏览助手保护什么。",
+    "note": "一切都不是预设的。由你选择 Stealth Browser Assistant 保护什么。",
     "story": {
       "define": "你来定义",
-      "detect": "隐私浏览助手检测",
+      "detect": "Stealth Browser Assistant 检测",
       "control": "你来掌控"
     }
   },
@@ -148,14 +148,14 @@
   "demo": {
     "eyebrow": "实际效果",
     "heading": "几秒掌握主动权。",
-    "copy": "观看 隐私浏览助手 如何在任何场景下保护你的隐私。",
+    "copy": "观看 Stealth Browser Assistant 如何在任何场景下保护你的隐私。",
     "cta": "在 YouTube 观看",
     "playAria": "播放演示视频"
   },
   "privacy": {
     "eyebrow": "你的隐私至关重要",
     "heading": "浏览记录只属于你。",
-    "copy": "隐私浏览助手 在你的浏览器本地运行。数据从不被收集或共享。",
+    "copy": "Stealth Browser Assistant 在你的浏览器本地运行。数据从不被收集或共享。",
     "localMatching": "关键词匹配在本地完成。你的关键词、标签页 URL 和浏览活动无需离开浏览器。",
     "points": {
       "noData": {
@@ -242,8 +242,8 @@
         "answer": "完全可以。添加或删除关键词、更改快捷键——都可在扩展的设置页面完成。"
       },
       "detect": {
-        "question": "隐私浏览助手如何识别隐私标签页？",
-        "answer": "隐私浏览助手会将你自定义的关键词与浏览器标签页的 URL 和标题进行匹配。匹配在浏览器本地完成，你的浏览活动无需发送到任何服务器。"
+        "question": "Stealth Browser Assistant 如何识别隐私标签页？",
+        "answer": "Stealth Browser Assistant 会将你自定义的关键词与浏览器标签页的 URL 和标题进行匹配。匹配在浏览器本地完成，你的浏览活动无需发送到任何服务器。"
       }
     }
   },
@@ -281,14 +281,14 @@
         "title": "下载"
       }
     },
-    "copyright": "© 2026 隐私浏览助手。保留所有权利。"
+    "copyright": "© 2026 Stealth Browser Assistant。保留所有权利。"
   },
   "legal": {
     "lastUpdatedPrefix": "最后更新："
   },
   "changelog": {
     "title": "更新日志",
-    "description": "了解隐私浏览助手的最新动态。我们一直致力于让你的浏览更私密、更安全、更轻松。",
+    "description": "了解 Stealth Browser Assistant 的最新动态。我们一直致力于让你的浏览更私密、更安全、更轻松。",
     "latest": "最新",
     "empty": "没有符合该筛选的更新。",
     "filters": {
@@ -315,14 +315,14 @@
     "formTitle": "给我们留言"
   },
   "goodbye": {
-    "metadataTitle": "感谢体验隐私浏览助手",
-    "metadataDescription": "告诉我们如何把隐私浏览助手做得更好。",
+    "metadataTitle": "感谢体验 Stealth Browser Assistant",
+    "metadataDescription": "告诉我们如何把 Stealth Browser Assistant 做得更好。",
     "eyebrow": "简单道个别",
     "heading": "感谢你体验 Stealth Browser Assistant。",
     "description": "我们一直在努力改进，并致力于让隐私浏览更简单、更快捷、更可靠。",
     "question": "可以花一点时间告诉我们，你为什么卸载 Stealth Browser Assistant 吗？",
     "formNote": "你的反馈将保持匿名，并帮助我们决定接下来应该改进什么。",
-    "formTitle": "隐私浏览助手卸载反馈",
+    "formTitle": "Stealth Browser Assistant 卸载反馈",
     "footerPrefix": "改变主意了？",
     "footerLink": "重新安装 Stealth Browser Assistant"
   },
