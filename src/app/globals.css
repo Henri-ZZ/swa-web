@@ -123,7 +123,9 @@ img[data-image-zoom-ready="true"]:focus-visible {
   color: var(--muted);
 }
 
-/* YouTube demo player: iframe created by YT API must fill the container */
+/* Lightweight YouTube facade and its click-loaded iframe fill the container. */
+.demo-video > [data-ntpc],
+.demo-video lite-youtube,
 .demo-video iframe {
   width: 100%;
   height: 100%;

@@ -455,6 +455,7 @@ export default async function Home({
           heading={t("demo.heading")}
           copy={t("demo.copy")}
           cta={t("demo.cta")}
+          playAria={t("demo.playAria")}
         />
 
         {/* Privacy */}
