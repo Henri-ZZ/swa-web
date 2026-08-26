@@ -65,7 +65,9 @@ function Flow({ flow }: { flow: LandingPageContent["flow"] }) {
 }
 
 export function LandingPage({ page, t }: { page: LandingPageContent; t: Translations }) {
-  const related = (Object.keys(relatedLabels) as LandingSlug[]).filter((slug) => slug !== page.slug).slice(0, 3);
+  const related: LandingSlug[] = page.slug === "clean-porn-history"
+    ? ["hide-browser-tabs", "mute-browser-tabs", "chrome-panic-button"]
+    : (Object.keys(relatedLabels) as LandingSlug[]).filter((slug) => slug !== page.slug).slice(0, 3);
 
   return (
     <div lang="en" className="flex min-h-full flex-col bg-white">
@@ -92,6 +94,20 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
         </section>
 
         {page.answer ? <section className="border-b border-[var(--border)] bg-purple-50"><p className="mx-auto max-w-4xl px-6 py-8 text-center text-lg font-medium leading-8 text-purple-950">{page.answer}</p></section> : null}
+
+        {page.supportingIntents?.length ? (
+          <section className="border-b border-[var(--border)] bg-white px-6 py-14">
+            <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-2">
+              {page.supportingIntents.map((intent) => (
+                <article key={intent.title} className="rounded-3xl border border-purple-100 bg-purple-50/60 p-7 sm:p-9">
+                  <p className="text-xs font-semibold tracking-[0.2em] text-[var(--purple)]">{intent.eyebrow}</p>
+                  <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">{intent.title}</h2>
+                  <p className="mt-4 text-lg leading-8 text-[var(--muted)]">{intent.copy}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_0.9fr]">
           <div>

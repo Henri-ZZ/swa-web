@@ -21,6 +21,7 @@ export type LandingPageContent = {
   image: string;
   imageAlt: string;
   answer?: string;
+  supportingIntents?: { eyebrow: string; title: string; copy: string }[];
   problem: { title: string; copy: string; items: string[] };
   flow: { before: string; action: string; after: string };
   flowEyebrow?: string;
@@ -338,6 +339,18 @@ const en: Record<LandingSlug, LandingPageContent> = {
       "Someone approaching while Stealth Browser Assistant hides matching private browser tabs",
     answer:
       "Stealth Browser Assistant helps you hide porn tabs instantly for free. When you want a more complete cleanup, Premium can clear selected private browser data such as browsing history and download history.",
+    supportingIntents: [
+      {
+        eyebrow: "HIDE ADULT TABS",
+        title: "How to hide adult tabs instantly",
+        copy: "Use Stealth Browser Assistant to hide adult browser tabs with your own website and page-title keywords. The free Hide action keeps matching tabs out of view, while the free Emergency Action can hide and mute them together with one keyboard shortcut.",
+      },
+      {
+        eyebrow: "CLEAR BROWSING TRACES",
+        title: "How to clear porn history from your browser",
+        copy: "Use Premium Clear Private Data when you want to clean porn browsing traces after a session. Choose the browser-data categories you want to clear, including browsing history, download history, cookies and site data, and address bar history. Clearing download history removes the browser record, not files saved on your computer.",
+      },
+    ],
     problem: {
       title: "Privacy needs two different responses.",
       copy: "When someone approaches, hiding matching tabs is the fastest response. Afterward, you may also want to clear the browser records left behind. SBA supports both parts of that workflow without touching unrelated open tabs.",
@@ -407,8 +420,16 @@ const en: Record<LandingSlug, LandingPageContent> = {
         answer: "SBA Premium can clear selected private browser data, including browsing history, download history, cookies and site data, and address bar history. You choose the matching rules and cleanup settings.",
       },
       {
+        question: "How do I delete porn history from my browser?",
+        answer: "Use SBA Premium's Clear Private Data action to clear the browser-data categories you configure. It can remove browsing-history and download-history records together with other selected private data.",
+      },
+      {
         question: "Is hiding porn tabs free?",
         answer: "Yes. Hide, Mute, and the Mute-and-Hide Emergency Action are included in the free version. Private-data cleanup and automatic cleanup require Premium.",
+      },
+      {
+        question: "Can I hide adult browser tabs for free?",
+        answer: "Yes. Add your own adult-site domains or page-title keywords, then use SBA's free Hide action or the free Mute-and-Hide Emergency Action on matching tabs.",
       },
       {
         question: "Does clearing download history delete downloaded files?",
