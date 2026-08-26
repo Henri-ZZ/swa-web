@@ -17,6 +17,15 @@ type FooterLink = {
   icon?: string;
 };
 
+const GUIDE_LINKS = [
+  { href: "/hide-browser-tabs", label: "Hide browser tabs" },
+  { href: "/hide-chrome-tabs", label: "Hide Chrome tabs" },
+  { href: "/hide-tabs-from-boss", label: "Hide tabs at work" },
+  { href: "/chrome-panic-button", label: "Chrome panic button" },
+  { href: "/mute-browser-tabs", label: "Mute browser tabs" },
+  { href: "/emergency-tab-close", label: "Emergency tab close" },
+] as const;
+
 function FooterCol({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div>
@@ -48,6 +57,7 @@ function FooterCol({ title, links }: { title: string; links: FooterLink[] }) {
                     width={16}
                     height={16}
                     className="h-4 w-auto"
+                    style={{ width: "auto" }}
                   />
                 )}
                 {l.label}
@@ -70,6 +80,13 @@ function FooterCol({ title, links }: { title: string; links: FooterLink[] }) {
 }
 
 export function SiteFooter({ t }: { t: Translations }) {
+  // Keep the footer render-safe while a dev server still holds an older
+  // translation bundle during hot reload. A full refresh will use the locale
+  // specific label from messages/*.json.
+  const guidesTitle = t.has("footer.guides.title")
+    ? t("footer.guides.title")
+    : "Browser guides";
+
   return (
     <footer className="bg-[var(--dark)] text-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -170,7 +187,30 @@ export function SiteFooter({ t }: { t: Translations }) {
             ]}
           />
         </div>
-        <div className="mt-12 border-t border-white/10 pt-6">
+        <nav
+          aria-label={guidesTitle}
+          className="mt-10 border-t border-white/10 pt-5"
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+            {guidesTitle}
+          </p>
+          <ul className="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-[13px] text-zinc-500">
+            {GUIDE_LINKS.map((guide, index) => (
+              <li key={guide.href} className="flex items-center gap-2">
+                {index > 0 ? <span aria-hidden>·</span> : null}
+                <a
+                  href={guide.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="transition-colors hover:text-zinc-200"
+                >
+                  {guide.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="mt-6 border-t border-white/10 pt-6">
           {/* Optional listing badges: remove this line and footer-badges.tsx to retire them. */}
           <FooterBadges />
           <p className="mt-4 text-xs text-zinc-500">

@@ -345,6 +345,7 @@ export default async function Home({
                             width={16}
                             height={16}
                             className="h-4 w-auto"
+                            style={{ width: "auto" }}
                           />
                           <span className="text-xs font-medium">{b.name}</span>
                         </span>

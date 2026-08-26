@@ -129,9 +129,9 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
               <div><h3 className="text-lg font-semibold">Use SBA on your preferred browser.</h3><p className="mt-1 text-[var(--muted)]">{page.compatibility}</p></div>
               <div className="flex gap-3" data-no-image-zoom>
                 {[
-                  { name: "Google Chrome", icon: "/chrome.svg", url: STORE_URLS.chrome },
-                  { name: "Microsoft Edge", icon: "/edge.svg", url: STORE_URLS.edge },
-                  { name: "Mozilla Firefox", icon: "/firefox.svg", url: STORE_URLS.firefox },
+                  { name: "Google Chrome", icon: "/chrome.svg", url: STORE_URLS.chrome, width: 512, height: 512 },
+                  { name: "Microsoft Edge", icon: "/edge.svg", url: STORE_URLS.edge, width: 480, height: 480 },
+                  { name: "Mozilla Firefox", icon: "/firefox.svg", url: STORE_URLS.firefox, width: 256, height: 265 },
                 ].map((browser) => (
                   <a
                     key={browser.name}
@@ -145,9 +145,10 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
                     <Image
                       src={browser.icon}
                       alt=""
-                      width={28}
-                      height={28}
+                      width={browser.width}
+                      height={browser.height}
                       className="h-7 w-auto"
+                      style={{ width: "auto" }}
                     />
                   </a>
                 ))}
