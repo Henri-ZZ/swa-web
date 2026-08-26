@@ -63,7 +63,7 @@ export default async function ChangelogPage({
           <Link href="/" className="flex items-center gap-2.5">
             <Image
               src="/icon.png"
-              alt=""
+              alt="Stealth Browser Assistant logo"
               width={28}
               height={28}
               className="h-7 w-7"

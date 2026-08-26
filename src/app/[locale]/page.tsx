@@ -145,7 +145,7 @@ export default async function Home({
           <Link href="/" className="flex items-center gap-2.5">
             <Image
               src="/icon.png"
-              alt=""
+              alt="Stealth Browser Assistant logo"
               width={28}
               height={28}
               className="h-7 w-7"
@@ -287,7 +287,7 @@ export default async function Home({
                     <div className="flex items-center gap-2.5">
                       <Image
                         src="/icon.png"
-                        alt=""
+                        alt="Stealth Browser Assistant extension icon"
                         width={24}
                         height={24}
                         className="h-6 w-6"
@@ -297,7 +297,7 @@ export default async function Home({
                       </span>
                       <Image
                         src="/premium.png"
-                        alt=""
+                        alt="Stealth Browser Assistant Premium badge"
                         width={16}
                         height={16}
                         className="h-4 w-4"
@@ -585,7 +585,7 @@ export default async function Home({
                 <h3 className="flex items-center gap-2.5 text-lg font-semibold text-[var(--text)]">
                   <Image
                     src="/premium.png"
-                    alt=""
+                    alt="Stealth Browser Assistant Premium badge"
                     width={24}
                     height={24}
                     className="h-6 w-6"

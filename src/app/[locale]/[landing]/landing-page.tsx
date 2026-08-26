@@ -24,7 +24,7 @@ function LandingHeader({ t }: { t: Translations }) {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[var(--dark)]/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2.5 text-white">
-          <Image src="/icon.png" alt="" width={30} height={30} priority />
+          <Image src="/icon.png" alt="Stealth Browser Assistant logo" width={30} height={30} priority />
           <span className="text-sm font-bold tracking-tight sm:text-base">Stealth Browser Assistant</span>
         </Link>
         <div className="flex items-center gap-3">
@@ -161,7 +161,7 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
                   >
                     <Image
                       src={browser.icon}
-                      alt=""
+                      alt={`${browser.name} logo`}
                       width={browser.width}
                       height={browser.height}
                       className="h-7 w-auto"

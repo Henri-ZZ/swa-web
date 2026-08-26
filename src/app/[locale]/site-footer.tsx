@@ -54,7 +54,7 @@ function FooterCol({ title, links }: { title: string; links: FooterLink[] }) {
                 {l.icon && (
                   <Image
                     src={l.icon}
-                    alt=""
+                    alt={`${l.label} browser logo`}
                     width={16}
                     height={16}
                     className="h-4 w-auto"
@@ -96,7 +96,7 @@ export function SiteFooter({ t }: { t: Translations }) {
             <Link href="/" className="flex w-fit items-center gap-2.5">
               <Image
                 src="/icon.png"
-                alt=""
+                alt="Stealth Browser Assistant logo"
                 width={28}
                 height={28}
                 className="h-7 w-7"
