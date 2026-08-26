@@ -5,6 +5,7 @@ export const LANDING_SLUGS = [
   "chrome-panic-button",
   "mute-browser-tabs",
   "emergency-tab-close",
+  "clean-porn-history",
 ] as const;
 
 export type LandingSlug = (typeof LANDING_SLUGS)[number];
@@ -22,6 +23,8 @@ export type LandingPageContent = {
   answer?: string;
   problem: { title: string; copy: string; items: string[] };
   flow: { before: string; action: string; after: string };
+  flowEyebrow?: string;
+  flowTitle?: string;
   howTitle: string;
   steps: { title: string; copy: string }[];
   featuresTitle: string;
@@ -318,6 +321,106 @@ const en: Record<LandingSlug, LandingPageContent> = {
       {
         question: "Is Close matching tabs a free feature?",
         answer: "Close matching tabs is a Premium Emergency Action. Free users can use Hide to remove matching tabs from view without closing them, and the free Emergency Action includes Mute and Hide.",
+      },
+    ],
+  },
+  "clean-porn-history": {
+    slug: "clean-porn-history",
+    title: "Clean Porn History & Hide Porn Tabs Instantly | SBA",
+    description:
+      "Hide porn tabs instantly, then clear browsing history, download history, cookies, site data, and address bar history with Stealth Browser Assistant.",
+    eyebrow: "HIDE NOW · CLEAN AFTER",
+    headline: "Hide porn tabs now. Clean your traces afterward.",
+    lead: "Start free: use your own keywords and one shortcut to hide and mute matching tabs before anyone sees or hears them.",
+    cta: "Hide Tabs Free",
+    image: "/promo-images/someone-coming.png",
+    imageAlt:
+      "Someone approaching while Stealth Browser Assistant hides matching private browser tabs",
+    answer:
+      "Stealth Browser Assistant helps you hide porn tabs instantly for free. When you want a more complete cleanup, Premium can clear selected private browser data such as browsing history and download history.",
+    problem: {
+      title: "Privacy needs two different responses.",
+      copy: "When someone approaches, hiding matching tabs is the fastest response. Afterward, you may also want to clear the browser records left behind. SBA supports both parts of that workflow without touching unrelated open tabs.",
+      items: [
+        "Hide and mute matching tabs immediately",
+        "Keep unrelated work and personal tabs available",
+        "Clear selected browsing traces when you are ready",
+      ],
+    },
+    flow: {
+      before: "Private tabs are visible",
+      action: "Hide now · Clean afterward",
+      after: "Tabs out of view · selected data cleared",
+    },
+    flowEyebrow: "IMMEDIATE PRIVACY → OPTIONAL CLEANUP",
+    flowTitle: "Hide first. Clean up when you are ready.",
+    howTitle: "How to hide porn tabs and clean browsing traces",
+    steps: [
+      {
+        title: "Define your own matches",
+        copy: "Add the domains, URLs, or page-title keywords that identify the tabs you want SBA to control. SBA does not decide what counts as adult or private content.",
+      },
+      {
+        title: "Hide and mute for free",
+        copy: "Use Hide or the free Emergency Action to remove matching tabs from view and silence their audio with a shortcut.",
+      },
+      {
+        title: "Clear private data with Premium",
+        copy: "When you are finished, Premium can clear selected categories including browsing history, download history, cookies and site data, and address bar history.",
+      },
+      {
+        title: "Automate cleanup with Premium",
+        copy: "Choose automatic cleanup when you want SBA to clear configured private data after the last matching tab is closed.",
+      },
+    ],
+    featuresTitle: "Start free. Add deeper cleanup when you need it.",
+    features: [
+      {
+        title: "Free tab hiding",
+        copy: "Hide every tab matching your configured rules without closing unrelated tabs.",
+      },
+      {
+        title: "Free emergency action",
+        copy: "Mute and hide matching tabs together when someone approaches or screen sharing starts.",
+      },
+      {
+        title: "Premium private-data cleanup",
+        copy: "Clear selected browser records in one action when hiding alone is not enough.",
+      },
+      {
+        title: "Local matching",
+        copy: "Your matching rules and browsing activity stay in your browser instead of being uploaded for analysis.",
+      },
+    ],
+    compatibility:
+      "Free Hide, Mute, and Emergency Action are available on Chrome, Edge, and Firefox. Private-data cleanup and automatic cleanup require Premium.",
+    ctaTitle: "Start by hiding matching tabs for free.",
+    ctaCopy:
+      "Install SBA, add your own matching rules, and upgrade later only if you want private-data cleanup and automation.",
+    faq: [
+      {
+        question: "How can I hide porn tabs quickly?",
+        answer: "Add your own website or title keywords in SBA, then use Hide or the free Emergency Action to hide all currently matching tabs with a shortcut.",
+      },
+      {
+        question: "Can SBA clean porn browsing history?",
+        answer: "SBA Premium can clear selected private browser data, including browsing history, download history, cookies and site data, and address bar history. You choose the matching rules and cleanup settings.",
+      },
+      {
+        question: "Is hiding porn tabs free?",
+        answer: "Yes. Hide, Mute, and the Mute-and-Hide Emergency Action are included in the free version. Private-data cleanup and automatic cleanup require Premium.",
+      },
+      {
+        question: "Does clearing download history delete downloaded files?",
+        answer: "No. Clearing download history removes the browser's download-list records; it does not delete files already saved on your computer.",
+      },
+      {
+        question: "Can SBA clean browsing data automatically?",
+        answer: "Yes. Premium includes automatic cleanup that can run after the last matching tab is closed, using the cleanup options you configure.",
+      },
+      {
+        question: "Does SBA automatically detect porn websites?",
+        answer: "No. SBA does not classify pages as porn or private content. You define the domains, URLs, and title keywords that should match.",
       },
     ],
   },

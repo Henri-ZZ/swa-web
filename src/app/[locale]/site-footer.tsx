@@ -24,6 +24,7 @@ const GUIDE_LINKS = [
   { href: "/chrome-panic-button", label: "Chrome panic button" },
   { href: "/mute-browser-tabs", label: "Mute browser tabs" },
   { href: "/emergency-tab-close", label: "Emergency tab close" },
+  { href: "/clean-porn-history", label: "Clean private browsing history" },
 ] as const;
 
 function FooterCol({ title, links }: { title: string; links: FooterLink[] }) {

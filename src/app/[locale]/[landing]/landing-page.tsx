@@ -16,6 +16,7 @@ const relatedLabels: Record<LandingSlug, string> = {
   "chrome-panic-button": "Chrome panic button",
   "mute-browser-tabs": "Mute browser tabs",
   "emergency-tab-close": "Emergency tab close",
+  "clean-porn-history": "Clean porn history and hide tabs",
 };
 
 function LandingHeader({ t }: { t: Translations }) {
@@ -105,8 +106,8 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
 
         <section className="bg-[var(--dark-2)] px-6 py-20 text-white">
           <div className="mx-auto max-w-6xl">
-            <p className="text-center text-xs font-semibold tracking-[0.2em] text-purple-300">BEFORE → ACTION → AFTER</p>
-            <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-semibold tracking-tight sm:text-4xl">See the change in one shortcut.</h2>
+            <p className="text-center text-xs font-semibold tracking-[0.2em] text-purple-300">{page.flowEyebrow ?? "BEFORE → ACTION → AFTER"}</p>
+            <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-semibold tracking-tight sm:text-4xl">{page.flowTitle ?? "See the change in one shortcut."}</h2>
             <div className="mt-10"><Flow flow={page.flow} /></div>
           </div>
         </section>
@@ -114,7 +115,7 @@ export function LandingPage({ page, t }: { page: LandingPageContent; t: Translat
         <section className="mx-auto max-w-6xl px-6 py-20">
           <p className="text-xs font-semibold tracking-[0.2em] text-[var(--purple)]">HOW IT WORKS</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{page.howTitle}</h2>
-          <ol className="mt-10 grid gap-5 md:grid-cols-3">
+          <ol className={`mt-10 grid gap-5 md:grid-cols-2 ${page.steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
             {page.steps.map((step, index) => <li key={step.title} className="rounded-3xl border border-[var(--border)] p-7 shadow-sm"><span className="text-sm font-semibold text-[var(--purple)]">0{index + 1}</span><h3 className="mt-5 text-xl font-semibold">{step.title}</h3><p className="mt-3 leading-7 text-[var(--muted)]">{step.copy}</p></li>)}
           </ol>
         </section>
