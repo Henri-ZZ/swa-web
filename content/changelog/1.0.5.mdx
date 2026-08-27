@@ -1,0 +1,15 @@
+---
+version: "1.0.5"
+date: "2026-08-28"
+type: "improvement"
+title:
+  en: "More Reliable Muting and Media Pausing"
+  zh: "静音与媒体暂停能力增强"
+content:
+  en: |
+    - Refactored Mute to use the browser's native tab-muting API, providing more complete and reliable audio control while preserving mute states managed by the user, Hide, other extensions, or tab capture.
+    - Enhanced Pause media with persistent support for accessible iframes, open Shadow DOM, and dynamically added audio and video elements. Turning the feature off never resumes media automatically.
+  zh: |
+    - 重构 Mute 静音机制，改用浏览器原生标签页静音 API，在提供更完整、可靠声音控制的同时，妥善保留由用户、Hide、其他扩展或标签页捕获管理的静音状态。
+    - 增强 Pause media 媒体暂停能力，持续支持可访问的 iframe、开放式 Shadow DOM，以及动态加载的音频和视频元素；关闭功能时不会自动恢复播放。
+---
