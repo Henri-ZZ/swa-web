@@ -2,6 +2,7 @@ export const LANDING_SLUGS = [
   "hide-browser-tabs",
   "hide-chrome-tabs",
   "hide-tabs-from-boss",
+  "panic-button",
   "chrome-panic-button",
   "mute-browser-tabs",
   "emergency-tab-close",
@@ -65,7 +66,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       { title: "Hide tabs", copy: "Hide matching tabs without closing them." },
       { title: "Custom keywords", copy: "You decide which websites and page titles match." },
       { title: "Keyboard shortcuts", copy: "Act without opening the extension popup." },
-      { title: "Emergency Mode", copy: "Hide and mute matching tabs together when speed matters." },
+      { title: "Panic Button", copy: "Hide and mute matching tabs together when speed matters." },
     ],
     compatibility: "Available for Chrome, Edge, and Firefox.",
     ctaTitle: "Ready to hide your tabs?",
@@ -106,7 +107,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       { title: "Preserve your session", copy: "Keep the relevant browsing state available for later." },
       { title: "Control several tabs", copy: "Handle matching tabs together rather than one at a time." },
       { title: "Use your own rules", copy: "Match by the keywords and sites that matter to you." },
-      { title: "Add Emergency Mode", copy: "Combine hiding with muting for a faster response." },
+      { title: "Add the Panic Button", copy: "Combine hiding with muting for a faster response." },
     ],
     compatibility: "Built for Chrome and also available on Edge and Firefox.",
     ctaTitle: "Hide what you need. Keep the rest.",
@@ -125,19 +126,19 @@ const en: Record<LandingSlug, LandingPageContent> = {
     eyebrow: "WORK & SCREEN SHARING",
     headline: "Someone is coming. Hide your tabs.",
     lead: "Keep personal browsing out of sight before it appears in a shared screen or work conversation.",
-    cta: "Get the Emergency Shortcut",
+    cta: "Get the Panic Button",
     image: "/promo-images/someone-coming.png",
-    imageAlt: "Someone approaching while a user triggers the Stealth Browser Assistant emergency shortcut",
+    imageAlt: "Someone approaching while a user triggers the Stealth Browser Assistant panic shortcut",
     problem: {
       title: "Work on one side. Personal browsing on the other.",
       copy: "A screen share, shared computer, or unexpected conversation can expose unrelated tabs. SBA gives you a quick, controlled response.",
       items: ["Keep work tabs visible", "Hide personal matches", "Mute matching media at the same time"],
     },
-    flow: { before: "Work + personal tabs", action: "Emergency shortcut", after: "Work tabs remain" },
+    flow: { before: "Work + personal tabs", action: "Panic shortcut", after: "Work tabs remain" },
     howTitle: "One shortcut, two privacy actions",
     steps: [
       { title: "Define personal matches", copy: "Add the sites or words that identify tabs you do not want visible." },
-      { title: "Configure Emergency Mode", copy: "Choose Hide and Mute for matching tabs." },
+      { title: "Configure the Panic Button", copy: "Choose Mute and Hide for matching tabs." },
       { title: "Use the shortcut", copy: "Trigger both actions before sharing your screen or handing over your computer." },
     ],
     featuresTitle: "Useful beyond one awkward moment",
@@ -153,26 +154,120 @@ const en: Record<LandingSlug, LandingPageContent> = {
     faq: [
       { question: "Will SBA hide every tab?", answer: "Only tabs matching the keywords you configure are affected by matching actions." },
       { question: "Can it help during screen sharing?", answer: "Yes. You can hide matching unrelated tabs before or during a screen-sharing session." },
-      { question: "Does Emergency Mode also mute sound?", answer: "Emergency actions can be configured to hide and mute matching tabs together." },
+      { question: "Does the Panic Button also mute sound?", answer: "The Panic Button can be configured to hide and mute matching tabs together." },
       { question: "Is my browsing sent to a server?", answer: "SBA performs keyword matching locally in the browser; review the privacy policy for full details." },
+    ],
+  },
+  "panic-button": {
+    slug: "panic-button",
+    title: "Browser Panic Button — Hide & Mute Tabs Instantly | SBA",
+    description:
+      "Use a browser panic button to instantly hide and mute matching tabs with one customizable shortcut. Available for Chrome, Edge, and Firefox.",
+    eyebrow: "BROWSER PANIC BUTTON",
+    headline: "One panic button. Private tabs out of sight.",
+    lead: "Instantly hide and mute every matching tab while leaving unrelated tabs open.",
+    cta: "Get the Panic Button",
+    image: "/promo-images/someone-coming.png",
+    imageAlt:
+      "Stealth Browser Assistant panic button hiding and muting matching browser tabs when someone approaches",
+    answer:
+      "A browser panic button gives you one fast, customizable shortcut for hiding and muting matching tabs across Chrome, Edge, and Firefox.",
+    problem: {
+      title: "When someone walks in, every second counts.",
+      copy: "Searching through a crowded tab bar is slow, and muting only one tab may leave another making sound. SBA applies your chosen panic action to every tab matching your own rules.",
+      items: [
+        "Hide matching tabs from view",
+        "Mute matching audio at the same time",
+        "Leave unrelated tabs open and visible",
+      ],
+    },
+    flow: {
+      before: "Private tabs are visible and playing",
+      action: "Press the panic shortcut",
+      after: "Matching tabs are hidden and silent",
+    },
+    howTitle: "How to set up your browser panic button",
+    steps: [
+      {
+        title: "Define what should match",
+        copy: "Add the websites, domains, URLs, or page-title keywords you want SBA to recognize.",
+      },
+      {
+        title: "Choose the panic action",
+        copy: "Use the free Mute and Hide action, or choose Close matching tabs with Premium.",
+      },
+      {
+        title: "Customize the shortcut",
+        copy: "Assign a keyboard combination you can reach quickly in your browser's extension shortcut settings.",
+      },
+      {
+        title: "Press it when needed",
+        copy: "SBA acts on all current matches together without disturbing unrelated tabs.",
+      },
+    ],
+    featuresTitle: "A panic button built around your rules",
+    features: [
+      {
+        title: "Free Mute and Hide",
+        copy: "Silence matching audio and move matching tabs out of sight in one action.",
+      },
+      {
+        title: "Premium Close action",
+        copy: "Choose to close all matching tabs when hiding is not enough.",
+      },
+      {
+        title: "Custom matching",
+        copy: "You decide which websites and page-title keywords the Panic Button affects.",
+      },
+      {
+        title: "Custom shortcut",
+        copy: "Trigger the Panic Button without opening the extension popup.",
+      },
+    ],
+    compatibility:
+      "The SBA Panic Button is available on Chrome, Edge, and Firefox. Mute and Hide is free; Close matching tabs requires Premium.",
+    ctaTitle: "Set up your Panic Button before you need it.",
+    ctaCopy:
+      "Install Stealth Browser Assistant, define your matching rules, and choose a shortcut you can press instantly.",
+    faq: [
+      {
+        question: "What is a browser panic button?",
+        answer: "It is a fast browser-extension action that hides, mutes, or closes selected tabs when you press a customizable shortcut.",
+      },
+      {
+        question: "Does the Panic Button hide every browser tab?",
+        answer: "No. SBA acts only on tabs matching the keywords, domains, URLs, or page-title rules you configure.",
+      },
+      {
+        question: "Is the SBA Panic Button free?",
+        answer: "Yes. The Mute and Hide Panic Button action is free. Closing all matching tabs with the Panic Button is a Premium option.",
+      },
+      {
+        question: "Can I customize the panic button shortcut?",
+        answer: "Yes. Chrome, Edge, and Firefox let you assign your preferred keyboard shortcut to the extension action.",
+      },
+      {
+        question: "Does it work on Chrome, Edge, and Firefox?",
+        answer: "Yes. Stealth Browser Assistant and its Panic Button are available for all three browsers.",
+      },
     ],
   },
   "chrome-panic-button": {
     slug: "chrome-panic-button",
     title: "Chrome Panic Button — Hide Tabs Instantly | SBA",
     description: "Turn your browser into a panic button. Instantly hide and mute selected Chrome tabs with one keyboard shortcut.",
-    eyebrow: "EMERGENCY MODE",
+    eyebrow: "CHROME PANIC BUTTON",
     headline: "A panic button for your browser.",
     lead: "Someone walked in? Hide and mute selected tabs instantly with one keyboard shortcut.",
     cta: "Set Up Your Panic Button",
-    image: "/promo-images/chrome-panic-button-shortcut.png",
-    imageAlt: "Stealth Browser Assistant Emergency action setting for muting and hiding matching tabs",
+    image: "/promo-images/someone-coming.png",
+    imageAlt: "Stealth Browser Assistant Chrome panic button hiding and muting matching tabs",
     problem: {
       title: "You do not always have time to close tabs one by one.",
-      copy: "Emergency Mode handles every matching tab in one action, so your visible browser and its audio change together.",
+      copy: "The Panic Button handles every matching tab in one action, so your visible browser and its audio change together.",
       items: ["Hide matching tabs", "Mute matching tabs", "Keep unrelated work tabs visible"],
     },
-    flow: { before: "Video · Shopping · Work · Private", action: "Emergency Mode", after: "Work · Gmail · Sheets" },
+    flow: { before: "Video · Shopping · Work · Private", action: "Panic Button", after: "Work · Gmail · Sheets" },
     howTitle: "What the panic button does",
     steps: [
       { title: "Match", copy: "SBA identifies open tabs using your own keywords and website rules." },
@@ -181,17 +276,17 @@ const en: Record<LandingSlug, LandingPageContent> = {
     ],
     featuresTitle: "Fast by design",
     features: [
-      { title: "One shortcut", copy: "Trigger the full emergency action without opening the popup." },
+      { title: "One shortcut", copy: "Trigger the Panic Button without opening the popup." },
       { title: "Multiple matches", copy: "Handle several configured tabs in the same action." },
       { title: "Custom rules", copy: "Your keywords decide which tabs are affected." },
       { title: "Separate actions", copy: "Use Hide or Mute alone when you do not need both." },
     ],
-    compatibility: "Emergency Mode is available in SBA for Chrome, Edge, and Firefox.",
+    compatibility: "The Panic Button is available in SBA for Chrome, Edge, and Firefox.",
     ctaTitle: "Be ready before someone walks in.",
-    ctaCopy: "Install SBA and configure your emergency shortcut.",
+    ctaCopy: "Install SBA and configure your panic shortcut.",
     faq: [
       { question: "What is a Chrome panic button?", answer: "It is a keyboard shortcut that quickly applies configured actions to matching browser tabs." },
-      { question: "What does SBA Emergency Mode do?", answer: "It can hide and mute all matching tabs in one action." },
+      { question: "What does the SBA Panic Button do?", answer: "It can hide and mute all matching tabs in one action." },
       { question: "Does it affect my work tabs?", answer: "Only tabs that match your configured rules are targeted." },
       { question: "Can I change the keyboard shortcut?", answer: "Yes. Configure extension shortcuts through your browser's shortcut settings." },
     ],
@@ -223,7 +318,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       { title: "Keep tabs open", copy: "Mute audio without closing the underlying page." },
       { title: "Match several tabs", copy: "Apply Mute to all tabs matching your configured rules." },
       { title: "Keyboard control", copy: "Act without hunting through the tab strip." },
-      { title: "Emergency Mode", copy: "Need more than silence? Hide and mute matching tabs together." },
+      { title: "Panic Button", copy: "Need more than silence? Hide and mute matching tabs together." },
     ],
     compatibility: "Mute matching tabs with SBA on Chrome, Edge, and Firefox.",
     ctaTitle: "Stop unexpected tab audio.",
@@ -232,7 +327,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       { question: "Can SBA mute multiple tabs?", answer: "Yes. The Mute action applies to open tabs that match your configured keywords." },
       { question: "Will muting close the tab?", answer: "No. Mute and Close are separate actions." },
       { question: "Can I choose which tabs are muted?", answer: "Yes. You control matching through your own keywords and website rules." },
-      { question: "Can SBA hide and mute together?", answer: "Yes. Emergency Mode can combine both actions for matching tabs." },
+      { question: "Can SBA hide and mute together?", answer: "Yes. The Panic Button can combine both actions for matching tabs." },
     ],
   },
   "emergency-tab-close": {
@@ -251,7 +346,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       "Emergency tab close lets you close every open tab that matches your own keywords in one action, while unrelated tabs stay open.",
     problem: {
       title: "Sometimes the tabs need to be gone, not just hidden.",
-      copy: "Closing tabs one by one takes time and can expose each page as you search for it. SBA can close all configured matches together when you trigger the Emergency Action.",
+      copy: "Closing tabs one by one takes time and can expose each page as you search for it. SBA can close all configured matches together when you trigger the Panic Button.",
       items: [
         "Someone is approaching your computer",
         "A screen-sharing session starts unexpectedly",
@@ -270,8 +365,8 @@ const en: Record<LandingSlug, LandingPageContent> = {
         copy: "Add the domains, URLs, or title keywords that identify the tabs you may need to close.",
       },
       {
-        title: "Choose Close for Emergency Action",
-        copy: "Select Close matching tabs as your Premium Emergency Action in SBA settings. Free users can use Hide to remove matching tabs from view without closing them.",
+        title: "Choose Close for the Panic Button",
+        copy: "Select Close matching tabs as your Premium Panic Button action in SBA settings. Free users can use Hide to remove matching tabs from view without closing them.",
       },
       {
         title: "Customize the shortcut",
@@ -286,7 +381,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
     features: [
       {
         title: "Close all matches",
-        copy: "Handle several matching tabs in one emergency action.",
+        copy: "Handle several matching tabs with one Panic Button action.",
       },
       {
         title: "Keep unrelated tabs",
@@ -305,11 +400,11 @@ const en: Record<LandingSlug, LandingPageContent> = {
       "Emergency tab close is available with SBA Premium on Chrome, Edge, and Firefox. Free users can hide matching tabs instead.",
     ctaTitle: "Be ready before you need to close everything.",
     ctaCopy:
-      "Install SBA, define your matching rules, and configure your emergency action.",
+      "Install SBA, define your matching rules, and configure your Panic Button.",
     faq: [
       {
         question: "What is emergency tab close?",
-        answer: "It is an SBA Emergency Action that closes every currently open tab matching your configured keywords and website rules.",
+        answer: "It is an SBA Panic Button action that closes every currently open tab matching your configured keywords and website rules.",
       },
       {
         question: "Will emergency tab close close every browser tab?",
@@ -321,7 +416,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       },
       {
         question: "Is Close matching tabs a free feature?",
-        answer: "Close matching tabs is a Premium Emergency Action. Free users can use Hide to remove matching tabs from view without closing them, and the free Emergency Action includes Mute and Hide.",
+        answer: "Close matching tabs is a Premium Panic Button action. Free users can use Hide to remove matching tabs from view without closing them, and the free Panic Button includes Mute and Hide.",
       },
     ],
   },
@@ -343,7 +438,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       {
         eyebrow: "HIDE ADULT TABS",
         title: "How to hide adult tabs instantly",
-        copy: "Use Stealth Browser Assistant to hide adult browser tabs with your own website and page-title keywords. The free Hide action keeps matching tabs out of view, while the free Emergency Action can hide and mute them together with one keyboard shortcut.",
+        copy: "Use Stealth Browser Assistant to hide adult browser tabs with your own website and page-title keywords. The free Hide action keeps matching tabs out of view, while the free Panic Button can hide and mute them together with one keyboard shortcut.",
       },
       {
         eyebrow: "CLEAR BROWSING TRACES",
@@ -375,7 +470,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
       },
       {
         title: "Hide and mute for free",
-        copy: "Use Hide or the free Emergency Action to remove matching tabs from view and silence their audio with a shortcut.",
+        copy: "Use Hide or the free Panic Button to remove matching tabs from view and silence their audio with a shortcut.",
       },
       {
         title: "Clear private data with Premium",
@@ -393,7 +488,7 @@ const en: Record<LandingSlug, LandingPageContent> = {
         copy: "Hide every tab matching your configured rules without closing unrelated tabs.",
       },
       {
-        title: "Free emergency action",
+        title: "Free Panic Button",
         copy: "Mute and hide matching tabs together when someone approaches or screen sharing starts.",
       },
       {
@@ -406,14 +501,14 @@ const en: Record<LandingSlug, LandingPageContent> = {
       },
     ],
     compatibility:
-      "Free Hide, Mute, and Emergency Action are available on Chrome, Edge, and Firefox. Private-data cleanup and automatic cleanup require Premium.",
+      "Free Hide, Mute, and the Panic Button are available on Chrome, Edge, and Firefox. Private-data cleanup and automatic cleanup require Premium.",
     ctaTitle: "Start by hiding matching tabs for free.",
     ctaCopy:
       "Install SBA, add your own matching rules, and upgrade later only if you want private-data cleanup and automation.",
     faq: [
       {
         question: "How can I hide porn tabs quickly?",
-        answer: "Add your own website or title keywords in SBA, then use Hide or the free Emergency Action to hide all currently matching tabs with a shortcut.",
+        answer: "Add your own website or title keywords in SBA, then use Hide or the free Panic Button to hide all currently matching tabs with a shortcut.",
       },
       {
         question: "Can SBA clean porn browsing history?",
@@ -425,11 +520,11 @@ const en: Record<LandingSlug, LandingPageContent> = {
       },
       {
         question: "Is hiding porn tabs free?",
-        answer: "Yes. Hide, Mute, and the Mute-and-Hide Emergency Action are included in the free version. Private-data cleanup and automatic cleanup require Premium.",
+        answer: "Yes. Hide, Mute, and the Mute-and-Hide Panic Button action are included in the free version. Private-data cleanup and automatic cleanup require Premium.",
       },
       {
         question: "Can I hide adult browser tabs for free?",
-        answer: "Yes. Add your own adult-site domains or page-title keywords, then use SBA's free Hide action or the free Mute-and-Hide Emergency Action on matching tabs.",
+        answer: "Yes. Add your own adult-site domains or page-title keywords, then use SBA's free Hide action or the free Mute-and-Hide Panic Button action on matching tabs.",
       },
       {
         question: "Does clearing download history delete downloaded files?",

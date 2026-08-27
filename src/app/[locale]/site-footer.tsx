@@ -21,6 +21,7 @@ const GUIDE_LINKS = [
   { href: "/hide-browser-tabs", label: "Hide browser tabs" },
   { href: "/hide-chrome-tabs", label: "Hide Chrome tabs" },
   { href: "/hide-tabs-from-boss", label: "Hide tabs at work" },
+  { href: "/panic-button", label: "Browser panic button" },
   { href: "/chrome-panic-button", label: "Chrome panic button" },
   { href: "/mute-browser-tabs", label: "Mute browser tabs" },
   { href: "/emergency-tab-close", label: "Emergency tab close" },

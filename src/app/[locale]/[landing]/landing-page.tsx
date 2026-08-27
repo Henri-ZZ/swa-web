@@ -13,6 +13,7 @@ const relatedLabels: Record<LandingSlug, string> = {
   "hide-browser-tabs": "Hide browser tabs",
   "hide-chrome-tabs": "Hide Chrome tabs",
   "hide-tabs-from-boss": "Hide tabs at work",
+  "panic-button": "Browser panic button",
   "chrome-panic-button": "Chrome panic button",
   "mute-browser-tabs": "Mute browser tabs",
   "emergency-tab-close": "Emergency tab close",
@@ -66,7 +67,7 @@ function Flow({ flow }: { flow: LandingPageContent["flow"] }) {
 
 export function LandingPage({ page, t }: { page: LandingPageContent; t: Translations }) {
   const related: LandingSlug[] = page.slug === "clean-porn-history"
-    ? ["hide-browser-tabs", "mute-browser-tabs", "chrome-panic-button"]
+    ? ["hide-browser-tabs", "mute-browser-tabs", "panic-button"]
     : (Object.keys(relatedLabels) as LandingSlug[]).filter((slug) => slug !== page.slug).slice(0, 3);
 
   return (

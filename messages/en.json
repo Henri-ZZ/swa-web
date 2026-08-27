@@ -43,7 +43,7 @@
           "shortcut": "⌥ ⇧ H"
         },
         "emergency": {
-          "name": "Emergency Action",
+          "name": "Panic Button",
           "shortcut": "⌥ ⇧ E"
         },
         "clear": {
@@ -112,8 +112,8 @@
         ]
       },
       "emergency": {
-        "name": "Emergency Action",
-        "description": "Mute, hide or close all matching tabs with one click.",
+        "name": "Panic Button",
+        "description": "Mute, hide or close all matching tabs with one shortcut.",
         "keys": [
           "⌥",
           "⇧",
@@ -190,7 +190,7 @@
       "feedback": "Tab match feedback",
       "mute": "Mute tabs",
       "hide": "Hide tabs",
-      "emergency": "Emergency action",
+      "emergency": "Panic Button",
       "clear": "Clear private data"
     },
     "period": "One-time payment",
@@ -199,7 +199,7 @@
       "feedback": "Tab match feedback",
       "mute": "Mute tabs",
       "hide": "Hide tabs",
-      "emergency": "Emergency action",
+      "emergency": "Panic Button",
       "clear": "Clear private data",
       "all": "All premium features",
       "updates": "All future updates included",

@@ -43,7 +43,7 @@
           "shortcut": "⌥ ⇧ H"
         },
         "emergency": {
-          "name": "紧急动作",
+          "name": "紧急按钮",
           "shortcut": "⌥ ⇧ E"
         },
         "clear": {
@@ -112,7 +112,7 @@
         ]
       },
       "emergency": {
-        "name": "紧急动作",
+        "name": "紧急按钮",
         "description": "一键静音、隐藏或关闭所有匹配的标签页。",
         "keys": [
           "⌥",
@@ -190,7 +190,7 @@
       "feedback": "标签页命中反馈",
       "mute": "静音标签页",
       "hide": "隐藏标签页",
-      "emergency": "紧急动作",
+      "emergency": "紧急按钮",
       "clear": "清理隐私数据"
     },
     "period": "一次性付费",
@@ -199,7 +199,7 @@
       "feedback": "标签页命中反馈",
       "mute": "静音标签页",
       "hide": "隐藏标签页",
-      "emergency": "紧急动作",
+      "emergency": "紧急按钮",
       "clear": "清理隐私数据",
       "all": "所有高级功能",
       "updates": "后续更新功能继续使用",
