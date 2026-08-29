@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { getLandingPage, getSiteUrl, isLandingSlug, LANDING_SLUGS } from "@/lib/landing-pages";
+import { getLandingPage, isLandingSlug, LANDING_SLUGS } from "@/lib/landing-pages";
+import { getSiteUrl } from "@/lib/site";
 import { LandingPage } from "./landing-page";
 
 export function generateStaticParams() {

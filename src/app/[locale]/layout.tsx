@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 import { AnchorScroll } from "./anchor-scroll";
 import { ImageLightbox } from "./image-lightbox";
+import { SITE_URL } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
   return {
+    metadataBase: new URL(SITE_URL),
     title: t("title"),
     description: t("description"),
   };

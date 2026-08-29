@@ -549,9 +549,3 @@ export function isLandingSlug(value: string): value is LandingSlug {
 export function getLandingPage(slug: LandingSlug) {
   return en[slug];
 }
-
-export function getSiteUrl() {
-  const configured = process.env.NEXT_PUBLIC_SITE_URL;
-  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
-  return (configured ?? (vercel ? `https://${vercel}` : "http://localhost:4000")).replace(/\/$/, "");
-}

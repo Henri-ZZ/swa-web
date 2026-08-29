@@ -6,7 +6,7 @@ import {
   getGettingStartedContent,
   type TutorialStep,
 } from "@/lib/getting-started";
-import { getSiteUrl } from "@/lib/landing-pages";
+import { getSiteUrl } from "@/lib/site";
 import { getLocalizedAlternates, getLocalizedUrl } from "@/lib/seo";
 import { LocaleSwitcher } from "../locale-switcher";
 import { SiteFooter } from "../site-footer";

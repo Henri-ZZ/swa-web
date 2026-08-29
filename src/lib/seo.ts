@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl } from "@/lib/landing-pages";
+import { getSiteUrl } from "@/lib/site";
 
 export function getLocalizedAlternates(
   locale: string,

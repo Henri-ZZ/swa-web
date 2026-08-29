@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { getSiteUrl, LANDING_SLUGS } from "@/lib/landing-pages";
+import { LANDING_SLUGS } from "@/lib/landing-pages";
 import { getLocalizedUrl } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 
 const STATIC_ROUTES = ["", "/getting-started", "/changelog", "/contact", "/privacy", "/refund", "/terms"];
 

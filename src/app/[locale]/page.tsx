@@ -10,7 +10,7 @@ import { SiteFooter } from "./site-footer";
 import { StoreLink } from "./store-link";
 import { STORE_URLS } from "./store-urls";
 import { KeywordMatching } from "./keyword-matching";
-import { getSiteUrl } from "@/lib/landing-pages";
+import { getSiteUrl } from "@/lib/site";
 import { getLocalizedAlternates, getLocalizedUrl } from "@/lib/seo";
 
 export async function generateMetadata({

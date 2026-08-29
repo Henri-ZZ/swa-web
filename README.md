@@ -30,7 +30,7 @@ pnpm start
 pnpm lint
 ```
 
-打开 [http://localhost:3000](http://localhost:3000) 查看效果。根路径会自动重定向到浏览器首选语言对应的 locale（默认 `en`）。
+打开 [http://localhost:4000](http://localhost:4000) 查看效果。根路径会自动重定向到浏览器首选语言对应的 locale（默认 `en`）。
 
 ## Google Analytics
 
@@ -38,12 +38,11 @@ pnpm lint
 
 ```bash
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_SITE_URL=https://your-production-domain.example
 ```
 
 未配置时不会加载 Google Analytics。`NEXT_PUBLIC_` 环境变量会在构建时写入前端资源，因此部署环境修改后需要重新构建。
 
-`NEXT_PUBLIC_SITE_URL` 用于 canonical、Open Graph、robots.txt 和 sitemap.xml，请在生产环境配置为网站的正式域名。
+网站正式地址统一定义在 `src/lib/site.ts`，当前为 `https://sba.henriz.dev`。canonical、Open Graph、robots.txt、sitemap.xml 和结构化数据均使用该地址，避免预览部署意外输出 Vercel 临时域名。
 
 ## 国际化（i18n）
 
