@@ -171,6 +171,12 @@ export default async function Home({
               {t("header.nav.howItWorks")}
             </Link>
             <Link
+              href="/getting-started"
+              className="transition-colors hover:text-white"
+            >
+              {t("header.nav.tutorial")}
+            </Link>
+            <Link
               href="#pricing"
               className="transition-colors hover:text-white"
             >

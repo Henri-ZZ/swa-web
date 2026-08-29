@@ -3,7 +3,7 @@ import { routing } from "@/i18n/routing";
 import { getSiteUrl, LANDING_SLUGS } from "@/lib/landing-pages";
 import { getLocalizedUrl } from "@/lib/seo";
 
-const STATIC_ROUTES = ["", "/changelog", "/contact", "/privacy", "/refund", "/terms"];
+const STATIC_ROUTES = ["", "/getting-started", "/changelog", "/contact", "/privacy", "/refund", "/terms"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();

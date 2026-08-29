@@ -10,6 +10,7 @@
     "nav": {
       "features": "功能",
       "howItWorks": "工作原理",
+      "tutorial": "教程",
       "pricing": "价格",
       "faq": "常见问题",
       "changelog": "更新日志"
@@ -96,38 +97,22 @@
       "mute": {
         "name": "静音标签页",
         "description": "立即静音匹配的标签页，而无需关闭它们。",
-        "keys": [
-          "⌥",
-          "⇧",
-          "M"
-        ]
+        "keys": ["⌥", "⇧", "M"]
       },
       "hide": {
         "name": "隐藏标签页",
         "description": "把隐私标签页从视图中隐藏，但保持打开状态。",
-        "keys": [
-          "⌥",
-          "⇧",
-          "H"
-        ]
+        "keys": ["⌥", "⇧", "H"]
       },
       "emergency": {
         "name": "紧急按钮",
         "description": "一键静音、隐藏或关闭所有匹配的标签页。",
-        "keys": [
-          "⌥",
-          "⇧",
-          "E"
-        ]
+        "keys": ["⌥", "⇧", "E"]
       },
       "clear": {
         "name": "清理隐私数据",
         "description": "一键清理隐私数据，例如浏览历史记录、下载历史记录等。",
-        "keys": [
-          "⌥",
-          "⇧",
-          "C"
-        ]
+        "keys": ["⌥", "⇧", "C"]
       }
     }
   },
@@ -272,9 +257,8 @@
       "resources": {
         "title": "资源",
         "links": {
-          "chrome": "Chrome 应用商店",
           "youtube": "YouTube 演示",
-          "docs": "文档"
+          "docs": "教程"
         }
       },
       "download": {

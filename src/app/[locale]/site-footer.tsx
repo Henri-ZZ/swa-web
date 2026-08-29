@@ -157,12 +157,14 @@ export function SiteFooter({ t }: { t: Translations }) {
           <FooterCol
             title={t("footer.columns.resources.title")}
             links={[
-              { label: t("footer.columns.resources.links.chrome"), href: "#" },
               {
                 label: t("footer.columns.resources.links.youtube"),
                 hash: "demo",
               },
-              { label: t("footer.columns.resources.links.docs"), href: "#" },
+              {
+                label: t("footer.columns.resources.links.docs"),
+                href: "/getting-started",
+              },
             ]}
           />
           <FooterCol
@@ -215,9 +217,7 @@ export function SiteFooter({ t }: { t: Translations }) {
         <div className="mt-6 border-t border-white/10 pt-6">
           {/* Optional listing badges: remove this line and footer-badges.tsx to retire them. */}
           <FooterBadges />
-          <p className="mt-4 text-xs text-zinc-500">
-            {t("footer.copyright")}
-          </p>
+          <p className="mt-4 text-xs text-zinc-500">{t("footer.copyright")}</p>
         </div>
       </div>
     </footer>

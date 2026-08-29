@@ -10,6 +10,7 @@
     "nav": {
       "features": "Features",
       "howItWorks": "How It Works",
+      "tutorial": "Tutorial",
       "pricing": "Pricing",
       "faq": "FAQ",
       "changelog": "Changelog"
@@ -96,38 +97,22 @@
       "mute": {
         "name": "Mute Tabs",
         "description": "Silence matching tabs instantly without closing them.",
-        "keys": [
-          "⌥",
-          "⇧",
-          "M"
-        ]
+        "keys": ["⌥", "⇧", "M"]
       },
       "hide": {
         "name": "Hide Tabs",
         "description": "Hide private tabs from view while keeping them open.",
-        "keys": [
-          "⌥",
-          "⇧",
-          "H"
-        ]
+        "keys": ["⌥", "⇧", "H"]
       },
       "emergency": {
         "name": "Panic Button",
         "description": "Mute, hide or close all matching tabs with one shortcut.",
-        "keys": [
-          "⌥",
-          "⇧",
-          "E"
-        ]
+        "keys": ["⌥", "⇧", "E"]
       },
       "clear": {
         "name": "Clear Private Data",
         "description": "Wipe private data such as browsing history and download history in one go.",
-        "keys": [
-          "⌥",
-          "⇧",
-          "C"
-        ]
+        "keys": ["⌥", "⇧", "C"]
       }
     }
   },
@@ -272,9 +257,8 @@
       "resources": {
         "title": "Resources",
         "links": {
-          "chrome": "Chrome Web Store",
           "youtube": "YouTube Demo",
-          "docs": "Documentation"
+          "docs": "Tutorial"
         }
       },
       "download": {
