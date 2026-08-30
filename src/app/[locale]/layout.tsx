@@ -35,6 +35,9 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     title: t("title"),
     description: t("description"),
+    verification: {
+      google: "xAcO-ctraDUIb4jND6iUlnNowsjS8EyMmHTllYHirZI",
+    },
   };
 }
 
