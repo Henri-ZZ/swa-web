@@ -26,7 +26,7 @@ export function PaddleBuyButton({
     initializePaddle({
       environment,
       token,
-      // 激活码发放由 Paddle webhook 转发到激活码管理平台（licentra.henri.ren）处理，
+      // 激活码发放由 Paddle webhook 转发到激活码管理平台（licentra）处理，
       // 前端无需监听交易事件。
     }).then((instance) => {
       if (!cancelled && instance) {
