@@ -11,7 +11,11 @@ import { StoreLink } from "./store-link";
 import { STORE_URLS } from "./store-urls";
 import { KeywordMatching } from "./keyword-matching";
 import { getSiteUrl } from "@/lib/site";
-import { getLocalizedAlternates, getLocalizedUrl } from "@/lib/seo";
+import {
+  getLocalizedAlternates,
+  getLocalizedUrl,
+  getSocialMetadata,
+} from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -22,34 +26,17 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "metadata" });
   const title = t("title");
   const description = t("description");
-  const url = getLocalizedUrl(locale);
-  const image = `${getSiteUrl()}/promo-images/SBA_Marquee_Promo_Tile_1400x560.png`;
 
   return {
+    title,
+    description,
     alternates: getLocalizedAlternates(locale),
-    openGraph: {
-      type: "website",
-      url,
-      siteName: "Stealth Browser Assistant",
-      locale: locale === "zh" ? "zh_CN" : "en_US",
-      alternateLocale: locale === "zh" ? ["en_US"] : ["zh_CN"],
+    ...getSocialMetadata({
+      locale,
       title,
       description,
-      images: [
-        {
-          url: image,
-          width: 1400,
-          height: 560,
-          alt: "Stealth Browser Assistant — Mute, Hide, and Clean browser tabs",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [image],
-    },
+      url: getLocalizedUrl(locale),
+    }),
   };
 }
 

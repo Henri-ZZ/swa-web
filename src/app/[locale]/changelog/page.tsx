@@ -7,7 +7,11 @@ import { LocaleSwitcher } from "../locale-switcher";
 import { SiteFooter } from "../site-footer";
 import { ChangelogTimeline, type ChangelogItem } from "../changelog-timeline";
 import { getChangelogEntries } from "@/lib/changelog";
-import { getLocalizedAlternates } from "@/lib/seo";
+import {
+  getLocalizedAlternates,
+  getLocalizedUrl,
+  getSocialMetadata,
+} from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -17,9 +21,19 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "changelog" });
   const tb = await getTranslations({ locale, namespace: "header" });
+  const title = `${t("title")} | ${tb("brandFull")}`;
+  const description = t("description");
+
   return {
-    title: `${t("title")} | ${tb("brandFull")}`,
+    title,
+    description,
     alternates: getLocalizedAlternates(locale, "/changelog"),
+    ...getSocialMetadata({
+      locale,
+      title,
+      description,
+      url: getLocalizedUrl(locale, "/changelog"),
+    }),
   };
 }
 

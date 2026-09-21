@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -8,18 +9,18 @@ import {
 } from "@/lib/getting-started";
 import { getSiteUrl } from "@/lib/site";
 import { getLocalizedAlternates, getLocalizedUrl } from "@/lib/seo";
+import { InstalledBanner } from "./installed-banner";
 import { LocaleSwitcher } from "../locale-switcher";
 import { SiteFooter } from "../site-footer";
 import { StoreLink } from "../store-link";
 
 type GettingStartedPageProps = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
 export async function generateMetadata({
   params,
-}: Pick<GettingStartedPageProps, "params">): Promise<Metadata> {
+}: GettingStartedPageProps): Promise<Metadata> {
   const { locale } = await params;
   const content = getGettingStartedContent(locale);
   const url = getLocalizedUrl(locale, "/getting-started");
@@ -186,18 +187,13 @@ function TutorialCard({
 
 export default async function GettingStartedPage({
   params,
-  searchParams,
 }: GettingStartedPageProps) {
-  const [{ locale }, query] = await Promise.all([params, searchParams]);
+  const { locale } = await params;
   setRequestLocale(locale);
   const [content, t] = [
     getGettingStartedContent(locale),
     await getTranslations({ locale }),
   ];
-  const installedValue = Array.isArray(query.installed)
-    ? query.installed[0]
-    : query.installed;
-  const isInstalled = installedValue === "1" || installedValue === "true";
   const pageUrl = getLocalizedUrl(locale, "/getting-started");
   const siteUrl = getSiteUrl();
   const jsonLd = {
@@ -275,29 +271,14 @@ export default async function GettingStartedPage({
       </header>
 
       <main>
-        {isInstalled ? (
-          <section className="border-b border-purple-400/20 bg-purple-600 text-white">
-            <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-7 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-xs font-semibold tracking-[0.2em] text-purple-200">
-                  {content.installed.eyebrow}
-                </p>
-                <h1 className="mt-2 text-2xl font-semibold">
-                  {content.installed.title}
-                </h1>
-                <p className="mt-2 max-w-3xl text-sm leading-6 text-purple-100">
-                  {content.installed.copy}
-                </p>
-              </div>
-              <a
-                href="#quick-start"
-                className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-purple-700 transition hover:bg-purple-50"
-              >
-                {content.headerCta} <span aria-hidden>↓</span>
-              </a>
-            </div>
-          </section>
-        ) : null}
+        <Suspense fallback={null}>
+          <InstalledBanner
+            eyebrow={content.installed.eyebrow}
+            title={content.installed.title}
+            copy={content.installed.copy}
+            cta={content.headerCta}
+          />
+        </Suspense>
 
         <section className="relative overflow-hidden bg-[var(--dark)] text-white">
           <div aria-hidden className="hero-glow pointer-events-none absolute inset-0" />
@@ -319,14 +300,12 @@ export default async function GettingStartedPage({
                 >
                   {content.hero.primaryCta} <span aria-hidden>↓</span>
                 </a>
-                {!isInstalled ? (
-                  <StoreLink
-                    analyticsLabel="getting_started_hero"
-                    className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
-                  >
-                    {content.hero.secondaryCta} <span aria-hidden>→</span>
-                  </StoreLink>
-                ) : null}
+                <StoreLink
+                  analyticsLabel="getting_started_hero"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+                >
+                  {content.hero.secondaryCta} <span aria-hidden>→</span>
+                </StoreLink>
               </div>
               <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm text-zinc-400">
                 <span>✓ {content.hero.time}</span>
@@ -545,21 +524,12 @@ export default async function GettingStartedPage({
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-400">
             {content.hero.copy}
           </p>
-          {!isInstalled ? (
-            <StoreLink
-              analyticsLabel="getting_started_bottom"
-              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--purple)] px-7 text-sm font-semibold text-white transition hover:bg-[var(--purple-bright)]"
-            >
-              {content.hero.secondaryCta} <span aria-hidden>→</span>
-            </StoreLink>
-          ) : (
-            <a
-              href="#quick-start"
-              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--purple)] px-7 text-sm font-semibold text-white transition hover:bg-[var(--purple-bright)]"
-            >
-              {content.headerCta} <span aria-hidden>↑</span>
-            </a>
-          )}
+          <StoreLink
+            analyticsLabel="getting_started_bottom"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--purple)] px-7 text-sm font-semibold text-white transition hover:bg-[var(--purple-bright)]"
+          >
+            {content.hero.secondaryCta} <span aria-hidden>→</span>
+          </StoreLink>
         </section>
       </main>
 

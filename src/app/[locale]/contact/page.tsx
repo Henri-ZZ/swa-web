@@ -4,7 +4,11 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "../locale-switcher";
 import { SiteFooter } from "../site-footer";
-import { getLocalizedAlternates } from "@/lib/seo";
+import {
+  getLocalizedAlternates,
+  getLocalizedUrl,
+  getSocialMetadata,
+} from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,9 +18,19 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
   const tb = await getTranslations({ locale, namespace: "header" });
+  const title = `${t("heading")} | ${tb("brandFull")}`;
+  const description = t("description");
+
   return {
-    title: `${t("heading")} | ${tb("brandFull")}`,
+    title,
+    description,
     alternates: getLocalizedAlternates(locale, "/contact"),
+    ...getSocialMetadata({
+      locale,
+      title,
+      description,
+      url: getLocalizedUrl(locale, "/contact"),
+    }),
   };
 }
 

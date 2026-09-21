@@ -271,7 +271,12 @@
     "copyright": "© 2026 Stealth Browser Assistant. All rights reserved."
   },
   "legal": {
-    "lastUpdatedPrefix": "Last Updated: "
+    "lastUpdatedPrefix": "Last Updated: ",
+    "descriptions": {
+      "privacy": "How Stealth Browser Assistant handles your data: keywords are matched locally in your browser, browsing activity is never uploaded, and no account is required.",
+      "terms": "The terms that govern your use of Stealth Browser Assistant, including the usage license, user responsibilities, payment processing, and digital product notice.",
+      "refund": "Refund policy for Stealth Browser Assistant Premium: eligible refund reasons, how to submit a request through Paddle, and how refunds are processed."
+    }
   },
   "changelog": {
     "title": "Changelog",

@@ -3,7 +3,11 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LegalPage } from "../legal-page";
 import { getLegalDocForLocale } from "../legal-doc";
-import { getLocalizedAlternates } from "@/lib/seo";
+import {
+  getLocalizedAlternates,
+  getLocalizedUrl,
+  getSocialMetadata,
+} from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -13,9 +17,20 @@ export async function generateMetadata({
   const { locale } = await params;
   const doc = await getLegalDocForLocale("refund", locale);
   const tb = await getTranslations({ locale, namespace: "header" });
+  const t = await getTranslations({ locale, namespace: "legal" });
+  const title = `${doc?.title ?? "Refund Policy"} | ${tb("brandFull")}`;
+  const description = t("descriptions.refund");
+
   return {
-    title: `${doc?.title ?? "Refund Policy"} | ${tb("brandFull")}`,
+    title,
+    description,
     alternates: getLocalizedAlternates(locale, "/refund"),
+    ...getSocialMetadata({
+      locale,
+      title,
+      description,
+      url: getLocalizedUrl(locale, "/refund"),
+    }),
   };
 }
 

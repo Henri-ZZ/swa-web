@@ -2,7 +2,6 @@ import Image from "next/image";
 import type { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { LandingPageContent, LandingSlug } from "@/lib/landing-pages";
-import { LocaleSwitcher } from "../locale-switcher";
 import { SiteFooter } from "../site-footer";
 import { StoreLink } from "../store-link";
 import { STORE_URLS } from "../store-urls";
@@ -28,15 +27,14 @@ function LandingHeader({ t }: { t: Translations }) {
           <Image src="/icon.png" alt="Stealth Browser Assistant logo" width={30} height={30} priority />
           <span className="text-sm font-bold tracking-tight sm:text-base">Stealth Browser Assistant</span>
         </Link>
-        <div className="flex items-center gap-3">
-          <StoreLink
-            analyticsLabel="landing_header"
-            className="hidden h-9 items-center rounded-full bg-[var(--purple)] px-4 text-sm font-semibold text-white transition hover:bg-[var(--purple-bright)] sm:inline-flex"
-          >
-            {t("header.cta")} <span aria-hidden>→</span>
-          </StoreLink>
-          <LocaleSwitcher />
-        </div>
+        {/* No locale switcher here on purpose: these guides are English-only and
+            `/zh/<slug>` permanently redirects back to this page. */}
+        <StoreLink
+          analyticsLabel="landing_header"
+          className="hidden h-9 items-center rounded-full bg-[var(--purple)] px-4 text-sm font-semibold text-white transition hover:bg-[var(--purple-bright)] sm:inline-flex"
+        >
+          {t("header.cta")} <span aria-hidden>→</span>
+        </StoreLink>
       </nav>
     </header>
   );

@@ -202,10 +202,12 @@ export function SiteFooter({ t }: { t: Translations }) {
             {GUIDE_LINKS.map((guide, index) => (
               <li key={guide.href} className="flex items-center gap-2">
                 {index > 0 ? <span aria-hidden>·</span> : null}
+                {/* Plain anchors (not `Link`) keep these English-only guides
+                    pointing at the default locale from the `zh` pages, and
+                    `hrefLang` documents that for search engines. */}
                 <a
                   href={guide.href}
-                  target="_blank"
-                  rel="noopener"
+                  hrefLang="en"
                   className="transition-colors hover:text-zinc-200"
                 >
                   {guide.label}

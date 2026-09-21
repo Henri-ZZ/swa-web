@@ -271,7 +271,12 @@
     "copyright": "© 2026 Stealth Browser Assistant。保留所有权利。"
   },
   "legal": {
-    "lastUpdatedPrefix": "最后更新："
+    "lastUpdatedPrefix": "最后更新：",
+    "descriptions": {
+      "privacy": "Stealth Browser Assistant 如何处理你的数据：关键词仅在本机浏览器内匹配，浏览行为不会上传，也无需注册账号。",
+      "terms": "使用 Stealth Browser Assistant 的服务条款，包括使用许可、用户责任、支付处理与数字商品说明。",
+      "refund": "Stealth Browser Assistant 高级版退款政策：可退款情形、如何通过 Paddle 提交申请，以及退款处理方式。"
+    }
   },
   "changelog": {
     "title": "更新日志",
